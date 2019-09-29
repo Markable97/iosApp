@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE33352AC64D774581B089EF /* Pods_Exider_org.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12D7760E304F5188E782C6F /* Pods_Exider_org.framework */; };
 		D0117885233F787200773E34 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0117884233F787200773E34 /* RegisterViewController.swift */; };
 		D0117887233F7B8900773E34 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0117886233F7B8900773E34 /* MainViewController.swift */; };
 		D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A7BE6233E5C1D00923F5B /* AppDelegate.swift */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		710428981A31B788C61F9FAE /* Pods-Exider.org.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exider.org.debug.xcconfig"; path = "Target Support Files/Pods-Exider.org/Pods-Exider.org.debug.xcconfig"; sourceTree = "<group>"; };
+		8FB56D92B649013C33CA09C7 /* Pods-Exider.org.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exider.org.release.xcconfig"; path = "Target Support Files/Pods-Exider.org/Pods-Exider.org.release.xcconfig"; sourceTree = "<group>"; };
+		C12D7760E304F5188E782C6F /* Pods_Exider_org.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exider_org.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0117884233F787200773E34 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D0117886233F7B8900773E34 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D04A7BE3233E5C1D00923F5B /* Exider.org.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exider.org.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE33352AC64D774581B089EF /* Pods_Exider_org.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B233A5B43C84957B9444543E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C12D7760E304F5188E782C6F /* Pods_Exider_org.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB2B2DDD8CDEE2DDA20B4CCC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				710428981A31B788C61F9FAE /* Pods-Exider.org.debug.xcconfig */,
+				8FB56D92B649013C33CA09C7 /* Pods-Exider.org.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D04A7BDA233E5C1D00923F5B = {
 			isa = PBXGroup;
 			children = (
 				D04A7BE5233E5C1D00923F5B /* HelloWorld */,
 				D04A7BE4233E5C1D00923F5B /* Products */,
+				CB2B2DDD8CDEE2DDA20B4CCC /* Pods */,
+				B233A5B43C84957B9444543E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D04A7BF5233E5C1F00923F5B /* Build configuration list for PBXNativeTarget "Exider.org" */;
 			buildPhases = (
+				57096D429B9D3D27CA88E87C /* [CP] Check Pods Manifest.lock */,
 				D04A7BDF233E5C1D00923F5B /* Sources */,
 				D04A7BE0233E5C1D00923F5B /* Frameworks */,
 				D04A7BE1233E5C1D00923F5B /* Resources */,
+				2CDD2581AA0B8C7C375B5097 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CDD2581AA0B8C7C375B5097 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Exider.org/Pods-Exider.org-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Exider.org/Pods-Exider.org-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Exider.org/Pods-Exider.org-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57096D429B9D3D27CA88E87C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Exider.org-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D04A7BDF233E5C1D00923F5B /* Sources */ = {
@@ -289,6 +357,7 @@
 		};
 		D04A7BF6233E5C1F00923F5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 710428981A31B788C61F9FAE /* Pods-Exider.org.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +377,7 @@
 		};
 		D04A7BF7233E5C1F00923F5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FB56D92B649013C33CA09C7 /* Pods-Exider.org.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

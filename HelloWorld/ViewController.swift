@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSocket
 
 class ViewController: UIViewController {
 
@@ -34,9 +35,47 @@ class ViewController: UIViewController {
         }else{
             guard let login = login, let password = password else {return}
             print("Click button login = \(login) \n password = \(password)")
-            performSegue(withIdentifier: "mainView", sender: nil)
+            if(connection(comand: "team")){
+                print("seccuse")
+                performSegue(withIdentifier: "mainView", sender: nil)
+            }else{
+                print("BAD :(")
+            }
+            
         }
+    /*{"messageLogic":"login","id":1,"tour":1,"team_name":"Титан"},"user_info":{"name":"Dmitriy Lox","email":"markableglushko@yandex.com","team":"Mors","password":"DGlop791"},"settingForApp":0}*/
+       
         
+        
+    }
+    func connection(comand:String)->Bool{
+        //let data = "iam:\(comand)".data(using: .ascii)!
+        let forServer: String = "\"messageLogic\":\"\(comand)\",\"id\":1,\"tour\":1,\"team_name\":\"Титан\",\"user_info\":{\"name\":\"Dmitriy Lox\",\"email\":\"\(loginTF.text!)\",\"team\":\"Mors\",\"password\":\"DGlop791\"},\"settingForApp\":0}"
+        print(forServer)
+        let byte: Data? = "{\(forServer)".data(using: .utf8)!
+        print(byte!.count)
+        let client = TCPClient(address: "192.168.0.106", port: 55555)
+        switch client.connect(timeout: 5) {
+          case .success:
+            print("connect with server********")
+            switch client.send(data: byte! ) {
+              case .success:
+                print("message send")
+                /*guard let data = client.read(1024*10) else { return false}
+
+                if let response = String(bytes: data, encoding: .utf8) {
+                  print(response)
+                }*/
+                client.close()
+                return true
+              case .failure(let error):
+                print(error)
+                return false
+            }
+          case .failure(let error):
+            print(error)
+            return false
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

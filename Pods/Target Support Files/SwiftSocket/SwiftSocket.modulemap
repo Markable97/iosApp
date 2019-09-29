@@ -1,4 +1,4 @@
-module SwiftSocket {
+framework module SwiftSocket {
   umbrella header "SwiftSocket-umbrella.h"
 
   export *

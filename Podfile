@@ -1,13 +1,10 @@
-platform :ios, '13.0'
-inhibit_all_warnings!
-pod 'SwiftSocket', '2.0.2'
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
-workspace 'Project/HelloWorld/Exider.org.xcodeproj'
+target 'Exider.org' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
 
-pre_install do |installer|
-    installer.analysis_result.specifications.each do |s|
-        if s.name == 'SwiftSocket'
-            s.swift_version = '4.2'
-        end
-    end
+  # Pods for Exider.org
+	pod 'SwiftSocket'
 end

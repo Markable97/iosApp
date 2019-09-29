@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2098E99F31975F5C89523CC6EB58B9CC"
-               BuildableName = "libSwiftSocket.a"
+               BuildableName = "SwiftSocket.framework"
                BlueprintName = "SwiftSocket"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
