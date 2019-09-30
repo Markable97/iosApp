@@ -153,7 +153,9 @@
                     </view>
                     <connections>
                         <outlet property="emailTF" destination="jhf-Tb-TH9" id="Cis-6q-Vmc"/>
+                        <outlet property="nameTF" destination="qRT-SL-0Tn" id="6Jt-pF-PI6"/>
                         <outlet property="passwordTF" destination="1gX-oJ-0fv" id="Rbm-dR-COV"/>
+                        <outlet property="teamTF" destination="Gp6-ei-APH" id="2Up-iD-lfE"/>
                         <segue destination="HD5-Qb-U77" kind="unwind" identifier="alreadyAkk" unwindAction="returnOnViewConrolerWithSeque:" id="ylX-dn-8Hj"/>
                         <segue destination="HD5-Qb-U77" kind="unwind" identifier="regUp" unwindAction="returnOnViewConrolerWithSeque:" id="ZVz-vd-9zl"/>
                     </connections>

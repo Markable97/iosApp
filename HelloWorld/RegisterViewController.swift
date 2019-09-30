@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var teamTF: UITextField!
+    @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
@@ -19,13 +21,26 @@ class RegisterViewController: UIViewController {
     //Нажатие на кнопку "Зарегистрироваться"
     @IBAction func onClickRegister(){
         print("clivk button register")
-        guard let email = emailTF.text, let password = passwordTF.text else { return }
+        guard let email = emailTF.text, let password = passwordTF.text, let team = teamTF.text, let name = nameTF.text else { return }
         if email.isEmpty || password.isEmpty{
             print("password or email is emoty")
         }else{
-            self.email = email
-            self.password = password
-            performSegue(withIdentifier: "regUp", sender: nil)
+            
+            let userInfo = UserInfo(name: name, team: team, email: email, password: password)
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let messageForServer = MessageJSON(messageLogic: "register", user_info: userInfo)
+            let data = try? encoder.encode(messageForServer)
+            print(String(data: data!, encoding: .utf8)!)
+            if(Connect().connection(JSON: data!)){
+                print("register seccuss")
+                self.email = email
+                self.password = password
+                performSegue(withIdentifier: "regUp", sender: nil)
+            }else{
+                print("ERROR")
+            }
+            
         }
     //Нажатие на кнопку "Уже есть аккаунт"
     }
