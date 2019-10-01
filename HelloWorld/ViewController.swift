@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         let password = passwordTF.text
         if login!.isEmpty || password!.isEmpty {
             print("login or password is empty")
+            present(AlertVisible.showAlert(message: "Необходимо ввести email и пароль"), animated: true, completion: nil)
         }else{
             guard let login = login, let password = password else {return}
             print("Click button login = \(login) \n password = \(password)")
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
                 performSegue(withIdentifier: "mainView", sender: nil)
             }else{
                 print("ERROR")
+                present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
             }
             
         }

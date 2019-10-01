@@ -18,6 +18,7 @@
 		D09BAD89234271EE00E42A92 /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09BAD88234271EE00E42A92 /* Connect.swift */; };
 		D09BAD8B23427AC900E42A92 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09BAD8A23427AC900E42A92 /* UserInfo.swift */; };
 		D09BAD8D2342830F00E42A92 /* MessageJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09BAD8C2342830F00E42A92 /* MessageJSON.swift */; };
+		D09BAD8F2343C6BC00E42A92 /* AlertVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09BAD8E2343C6BC00E42A92 /* AlertVisible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D09BAD88234271EE00E42A92 /* Connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect.swift; sourceTree = "<group>"; };
 		D09BAD8A23427AC900E42A92 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		D09BAD8C2342830F00E42A92 /* MessageJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageJSON.swift; sourceTree = "<group>"; };
+		D09BAD8E2343C6BC00E42A92 /* AlertVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVisible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				D09BAD88234271EE00E42A92 /* Connect.swift */,
 				D09BAD8A23427AC900E42A92 /* UserInfo.swift */,
 				D09BAD8C2342830F00E42A92 /* MessageJSON.swift */,
+				D09BAD8E2343C6BC00E42A92 /* AlertVisible.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				D0117885233F787200773E34 /* RegisterViewController.swift in Sources */,
 				D09BAD8D2342830F00E42A92 /* MessageJSON.swift in Sources */,
 				D04A7BE9233E5C1D00923F5B /* ViewController.swift in Sources */,
+				D09BAD8F2343C6BC00E42A92 /* AlertVisible.swift in Sources */,
 				D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */,
 				D0117887233F7B8900773E34 /* MainViewController.swift in Sources */,
 				D09BAD8B23427AC900E42A92 /* UserInfo.swift in Sources */,

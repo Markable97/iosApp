@@ -24,6 +24,7 @@ class RegisterViewController: UIViewController {
         guard let email = emailTF.text, let password = passwordTF.text, let team = teamTF.text, let name = nameTF.text else { return }
         if email.isEmpty || password.isEmpty{
             print("password or email is emoty")
+            present(AlertVisible.showAlert(message: "Необходимо ввести email и пароль"), animated: true, completion: nil)
         }else{
             
             let userInfo = UserInfo(name: name, team: team, email: email, password: password)
@@ -39,6 +40,7 @@ class RegisterViewController: UIViewController {
                 performSegue(withIdentifier: "regUp", sender: nil)
             }else{
                 print("ERROR")
+                present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
             }
             
         }
