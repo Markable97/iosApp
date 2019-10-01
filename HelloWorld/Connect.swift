@@ -11,7 +11,7 @@ import SwiftSocket
 
 class Connect: NSObject {
 
-    let IP: String = "192.168.0.102"
+    let IP: String = "192.168.0.106"
     let PORT: Int32 = 55555
     
     
@@ -24,7 +24,7 @@ class Connect: NSObject {
         let byte = JSON
         print(byte.count)
         let client = TCPClient(address: self.IP, port: self.PORT)
-        switch client.connect(timeout: 5) {
+        switch client.connect(timeout: 2) {
           case .success:
             print("connect with server********")
             switch client.send(data: byte) {

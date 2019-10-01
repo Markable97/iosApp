@@ -11,9 +11,14 @@ import SwiftSocket
 
 class ViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        indicator.hidesWhenStopped = true
+    }
    
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBAction  func returnOnViewConroler(seque: UIStoryboardSegue){
         if seque.identifier == "alreadyAkk"{
@@ -28,24 +33,33 @@ class ViewController: UIViewController {
     
     //Вход
     @IBAction func onClickRegIn(_ sender: UIButton) {
+        //indicator.isHidden = false//indicator.startAnimating()
         let login = loginTF.text
         let password = passwordTF.text
         if login!.isEmpty || password!.isEmpty {
             print("login or password is empty")
             present(AlertVisible.showAlert(message: "Необходимо ввести email и пароль"), animated: true, completion: nil)
+            //self.indicator.stopAnimating()
         }else{
-            guard let login = login, let password = password else {return}
-            print("Click button login = \(login) \n password = \(password)")
-            let userInfo = UserInfo(email: login, password: password)
+            indicator.startAnimating()
+            print("Click button login = \(login!) \n password = \(password!)")
+            let userInfo = UserInfo(email: login!, password: password!)
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             let messageForServer = MessageJSON(messageLogic: "login", user_info: userInfo)
             let data = try? encoder.encode(messageForServer)
             print(String(data: data!, encoding: .utf8)!)
+            
+            //UIApplication.shared.beginIgnoringInteractionEvents()
             if(Connect().connection(JSON: data!)){
+                indicator.stopAnimating()
+                //UIApplication.shared.endIgnoringInteractionEvents()
                 print("password seccuss")
                 performSegue(withIdentifier: "mainView", sender: nil)
+                
             }else{
+                indicator.stopAnimating()
+                //UIApplication.shared.endIgnoringInteractionEvents()
                 print("ERROR")
                 present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
             }

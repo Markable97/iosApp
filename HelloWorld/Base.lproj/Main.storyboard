@@ -47,6 +47,13 @@
                                     <action selector="onClickRegUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeR-D4-kD6"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ddT-ub-gfy">
+                                <rect key="frame" x="188.5" y="267" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="b9k-3u-lh3"/>
+                                    <constraint firstAttribute="width" constant="37" id="sgf-5a-1Sv"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1803921568627451" green="0.19607843137254902" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -59,9 +66,11 @@
                             <constraint firstItem="YMm-vd-m16" firstAttribute="width" secondItem="CGR-De-ewo" secondAttribute="width" id="FBp-lg-cSt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CGR-De-ewo" secondAttribute="trailing" constant="40" id="K5b-24-w6I"/>
                             <constraint firstItem="tmZ-ag-ETM" firstAttribute="top" secondItem="CGR-De-ewo" secondAttribute="bottom" constant="60" id="LRf-3w-M1K"/>
+                            <constraint firstItem="ddT-ub-gfy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NV6-D7-Qp7"/>
                             <constraint firstItem="JDr-Mx-Zyk" firstAttribute="top" secondItem="tmZ-ag-ETM" secondAttribute="bottom" constant="62" id="Ne4-pT-Jpl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YMm-vd-m16" secondAttribute="trailing" constant="40" id="Yer-SY-zrf"/>
                             <constraint firstItem="CGR-De-ewo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lhy-Py-sqO"/>
+                            <constraint firstItem="YMm-vd-m16" firstAttribute="top" secondItem="ddT-ub-gfy" secondAttribute="bottom" constant="67.5" id="nsE-H2-g2B"/>
                             <constraint firstItem="tmZ-ag-ETM" firstAttribute="width" secondItem="CGR-De-ewo" secondAttribute="width" id="qBg-cJ-vAq"/>
                             <constraint firstItem="CGR-De-ewo" firstAttribute="top" secondItem="YMm-vd-m16" secondAttribute="bottom" constant="36.5" id="r4f-XJ-dcw"/>
                             <constraint firstItem="CGR-De-ewo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xmG-Rz-vem"/>
@@ -69,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="ddT-ub-gfy" id="qoq-9g-fVL"/>
                         <outlet property="loginTF" destination="YMm-vd-m16" id="2R2-XB-dK0"/>
                         <outlet property="passwordTF" destination="CGR-De-ewo" id="6kc-IC-FaG"/>
                         <segue destination="AmI-62-kWQ" kind="show" identifier="mainView" id="Vl4-v7-F8p"/>
