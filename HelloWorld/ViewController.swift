@@ -41,27 +41,12 @@ class ViewController: UIViewController {
             present(AlertVisible.showAlert(message: "Необходимо ввести email и пароль"), animated: true, completion: nil)
             //self.indicator.stopAnimating()
         }else{
-            indicator.startAnimating()
-            print("Click button login = \(login!) \n password = \(password!)")
-            let userInfo = UserInfo(email: login!, password: password!)
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            let messageForServer = MessageJSON(messageLogic: "login", user_info: userInfo)
-            let data = try? encoder.encode(messageForServer)
-            print(String(data: data!, encoding: .utf8)!)
-            
-            //UIApplication.shared.beginIgnoringInteractionEvents()
-            if(Connect().connection(JSON: data!)){
-                indicator.stopAnimating()
-                //UIApplication.shared.endIgnoringInteractionEvents()
-                print("password seccuss")
-                performSegue(withIdentifier: "mainView", sender: nil)
-                
-            }else{
-                indicator.stopAnimating()
-                //UIApplication.shared.endIgnoringInteractionEvents()
-                print("ERROR")
-                present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+            //Вызов двух асинхронных потоков один для отображения анимации другой для выполнении отправки данных на сервер
+            DispatchQueue.main.async {
+                self.indicator.startAnimating()
+                DispatchQueue.main.async {
+                    self.sendData(login: login, password: password)
+                }
             }
             
         }
@@ -93,6 +78,30 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true) //убирание клавиатуры по нажатию на пустое место
+    }
+    
+    //Отправка данные на сервер
+    func sendData(login: String?, password: String?){
+        print("Click button login = \(login!) \n password = \(password!)")
+        let userInfo = UserInfo(email: login!, password: password!)
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let messageForServer = MessageJSON(messageLogic: "login", user_info: userInfo)
+        let data = try? encoder.encode(messageForServer)
+        print(String(data: data!, encoding: .utf8)!)
+        
+        //UIApplication.shared.beginIgnoringInteractionEvents()
+        if(Connect().connection(JSON: data!)){
+            indicator.stopAnimating()
+            //UIApplication.shared.endIgnoringInteractionEvents()
+            print("password seccuss")
+            performSegue(withIdentifier: "mainView", sender: nil)
+        }else{
+            indicator.stopAnimating()
+            //UIApplication.shared.endIgnoringInteractionEvents()
+            print("ERROR")
+            present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+        }
     }
     
 }

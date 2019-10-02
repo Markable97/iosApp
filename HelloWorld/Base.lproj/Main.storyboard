@@ -144,12 +144,21 @@
                                     <action selector="onClickAlreadyAkk" destination="uel-ba-ah5" eventType="touchUpInside" id="SOU-NP-d9m"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-Ip-i1z">
+                                <rect key="frame" x="188.5" y="202" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="9hV-gW-b43"/>
+                                    <constraint firstAttribute="width" constant="37" id="fa1-4H-L4R"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1803921568627451" green="0.19607843137254902" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7ly-rB-ioN" firstAttribute="leading" secondItem="FyU-sR-EF2" secondAttribute="leading" constant="40" id="5fn-Wp-Jgg"/>
+                            <constraint firstItem="qRT-SL-0Tn" firstAttribute="top" secondItem="b5g-Ip-i1z" secondAttribute="bottom" constant="67" id="9ua-tU-s7x"/>
                             <constraint firstItem="FyU-sR-EF2" firstAttribute="trailing" secondItem="9Ar-nF-QJz" secondAttribute="trailing" constant="40" id="BL6-06-uPM"/>
                             <constraint firstItem="FyU-sR-EF2" firstAttribute="trailing" secondItem="7ly-rB-ioN" secondAttribute="trailing" constant="40" id="DD1-Km-L34"/>
+                            <constraint firstItem="b5g-Ip-i1z" firstAttribute="centerX" secondItem="FyU-sR-EF2" secondAttribute="centerX" id="Da1-Dm-pyw"/>
                             <constraint firstItem="9Ar-nF-QJz" firstAttribute="leading" secondItem="1gX-oJ-0fv" secondAttribute="leading" id="T91-9S-kY9"/>
                             <constraint firstItem="d2L-Mx-xQK" firstAttribute="centerX" secondItem="FyU-sR-EF2" secondAttribute="centerX" id="bHg-ei-12R"/>
                             <constraint firstItem="9Ar-nF-QJz" firstAttribute="width" secondItem="1gX-oJ-0fv" secondAttribute="width" id="cXa-Te-9b5"/>
@@ -163,6 +172,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTF" destination="jhf-Tb-TH9" id="Cis-6q-Vmc"/>
+                        <outlet property="indicator" destination="b5g-Ip-i1z" id="mNe-Kk-D2I"/>
                         <outlet property="nameTF" destination="qRT-SL-0Tn" id="6Jt-pF-PI6"/>
                         <outlet property="passwordTF" destination="1gX-oJ-0fv" id="Rbm-dR-COV"/>
                         <outlet property="teamTF" destination="Gp6-ei-APH" id="2Up-iD-lfE"/>
