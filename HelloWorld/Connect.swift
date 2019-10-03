@@ -50,5 +50,52 @@ class Connect: NSObject {
             return false
         }
     }
+    func connectionDivision(JSON:Data)->Bool{
+        let byte = JSON
+        let client = TCPClient(address: self.IP, port: self.PORT)
+        switch client.connect(timeout: 5){
+            case .success:
+                print("connect with server********")
+                switch client.send(data: byte) {
+                    case .success:
+                        print("message send")
+                        let data_first = client.read(1024*50, timeout: 2)
+                        if data_first == nil{
+                            print("Error data read first")
+                        }else {
+                            print("Count bytes from server 1 = \(data_first!.count)")
+                        }
+                        
+                        let data_second = client.read(1024*59, timeout: 2)
+                        if data_second == nil {
+                            print("Error data read first")
+                        }else {
+                            print("Count bytes from server 2= \(data_second!.count)")
+                        }
+                       
+                        let data_third = client.read(1024*59, timeout: 2)
+                        if data_third == nil{
+                           print("Data third = nill")
+                        }else{
+                           print("Data from server 3 \(data_third!.count)")
+                        }
+                        
+
+                        let response = String(bytes: data_first!, encoding: .windowsCP1251)
+                        print("Data TOURNAMENT: \n \(response!)")
+                        
+                        let decoder = JSONDecoder()
+                        let table = try? decoder.decode([TournamentTable].self, from: response!.data(using: .utf8)!)
+                        print("table = \(table!.count)")
+                        return true
+                    case .failure(let error):
+                        print(error)
+                        return false
+                }
+            case .failure(let error):
+                print(error)
+                return false
+        }
+    }
     
 }

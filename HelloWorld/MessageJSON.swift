@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct MessageJSON: Codable {
-    var messageLogic: String   
-    var user_info: UserInfo
+class MessageJSON: Codable {
+    var messageLogic: String?
+    var id: Int?
+    var user_info: UserInfo?
+    init(messageLogic: String, user_info: UserInfo){
+        self.messageLogic = messageLogic
+        self.user_info = user_info
+    }
 }

@@ -38,7 +38,8 @@ class ViewController: UIViewController {
         let password = passwordTF.text
         if login!.isEmpty || password!.isEmpty {
             print("login or password is empty")
-            present(AlertVisible.showAlert(message: "Необходимо ввести email и пароль"), animated: true, completion: nil)
+            //present(AlertVisible.showAlert(message: "Необходимо ввести email и пароль"), animated: true, completion: nil)
+             performSegue(withIdentifier: "mainView", sender: nil)
             //self.indicator.stopAnimating()
         }else{
             //Вызов двух асинхронных потоков один для отображения анимации другой для выполнении отправки данных на сервер

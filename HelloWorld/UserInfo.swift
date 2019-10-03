@@ -8,11 +8,18 @@
 
 import Foundation
 
-struct UserInfo: Codable{
+class UserInfo: Codable{
     var name: String
     var email: String
     var team: String
     var password: String
+    
+    init(){
+        self.name = ""
+        self.team = ""
+        self.email = ""
+        self.password = ""
+    }
     
     init(email: String, password: String){
         self.name = ""
