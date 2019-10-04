@@ -92,7 +92,23 @@ class ViewController: UIViewController {
         print(String(data: data!, encoding: .utf8)!)
         
         //UIApplication.shared.beginIgnoringInteractionEvents()
-        if(Connect().connection(JSON: data!)){
+        switch Connect().connection(JSON: data!) {
+        case "Password successfull":
+            indicator.stopAnimating()
+            //UIApplication.shared.endIgnoringInteractionEvents()
+            print("password seccuss")
+            performSegue(withIdentifier: "mainView", sender: nil)
+        case "The password does not match":
+            indicator.stopAnimating()
+            print("bad password or login")
+            present(AlertVisible.showAlert(message: "Не правильный логин или пароль :("), animated: true, completion: nil)
+        default:
+            indicator.stopAnimating()
+            //UIApplication.shared.endIgnoringInteractionEvents()
+            print("ERROR")
+            present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+        }
+        /*if(Connect().connection(JSON: data!)){
             indicator.stopAnimating()
             //UIApplication.shared.endIgnoringInteractionEvents()
             print("password seccuss")
@@ -102,7 +118,7 @@ class ViewController: UIViewController {
             //UIApplication.shared.endIgnoringInteractionEvents()
             print("ERROR")
             present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
-        }
+        }*/
     }
     
 }

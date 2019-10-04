@@ -16,11 +16,7 @@ class Connect: NSObject {
     
     
     
-   func connection(JSON:Data)->Bool{
-        //let data = "iam:\(comand)".data(using: .ascii)!
-        /*let forServer: String = "\"messageLogic\":\"\(comand)\",\"id\":1,\"tour\":1,\"team_name\":\"Титан\",\"user_info\":{\"name\":\"Dmitriy Lox\",\"email\":\"\(loginTF.text!)\",\"team\":\"Mors\",\"password\":\"DGlop791\"},\"settingForApp\":0}"*/
-        //print(forServer)
-    //let byte: Data? = JSON.data(using: .utf8)!
+   func connection(JSON:Data)->String{
         let byte = JSON
         print(byte.count)
         let client = TCPClient(address: self.IP, port: self.PORT)
@@ -31,26 +27,39 @@ class Connect: NSObject {
               //switch client.send(string: forServer ) {
                 case .success:
                 print("message send")
-                guard let data = client.read(1024*10, timeout: 10) else {
+                var data = [UInt8]()
+                while true {
+                    guard let response = client.read(1024*10, timeout: 2) else { break }
+                    data += response
+                }/*guard let data = client.read(1024*10, timeout: 10) else {
                     print("Error data read")
-                    return false
+                    return "Error data read"
+                }*/
+                if data.count == 0{
+                    print("Error data read")
+                    return "Error data read"
+                }else{
+                    guard let response = String(bytes: data, encoding: .utf8) else {
+                        return "Unknow error"
+                    }
+                      print(response)
+                        let decoder = JSONDecoder()
+                        let message = try? decoder.decode(MessageJSON.self, from: response.data(using: .utf8)!)
+                        client.close()
+                        return message!.responseFromServer!
+                    
                 }
-
-                if let response = String(bytes: data, encoding: .utf8) {
-                  print(response)
-                }
-                client.close()
-                return true
+                
               case .failure(let error):
                 print(error)
-                return false
+                return "Error send"
             }
           case .failure(let error):
             print(error)
-            return false
+            return "Error connect"
         }
     }
-    func connectionDivision(JSON:Data)->Bool{
+    func connectionDivision(JSON:Data)->(Int,String){
         let byte = JSON
         let client = TCPClient(address: self.IP, port: self.PORT)
         switch client.connect(timeout: 5){
@@ -59,42 +68,33 @@ class Connect: NSObject {
                 switch client.send(data: byte) {
                     case .success:
                         print("message send")
-                        let data_first = client.read(1024*50, timeout: 2)
-                        if data_first == nil{
-                            print("Error data read first")
-                        }else {
-                            print("Count bytes from server 1 = \(data_first!.count)")
+                        var data_first = [UInt8]()
+                        while true {
+                            guard let response = client.read(1024*10, timeout: 2) else { break }
+                            data_first += response
                         }
-                        
-                        let data_second = client.read(1024*59, timeout: 2)
-                        if data_second == nil {
+                        /*guard let data_first = client.read(4096, timeout: 10) else{
                             print("Error data read first")
-                        }else {
-                            print("Count bytes from server 2= \(data_second!.count)")
-                        }
-                       
-                        let data_third = client.read(1024*59, timeout: 2)
-                        if data_third == nil{
-                           print("Data third = nill")
+                            return (-1,"Error data read")
+                        }*/
+                        if data_first.count == 0{
+                            return(-1,"Error data read")
                         }else{
-                           print("Data from server 3 \(data_third!.count)")
+                            print("Count bytes from server 1 = \(data_first.count)")
+                            
+                            guard let response = String(bytes: data_first, encoding: .windowsCP1251) else {return (-1,"ERRO convert to String")}
+                            //print("Data: \n \(response)")
+                            client.close()
+                            return (1,response)
                         }
                         
-
-                        let response = String(bytes: data_first!, encoding: .windowsCP1251)
-                        print("Data TOURNAMENT: \n \(response!)")
-                        
-                        let decoder = JSONDecoder()
-                        let table = try? decoder.decode([TournamentTable].self, from: response!.data(using: .utf8)!)
-                        print("table = \(table!.count)")
-                        return true
                     case .failure(let error):
                         print(error)
-                        return false
+                        return (-1,"Error send")
                 }
             case .failure(let error):
                 print(error)
-                return false
+                return (-1,"Error connect")
         }
     }
     

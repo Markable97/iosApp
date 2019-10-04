@@ -16,4 +16,9 @@ class MessageJSON: Codable {
         self.messageLogic = messageLogic
         self.user_info = user_info
     }
+    init(messageLogic: String, id: Int){
+        self.messageLogic = messageLogic
+        self.id = id
+    }
+    var responseFromServer: String?
 }

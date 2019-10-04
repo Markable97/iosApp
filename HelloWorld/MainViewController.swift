@@ -12,6 +12,10 @@ class MainViewController: UIViewController {
 
     var login: String!
     
+    var tournamentTable: [TournamentTable]!
+    var prevMatches: [PrevMatch]!
+    var nextMatches:[NextMatch]!
+    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -26,21 +30,35 @@ class MainViewController: UIViewController {
         //let userInfo = UserInfo(email: login!, password: password!)
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-        let messageForServer = TestJson(logic: logic, id: 1)
+        let messageForServer = MessageJSON(messageLogic: logic, id: 1)
         let data = try? encoder.encode(messageForServer)
         print(String(data: data!, encoding: .utf8)!)
         
         //UIApplication.shared.beginIgnoringInteractionEvents()
-        if(Connect().connectionDivision(JSON: data!)){
-            //indicator.stopAnimating()
-            //UIApplication.shared.endIgnoringInteractionEvents()
-            print("seccuss")
-        }else{
-            //indicator.stopAnimating()
-            //UIApplication.shared.endIgnoringInteractionEvents()
-            print("ERROR")
+        let (code,dataFromServer) = Connect().connectionDivision(JSON: data!)
+        switch code {
+        case 1:
+            print("seccuss read data from server")
+            //Вытаскивает JSON-ы через ? в строки и конвертируем в Массимы их классов чтобы потом передавать в нужные контроллеры
+            let decoder = JSONDecoder()
+            let arrayJSON = dataFromServer.split(separator: "?")
+            print(arrayJSON)
+            let table = try? decoder.decode([TournamentTable].self, from: arrayJSON[0].data(using: .utf8)!)
+            print("table = \(table!.count)")
+            if arrayJSON[1] != "prevMatch"{
+                let prevMatch = try? decoder.decode([PrevMatch].self, from: arrayJSON[1].data(using: .utf8)!)
+                print("prev = \(prevMatch!.count)")
+            }
+            if arrayJSON[2] != "nextMatch"{
+                let nextMatch = try? decoder.decode([NextMatch].self, from: arrayJSON[2].data(using: .utf8)!)
+                print("next = \(nextMatch!.count)")
+            }
+            
+        default:
+            print("\(dataFromServer)")
             present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
         }
+
     }
     /*
     // MARK: - Navigation
@@ -54,14 +72,5 @@ class MainViewController: UIViewController {
 
 }
 
-class TestJson: Codable{
-    var messageLogic: String
-    var id: Int
-    
-    init(logic: String, id: Int){
-        self.messageLogic = logic
-        self.id = id
-    }
-}
 
 

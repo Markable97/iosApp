@@ -57,7 +57,7 @@ class RegisterViewController: UIViewController {
         let messageForServer = MessageJSON(messageLogic: "register", user_info: userInfo)
         let data = try? encoder.encode(messageForServer)
         print(String(data: data!, encoding: .utf8)!)
-        if(Connect().connection(JSON: data!)){
+        /*if(Connect().connection(JSON: data!)){
             self.indicator.stopAnimating()
             print("register seccuss")
             self.email = email!
@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController {
             self.indicator.stopAnimating()
             print("ERROR")
             present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
-        }
+        }*/
     }
     /*
     // MARK: - Navigation
