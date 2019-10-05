@@ -8,14 +8,38 @@
 
 import UIKit
 
-class ResultController: UIViewController {
+class ResultController: UIViewController{
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var label: UILabel!
+    
+    var test: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("ResultConroler: viewDidLoad")
+        indicator.startAnimating()
+        //reciervFromMVC()
+        //print("test = \(test)")
         // Do any additional setup after loading the view.
+        /*indicator.startAnimating()
+        let query = DispatchQueue.global(qos: .utility)
+        query.async {
+                self.sendData(logic: "division")
+        }*/
+
+        
     }
     
+    func recieveTabBarConroler(data: String){
+        
+        indicator.stopAnimating()
+        self.label.text = data
+    }
+    
+
+
+    }
 
     /*
     // MARK: - Navigation

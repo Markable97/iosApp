@@ -82,62 +82,45 @@
                         <outlet property="loginTF" destination="YMm-vd-m16" id="2R2-XB-dK0"/>
                         <outlet property="passwordTF" destination="CGR-De-ewo" id="6kc-IC-FaG"/>
                         <segue destination="uel-ba-ah5" kind="show" identifier="registerView" id="Y8L-Ex-6E4"/>
-                        <segue destination="0Ry-yq-4Ng" kind="show" identifier="mainView" id="ZLO-Ht-kQh"/>
+                        <segue destination="aT4-bV-YQh" kind="show" identifier="mainView" id="7ew-Fx-sOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="16.071428571428569"/>
         </scene>
-        <!--Main View Controller-->
-        <scene sceneID="N5S-pw-iEC">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="0Ry-yq-4Ng" customClass="MainViewController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HgE-99-cja">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvR-Xf-mUc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <connections>
-                                    <segue destination="aT4-bV-YQh" kind="embed" id="rJ1-Tf-zrM"/>
-                                </connections>
-                            </containerView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-uz-qG3">
-                                <rect key="frame" x="143" y="217" width="129" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="BvR-Xf-mUc" firstAttribute="bottom" secondItem="ff9-MF-Laz" secondAttribute="bottom" id="Fyk-fj-xQO"/>
-                            <constraint firstItem="BvR-Xf-mUc" firstAttribute="top" secondItem="ff9-MF-Laz" secondAttribute="top" id="PQN-7l-rw1"/>
-                            <constraint firstItem="BvR-Xf-mUc" firstAttribute="leading" secondItem="ff9-MF-Laz" secondAttribute="leading" id="wSJ-y9-FV8"/>
-                            <constraint firstItem="BvR-Xf-mUc" firstAttribute="trailing" secondItem="ff9-MF-Laz" secondAttribute="trailing" id="zNg-1x-w4P"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ff9-MF-Laz"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="iri-H0-Sjy"/>
-                    <connections>
-                        <outlet property="indicator" destination="cuK-uz-qG3" id="gU8-bf-aFd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hpj-x8-b5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="873.91304347826099" y="15.401785714285714"/>
-        </scene>
         <!--Item 2-->
         <scene sceneID="cO5-cb-Icm">
             <objects>
-                <viewController id="0Is-HY-r7l" customClass="TournamentTableController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="0Is-HY-r7l" customClass="TournamentTableController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o6v-eu-y4f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IqY-bI-Qyo">
+                                <rect key="frame" x="87" y="315.5" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="957-aK-rzS"/>
+                                    <constraint firstAttribute="width" constant="240" id="MRs-rh-XZv"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IqY-bI-Qyo" firstAttribute="centerY" secondItem="sRc-za-Vtg" secondAttribute="centerY" id="UvW-OX-jMt"/>
+                            <constraint firstItem="IqY-bI-Qyo" firstAttribute="centerX" secondItem="sRc-za-Vtg" secondAttribute="centerX" id="kZr-Nz-a4Z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sRc-za-Vtg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="vFx-ex-Phf"/>
+                    <connections>
+                        <outlet property="textView" destination="IqY-bI-Qyo" id="i75-AJ-BBX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2f-02-YeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,23 +129,44 @@
         <!--Item 1-->
         <scene sceneID="cr8-UJ-OCF">
             <objects>
-                <viewController id="rhk-cQ-Ipu" customClass="ResultController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rhk-cQ-Ipu" customClass="ResultController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ubn-c1-4dr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Fxj-El-RDc">
+                                <rect key="frame" x="188.5" y="361" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-Lw-h4H">
+                                <rect key="frame" x="68" y="426" width="270" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fxj-El-RDc" firstAttribute="centerY" secondItem="8RM-Ah-zqe" secondAttribute="centerY" id="dt6-fL-DcT"/>
+                            <constraint firstItem="Fxj-El-RDc" firstAttribute="centerX" secondItem="8RM-Ah-zqe" secondAttribute="centerX" id="xbl-Vm-MRf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8RM-Ah-zqe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Fio-jU-ho1"/>
+                    <connections>
+                        <outlet property="indicator" destination="Fxj-El-RDc" id="xLr-HN-Z1c"/>
+                        <outlet property="label" destination="EAb-Lw-h4H" id="XAC-zM-JXT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoD-5s-i3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2496" y="-308"/>
+            <point key="canvasLocation" x="2494.202898550725" y="-308.03571428571428"/>
         </scene>
         <!--Tab Bar Main Controller-->
         <scene sceneID="uBk-hk-aDG">
             <objects>
-                <tabBarController id="aT4-bV-YQh" customClass="TabBarMainController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="aT4-bV-YQh" customClass="TabBarMainController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bss-Fc-H5F"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uFM-Qy-prA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -175,7 +179,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OlT-Ha-W1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="16"/>
+            <point key="canvasLocation" x="943" y="16"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="CqG-qG-Efl">

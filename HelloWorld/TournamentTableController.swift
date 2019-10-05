@@ -10,12 +10,31 @@ import UIKit
 
 class TournamentTableController: UIViewController {
 
+    //var tournamentTable: [TournamentTable]!
+    
+    var text: String = "While Empty"
+    
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Tournament table viewDidLoad()")
+        textView.text = text
+        //print(tournamentTable.count)
+        //fromMainConriler()
 
         // Do any additional setup after loading the view.
     }
-    
+
+     func recieveTabBarConroler(data: String){
+        if textView == nil{
+            
+            self.text = data
+        }else{
+            self.textView.text = data
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

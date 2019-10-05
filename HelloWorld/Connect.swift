@@ -62,7 +62,7 @@ class Connect: NSObject {
     func connectionDivision(JSON:Data)->(Int,String){
         let byte = JSON
         let client = TCPClient(address: self.IP, port: self.PORT)
-        switch client.connect(timeout: 5){
+        switch client.connect(timeout: 10){
             case .success:
                 print("connect with server********")
                 switch client.send(data: byte) {
