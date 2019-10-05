@@ -23,10 +23,35 @@ class TabBarMainController: UITabBarController, UITabBarControllerDelegate {
     }
 
     func sendForConroler(message: String){
+        var arrayJSON = [String.SubSequence()]
         let first_vc = self.viewControllers?[0] as? ResultController
-        first_vc!.recieveTabBarConroler(data: message)
         let seconf_vc = self.viewControllers?[1] as? TournamentTableController
-        seconf_vc!.recieveTabBarConroler(data: message)
+        if message != "ERROR"{
+            //Вытаскивает JSON-ы через ? в строки и передаем в табы
+            arrayJSON = message.split(separator: "?")
+            print(arrayJSON)
+            /*let table = try? decoder.decode([TournamentTable].self, from: arrayJSON[0].data(using: .utf8)!)
+            print("table = \(table!.count)")
+            if arrayJSON[1] != "prevMatch"{
+                let prevMatch = try? decoder.decode([PrevMatch].self, from: arrayJSON[1].data(using: .utf8)!)
+                print("prev = \(prevMatch!.count)")
+            }
+            if arrayJSON[2] != "nextMatch"{
+                let nextMatch = try? decoder.decode([NextMatch].self, from: arrayJSON[2].data(using: .utf8)!)
+                print("next = \(nextMatch!.count)")
+            }*/
+        }
+        if arrayJSON.isEmpty{
+            
+            first_vc!.recieveTabBarConroler(data: String(arrayJSON[1]))
+
+            seconf_vc!.recieveTabBarConroler(data: String(arrayJSON[0]))
+        }else{
+            first_vc!.recieveTabBarConroler(data: message)
+
+            seconf_vc!.recieveTabBarConroler(data: message)
+        }
+
     }
     
     func sendData(logic: String){
@@ -42,22 +67,8 @@ class TabBarMainController: UITabBarController, UITabBarControllerDelegate {
                switch code {
                case 1:
                    print("seccuss read data from server")
-                   //Вытаскивает JSON-ы через ? в строки и конвертируем в Массимы их классов чтобы потом передавать в нужные контроллеры
-                   let decoder = JSONDecoder()
-                   let arrayJSON = dataFromServer.split(separator: "?")
-                   print(arrayJSON)
-                   let table = try? decoder.decode([TournamentTable].self, from: arrayJSON[0].data(using: .utf8)!)
-                   print("table = \(table!.count)")
-                   if arrayJSON[1] != "prevMatch"{
-                       let prevMatch = try? decoder.decode([PrevMatch].self, from: arrayJSON[1].data(using: .utf8)!)
-                       print("prev = \(prevMatch!.count)")
-                   }
-                   if arrayJSON[2] != "nextMatch"{
-                       let nextMatch = try? decoder.decode([NextMatch].self, from: arrayJSON[2].data(using: .utf8)!)
-                       print("next = \(nextMatch!.count)")
-                   }
                    DispatchQueue.main.async {
-                    self.sendForConroler(message: String(arrayJSON[1]))
+                    self.sendForConroler(message: dataFromServer)
                     }
                default:
                    print("\(dataFromServer)")

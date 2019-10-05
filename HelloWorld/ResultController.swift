@@ -34,12 +34,17 @@ class ResultController: UIViewController{
     func recieveTabBarConroler(data: String){
         
         indicator.stopAnimating()
-        self.label.text = data
+        if data == "ERROR"{
+            present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+        }else{
+           self.label.text = data
+        }
+        
     }
     
 
 
-    }
+    
 
     /*
     // MARK: - Navigation

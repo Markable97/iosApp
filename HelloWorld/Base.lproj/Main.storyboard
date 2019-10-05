@@ -109,9 +109,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-kn-orU">
+                                <rect key="frame" x="197" y="369.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dcs-kn-orU" firstAttribute="centerY" secondItem="IqY-bI-Qyo" secondAttribute="centerY" id="0vu-cl-r7I"/>
+                            <constraint firstItem="dcs-kn-orU" firstAttribute="centerX" secondItem="IqY-bI-Qyo" secondAttribute="centerX" id="AoY-hN-KoP"/>
                             <constraint firstItem="IqY-bI-Qyo" firstAttribute="centerY" secondItem="sRc-za-Vtg" secondAttribute="centerY" id="UvW-OX-jMt"/>
                             <constraint firstItem="IqY-bI-Qyo" firstAttribute="centerX" secondItem="sRc-za-Vtg" secondAttribute="centerX" id="kZr-Nz-a4Z"/>
                         </constraints>
@@ -119,6 +124,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="vFx-ex-Phf"/>
                     <connections>
+                        <outlet property="indicator" destination="dcs-kn-orU" id="KDZ-Xh-Lxc"/>
                         <outlet property="textView" destination="IqY-bI-Qyo" id="i75-AJ-BBX"/>
                     </connections>
                 </viewController>
