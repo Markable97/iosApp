@@ -10,8 +10,8 @@ import UIKit
 
 class TournamentTableController: UIViewController {
 
-    //var tournamentTable: [TournamentTable]!
-    
+    var tournamentTable: [TournamentTable]!
+    let decoder = JSONDecoder()
     var text: String = ""
     
     @IBOutlet weak var textView: UITextView!
@@ -32,11 +32,18 @@ class TournamentTableController: UIViewController {
     }
 
      func recieveTabBarConroler(data: String){
+        print("Данные пришли в TournamentTable \(data)")
         if textView == nil{
             self.text = data
         }else{
             indicator.stopAnimating()
             self.textView.text = data
+            guard let tournamentTable = try? decoder.decode([TournamentTable].self, from: data.data(using: .utf8)!) else {
+                print("TableConroler bad JSON decode")
+                return
+            }
+            self.tournamentTable = tournamentTable
+            //let table = try? decoder.decode([TournamentTable].self, from: arrayJSON[0].data(using: .utf8)!)
         }
         
     }

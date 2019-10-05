@@ -24,8 +24,9 @@ class TabBarMainController: UITabBarController, UITabBarControllerDelegate {
 
     func sendForConroler(message: String){
         var arrayJSON = [String.SubSequence()]
-        let first_vc = self.viewControllers?[0] as? ResultController
-        let seconf_vc = self.viewControllers?[1] as? TournamentTableController
+        let first_vc = self.viewControllers?[0] as? CalendarController
+        let seconf_vc = self.viewControllers?[1] as? ResultController
+        let third_vc = self.viewControllers?[2] as? TournamentTableController
         if message != "ERROR"{
             //Вытаскивает JSON-ы через ? в строки и передаем в табы
             arrayJSON = message.split(separator: "?")
@@ -42,14 +43,13 @@ class TabBarMainController: UITabBarController, UITabBarControllerDelegate {
             }*/
         }
         if arrayJSON.isEmpty{
-            
             first_vc!.recieveTabBarConroler(data: String(arrayJSON[1]))
-
             seconf_vc!.recieveTabBarConroler(data: String(arrayJSON[0]))
+            third_vc!.recieveTabBarConroler(data: String(arrayJSON[2]))
         }else{
             first_vc!.recieveTabBarConroler(data: message)
-
             seconf_vc!.recieveTabBarConroler(data: message)
+            third_vc!.recieveTabBarConroler(data: message)
         }
 
     }

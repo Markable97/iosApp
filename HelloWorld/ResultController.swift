@@ -10,15 +10,21 @@ import UIKit
 
 class ResultController: UIViewController{
 
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var label: UILabel!
     
-    var test: String!
+    var results: [PrevMatch]!
+    let decoder = JSONDecoder()
+    var text: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ResultConroler: viewDidLoad")
-        indicator.startAnimating()
+        if text.count == 0{
+            indicator.startAnimating()
+        }
+        
+        textView.text = text
         //reciervFromMVC()
         //print("test = \(test)")
         // Do any additional setup after loading the view.
@@ -32,12 +38,17 @@ class ResultController: UIViewController{
     }
     
     func recieveTabBarConroler(data: String){
-        
-        indicator.stopAnimating()
-        if data == "ERROR"{
-            present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+        print("Данные пришли в Result \(data)")
+        if textView == nil{
+            self.text = data
         }else{
-           self.label.text = data
+            indicator.stopAnimating()
+            self.textView.text = data
+            guard let results = try? decoder.decode([PrevMatch].self, from: data.data(using: .utf8)!) else {
+                print("ResultConroler bad JSON decoder")
+                return
+            }
+            self.results = results
         }
         
     }
