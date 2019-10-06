@@ -26,6 +26,8 @@
 		D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */; };
 		D0CA2295234697C300AE10F5 /* TournamentTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA2294234697C300AE10F5 /* TournamentTable.swift */; };
 		D0CF165B234934E1005ACC93 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF165A234934E1005ACC93 /* CalendarController.swift */; };
+		D0CF165F234A0BDD005ACC93 /* TournamentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF165E234A0BDD005ACC93 /* TournamentCell.swift */; };
+		D0CF1661234A2860005ACC93 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF1660234A2860005ACC93 /* ResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTableController.swift; sourceTree = "<group>"; };
 		D0CA2294234697C300AE10F5 /* TournamentTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTable.swift; sourceTree = "<group>"; };
 		D0CF165A234934E1005ACC93 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		D0CF165E234A0BDD005ACC93 /* TournamentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCell.swift; sourceTree = "<group>"; };
+		D0CF1660234A2860005ACC93 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +142,9 @@
 				D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */,
 				D0CF165A234934E1005ACC93 /* CalendarController.swift */,
 				D0CA229023465CAD00AE10F5 /* ResultController.swift */,
+				D0CF1660234A2860005ACC93 /* ResultCell.swift */,
 				D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */,
+				D0CF165E234A0BDD005ACC93 /* TournamentCell.swift */,
 			);
 			name = MainScreen;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				D0CA229123465CAD00AE10F5 /* ResultController.swift in Sources */,
 				D09BAD8D2342830F00E42A92 /* MessageJSON.swift in Sources */,
 				D09E3C8F2347B7CB00455AFC /* NextMatch.swift in Sources */,
+				D0CF1661234A2860005ACC93 /* ResultCell.swift in Sources */,
 				D04A7BE9233E5C1D00923F5B /* ViewController.swift in Sources */,
 				D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */,
 				D0CF165B234934E1005ACC93 /* CalendarController.swift in Sources */,
@@ -271,6 +278,7 @@
 				D09E3C912347B86200455AFC /* PrevMatch.swift in Sources */,
 				D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */,
 				D0117887233F7B8900773E34 /* MainViewController.swift in Sources */,
+				D0CF165F234A0BDD005ACC93 /* TournamentCell.swift in Sources */,
 				D0CA2295234697C300AE10F5 /* TournamentTable.swift in Sources */,
 				D09BAD8B23427AC900E42A92 /* UserInfo.swift in Sources */,
 				D09BAD89234271EE00E42A92 /* Connect.swift in Sources */,

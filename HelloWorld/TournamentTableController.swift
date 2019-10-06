@@ -55,7 +55,6 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
             return
             }
             self.tournamentTable = tournamentTable
-            self.text = tournamentTable[0].teamName!
         }else{
             indicator.stopAnimating()
             guard let tournamentTable = try? decoder.decode([TournamentTable].self, from: data.data(using: .utf8)!) else {
@@ -63,7 +62,6 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
                 return
             }
             self.tournamentTable = tournamentTable
-            self.text = tournamentTable[0].teamName!//self.textView.text = data
             self.tableview.reloadData()
             //let table = try? decoder.decode([TournamentTable].self, from: arrayJSON[0].data(using: .utf8)!)
         }
@@ -72,13 +70,41 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
 
     // MARK: - Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tournamentTable.count
+        tournamentTable.count+1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 30
+        }else{
+            return 60
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = self.tournamentTable[indexPath.row].teamName
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! TournamentCell
+        if indexPath.row == 0{
+            cell.position.text = "#"
+            cell.imageTeam.image = nil
+            cell.teamName.text = "Команда"
+            cell.games.text = "И"
+            cell.scored.text = "З"
+            cell.conceded.text = "П"
+            cell.points.text = "О"
+        }else{
+            let row = indexPath.row-1
+            let tournamentTable: TournamentTable = self.tournamentTable[row]
+            cell.position.text = String(row+1)
+            cell.teamName.text = tournamentTable.teamName!
+            cell.games.text = String(tournamentTable.games!)
+            cell.scored.text = String(tournamentTable.goalScored!)
+            cell.conceded.text = String(tournamentTable.goalConceded!)
+            cell.points.text = String(tournamentTable.points!)
+        }
+        
+        
+        
+        return cell
     }
     
     /*
