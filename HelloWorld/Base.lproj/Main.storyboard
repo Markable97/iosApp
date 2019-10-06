@@ -82,14 +82,14 @@
                         <outlet property="loginTF" destination="YMm-vd-m16" id="2R2-XB-dK0"/>
                         <outlet property="passwordTF" destination="CGR-De-ewo" id="6kc-IC-FaG"/>
                         <segue destination="uel-ba-ah5" kind="show" identifier="registerView" id="Y8L-Ex-6E4"/>
-                        <segue destination="aT4-bV-YQh" kind="show" identifier="mainView" id="7ew-Fx-sOc"/>
+                        <segue destination="aT4-bV-YQh" kind="show" identifier="mainView" id="KJp-uD-pSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="16.071428571428569"/>
         </scene>
-        <!--Результаты-->
+        <!--Высший дивизион-->
         <scene sceneID="cO5-cb-Icm">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="0Is-HY-r7l" customClass="ResultController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IqY-bI-Qyo">
-                                <rect key="frame" x="87" y="315.5" width="240" height="128"/>
+                                <rect key="frame" x="87" y="343.5" width="240" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="957-aK-rzS"/>
@@ -109,7 +109,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-kn-orU">
-                                <rect key="frame" x="188.5" y="361" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -122,7 +122,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sRc-za-Vtg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Результаты" image="play.rectangle.fill" catalog="system" id="vFx-ex-Phf"/>
+                    <navigationItem key="navigationItem" title="Высший дивизион" id="CGP-Vd-8X1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8ap-uO-big">
+                            <connections>
+                                <action selector="onClickRefresh" destination="0Is-HY-r7l" id="GZI-Es-N0z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="indicator" destination="dcs-kn-orU" id="bLI-4T-0kz"/>
                         <outlet property="textView" destination="IqY-bI-Qyo" id="z42-9g-nt6"/>
@@ -130,9 +136,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2f-02-YeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="389"/>
+            <point key="canvasLocation" x="3402.898550724638" y="388.39285714285711"/>
         </scene>
-        <!--Таблица-->
+        <!--Высший дивизион-->
         <scene sceneID="d7I-zx-NyA">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="QAf-Ql-joC" customClass="TournamentTableController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-UN-SYo">
-                                <rect key="frame" x="87" y="315.5" width="240" height="128"/>
+                                <rect key="frame" x="87" y="343.5" width="240" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="5X9-xa-mBk"/>
@@ -152,7 +158,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-fz-mXh">
-                                <rect key="frame" x="188.5" y="361" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -165,8 +171,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dfq-bW-ZRn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Таблица" image="table" catalog="system" id="MM0-zX-teH"/>
-                    <navigationItem key="navigationItem" id="H3h-dD-3ST"/>
+                    <navigationItem key="navigationItem" title="Высший дивизион" id="H3h-dD-3ST">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="gUt-cY-yN8">
+                            <connections>
+                                <action selector="onClickRefresh" destination="QAf-Ql-joC" id="wZy-Du-pyp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="indicator" destination="AGh-fz-mXh" id="isi-Yh-nAG"/>
                         <outlet property="textView" destination="Tk9-UN-SYo" id="mKy-rz-OeV"/>
@@ -174,9 +185,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TJ-Dp-5eA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3239" y="43"/>
+            <point key="canvasLocation" x="5364" y="43"/>
         </scene>
-        <!--Календарь-->
+        <!--Высший дивизион-->
         <scene sceneID="cr8-UJ-OCF">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="rhk-cQ-Ipu" customClass="CalendarController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="epA-gk-RGK">
-                                <rect key="frame" x="87" y="315.5" width="240" height="128"/>
+                                <rect key="frame" x="87" y="343.5" width="240" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="AZd-JX-NOZ"/>
@@ -196,7 +207,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-XJ-bsZ">
-                                <rect key="frame" x="188.5" y="361" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -209,7 +220,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8RM-Ah-zqe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Календарь" image="calendar" catalog="system" id="Fio-jU-ho1"/>
+                    <navigationItem key="navigationItem" title="Высший дивизион" id="jWv-jg-wR7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="JzR-KE-aAK">
+                            <connections>
+                                <action selector="onClickRefresh" destination="rhk-cQ-Ipu" id="UCg-XE-U2f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="indicator" destination="Mqg-XJ-bsZ" id="2My-9C-nhA"/>
                         <outlet property="textView" destination="epA-gk-RGK" id="hGo-Xa-bNJ"/>
@@ -217,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoD-5s-i3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494.202898550725" y="-308.03571428571428"/>
+            <point key="canvasLocation" x="3404.347826086957" y="-308.03571428571428"/>
         </scene>
         <!--Tab Bar Main Controller-->
         <scene sceneID="uBk-hk-aDG">
@@ -230,14 +247,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rhk-cQ-Ipu" kind="relationship" relationship="viewControllers" id="25y-BI-4lh"/>
-                        <segue destination="0Is-HY-r7l" kind="relationship" relationship="viewControllers" id="blJ-F4-VWw"/>
-                        <segue destination="QAf-Ql-joC" kind="relationship" relationship="viewControllers" id="9ct-Zs-CiX"/>
+                        <segue destination="wzN-N6-p7H" kind="relationship" relationship="viewControllers" id="25y-BI-4lh"/>
+                        <segue destination="wyi-jV-kRX" kind="relationship" relationship="viewControllers" id="blJ-F4-VWw"/>
+                        <segue destination="uc7-cI-O7N" kind="relationship" relationship="viewControllers" id="9ct-Zs-CiX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OlT-Ha-W1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943" y="16"/>
+            <point key="canvasLocation" x="1287" y="16"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="CqG-qG-Efl">
@@ -334,6 +351,67 @@
                 <exit id="HD5-Qb-U77" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="35" y="719"/>
+        </scene>
+        <!--Результаты-->
+        <scene sceneID="gch-7T-pt4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wyi-jV-kRX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Результаты" image="play.rectangle.fill" catalog="system" id="vFx-ex-Phf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zMt-GI-Lqn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ikg-3X-Bag">
+                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="0Is-HY-r7l" kind="relationship" relationship="rootViewController" id="P7t-T4-5FO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTg-Bh-h4M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2492.753623188406" y="388.39285714285711"/>
+        </scene>
+        <!--Календарь-->
+        <scene sceneID="KRf-HX-kKq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wzN-N6-p7H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Календарь" image="calendar" catalog="system" id="Fio-jU-ho1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AuK-sV-jE9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rhk-cQ-Ipu" kind="relationship" relationship="rootViewController" id="Vqc-lY-HhN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNl-Hh-zDF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2494.202898550725" y="-308.03571428571428"/>
+        </scene>
+        <!--Таблица-->
+        <scene sceneID="v88-9J-iii">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uc7-cI-O7N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Таблица" image="table" catalog="system" id="MM0-zX-teH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KE0-Rx-oJn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QAf-Ql-joC" kind="relationship" relationship="rootViewController" id="jNg-Ud-7cm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sts-ED-aWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4403" y="43"/>
         </scene>
     </scenes>
     <resources>

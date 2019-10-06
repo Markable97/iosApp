@@ -13,12 +13,25 @@ class ResultController: UIViewController{
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    @IBAction func onClickRefresh(){
+        if !rvc.isDownloading{
+            textView.text = "TEEEEEEST"
+            indicator.startAnimating()
+            
+            rvc.controlDownloading()
+        
+        }else{
+            print("Already downloading!!")
+        }
+    }
+    var rvc: TabBarMainController!
     var results: [PrevMatch]!
     let decoder = JSONDecoder()
     var text: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rvc = self.tabBarController as? TabBarMainController //инициализация род. контролера
         print("ResultConroler: viewDidLoad")
         if text.count == 0{
             indicator.startAnimating()

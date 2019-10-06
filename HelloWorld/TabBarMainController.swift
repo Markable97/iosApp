@@ -8,9 +8,10 @@
 
 import UIKit
 
-class TabBarMainController: UITabBarController, UITabBarControllerDelegate {
+class TabBarMainController: UITabBarController {
 
     var test: String = "Hello from MVC"
+    var isDownloading: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,11 @@ class TabBarMainController: UITabBarController, UITabBarControllerDelegate {
     }
 
     func sendForConroler(message: String){
+        isDownloading = false
         var arrayJSON = [String.SubSequence()]
-        let first_vc = self.viewControllers?[0] as? CalendarController
-        let seconf_vc = self.viewControllers?[1] as? ResultController
-        let third_vc = self.viewControllers?[2] as? TournamentTableController
+        let first_vc = self.viewControllers?[0].children[0] as? CalendarController
+        let seconf_vc = self.viewControllers?[1].children[0] as? ResultController
+        let third_vc = self.viewControllers?[2].children[0] as? TournamentTableController
         if message != "ERROR"{
             //Вытаскивает JSON-ы через ? в строки и передаем в табы
             arrayJSON = message.split(separator: "?")
@@ -54,8 +56,20 @@ class TabBarMainController: UITabBarController, UITabBarControllerDelegate {
 
     }
     
+    func controlDownloading(){
+        if !isDownloading{
+            let query = DispatchQueue.global(qos: .utility)
+            query.async {
+                    self.sendData(logic: "division")
+            }
+        }else{
+            print("Downloding exist!!!!!")
+        }
+    }
+    
     func sendData(logic: String){
            print("send data to Server with logic \(logic)")
+           isDownloading = true
            //let userInfo = UserInfo(email: login!, password: password!)
            let encoder = JSONEncoder()
            encoder.outputFormatting = .prettyPrinted

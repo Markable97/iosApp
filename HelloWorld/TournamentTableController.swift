@@ -17,8 +17,21 @@ class TournamentTableController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    @IBAction func onClickRefresh(){
+        if !rvc.isDownloading{
+            textView.text = "TEEEEEEST"
+            indicator.startAnimating()
+            
+            rvc.controlDownloading()
+        
+        }else{
+            print("Already downloading!!")
+        }
+    }
+    var rvc: TabBarMainController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        rvc = self.tabBarController as? TabBarMainController //инициализация род. контролера
         print("Tournament table viewDidLoad()")
         if text.count == 0{
             indicator.startAnimating()

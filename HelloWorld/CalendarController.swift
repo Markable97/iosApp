@@ -13,11 +13,24 @@ class CalendarController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    @IBAction func onClickRefresh(){
+        if !rvc.isDownloading{
+            textView.text = "TEEEEEEST"
+            indicator.startAnimating()
+            
+            rvc.controlDownloading()
+        
+        }else{
+            print("Already downloading!!")
+        }
+    }
+    var rvc: TabBarMainController!
     var calendar: [NextMatch]!
     let decoder = JSONDecoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rvc = self.tabBarController as? TabBarMainController  //инициализация род. контролера
         print("CalendarConroler viewDidLoad()")
         indicator.startAnimating()
         // Do any additional setup after loading the view.
