@@ -38,7 +38,7 @@ class CalendarController: UIViewController {
     
     //Метод приема от главного контроера
     func recieveTabBarConroler(data: String){
-        print("Данные пришли в Calendar \(data)")
+        //print("Данные пришли в Calendar \(data)")
         indicator.stopAnimating()
         if data == "ERROR"{
             textView.text = data

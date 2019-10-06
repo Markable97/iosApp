@@ -25,29 +25,20 @@ class TabBarMainController: UITabBarController {
 
     func sendForConroler(message: String){
         isDownloading = false
-        var arrayJSON = [String.SubSequence()]
+        //var arrayJSON = [String.SubSequence()]
         let first_vc = self.viewControllers?[0].children[0] as? CalendarController
         let seconf_vc = self.viewControllers?[1].children[0] as? ResultController
         let third_vc = self.viewControllers?[2].children[0] as? TournamentTableController
         if message != "ERROR"{
             //Вытаскивает JSON-ы через ? в строки и передаем в табы
-            arrayJSON = message.split(separator: "?")
+            let arrayJSON = message.split(separator: "?")
             print(arrayJSON)
-            /*let table = try? decoder.decode([TournamentTable].self, from: arrayJSON[0].data(using: .utf8)!)
-            print("table = \(table!.count)")
-            if arrayJSON[1] != "prevMatch"{
-                let prevMatch = try? decoder.decode([PrevMatch].self, from: arrayJSON[1].data(using: .utf8)!)
-                print("prev = \(prevMatch!.count)")
-            }
-            if arrayJSON[2] != "nextMatch"{
-                let nextMatch = try? decoder.decode([NextMatch].self, from: arrayJSON[2].data(using: .utf8)!)
-                print("next = \(nextMatch!.count)")
-            }*/
-        }
-        if arrayJSON.isEmpty{
-            first_vc!.recieveTabBarConroler(data: String(arrayJSON[1]))
-            seconf_vc!.recieveTabBarConroler(data: String(arrayJSON[0]))
-            third_vc!.recieveTabBarConroler(data: String(arrayJSON[2]))
+            let table: String = String(arrayJSON[0])
+            let prevMatch: String = String(arrayJSON[1])
+            let nextMatch: String = String(arrayJSON[2])
+            first_vc!.recieveTabBarConroler(data: nextMatch)
+            seconf_vc!.recieveTabBarConroler(data: prevMatch)
+            third_vc!.recieveTabBarConroler(data: table)
         }else{
             first_vc!.recieveTabBarConroler(data: message)
             seconf_vc!.recieveTabBarConroler(data: message)

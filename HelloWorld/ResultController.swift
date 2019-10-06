@@ -33,7 +33,7 @@ class ResultController: UIViewController{
         super.viewDidLoad()
         rvc = self.tabBarController as? TabBarMainController //инициализация род. контролера
         print("ResultConroler: viewDidLoad")
-        if text.count == 0{
+        if rvc.isDownloading{
             indicator.startAnimating()
         }
         
