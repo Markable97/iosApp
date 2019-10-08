@@ -97,10 +97,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-kn-orU">
-                                <rect key="frame" x="169" y="308.5" width="37" height="37"/>
-                                <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-LA-htB">
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -122,21 +118,21 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iuO-b9-wfW">
-                                                    <rect key="frame" x="69" y="3.5" width="40" height="38"/>
+                                                    <rect key="frame" x="69" y="3.5" width="35" height="33"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="qpN-wY-EK3"/>
-                                                        <constraint firstAttribute="width" constant="40" id="rUH-fE-KVw"/>
+                                                        <constraint firstAttribute="height" constant="35" id="qpN-wY-EK3"/>
+                                                        <constraint firstAttribute="width" constant="35" id="rUH-fE-KVw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BpH-Q0-Th9">
-                                                    <rect key="frame" x="69" y="39.5" width="40" height="37.5"/>
+                                                    <rect key="frame" x="69" y="44.5" width="35" height="32.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="Lid-bv-l5F"/>
-                                                        <constraint firstAttribute="height" constant="40" id="ekb-7f-Rgm"/>
+                                                        <constraint firstAttribute="width" constant="35" id="Lid-bv-l5F"/>
+                                                        <constraint firstAttribute="height" constant="35" id="ekb-7f-Rgm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хозяева" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e24-Tz-QXh">
-                                                    <rect key="frame" x="117" y="4" width="206" height="40"/>
+                                                    <rect key="frame" x="112" y="4" width="211" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Quq-VP-4DU"/>
                                                         <constraint firstAttribute="width" constant="208" id="bx1-qH-pQS"/>
@@ -146,7 +142,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aho-L4-OvT">
-                                                    <rect key="frame" x="117" y="40" width="206" height="36"/>
+                                                    <rect key="frame" x="112" y="40" width="211" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="DVJ-8U-Nls"/>
                                                         <constraint firstAttribute="width" constant="208" id="WBf-PR-eVR"/>
@@ -216,6 +212,10 @@
                                     <outlet property="delegate" destination="0Is-HY-r7l" id="O8E-iS-c7G"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-kn-orU">
+                                <rect key="frame" x="169" y="308.5" width="37" height="37"/>
+                                <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1803921568627451" green="0.19607843137254902" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -275,15 +275,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tCp-QY-sVE">
-                                                    <rect key="frame" x="43" y="9.5" width="27" height="41.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tCp-QY-sVE">
+                                                    <rect key="frame" x="43" y="7.5" width="40" height="45.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="27" id="8N2-am-cwj"/>
+                                                        <constraint firstAttribute="width" constant="40" id="8N2-am-cwj"/>
                                                         <constraint firstAttribute="height" constant="44" id="Q0F-bn-sXE"/>
                                                     </constraints>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TeamName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSl-FI-RNV">
-                                                    <rect key="frame" x="78" y="8" width="131" height="44"/>
+                                                    <rect key="frame" x="91" y="8" width="118" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="WGq-KJ-66n"/>
                                                     </constraints>
@@ -612,7 +613,6 @@
         <!--Календарь-->
         <scene sceneID="KRf-HX-kKq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FNl-Hh-zDF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wzN-N6-p7H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Календарь" image="calendar" catalog="system" id="Fio-jU-ho1">
                         <color key="badgeColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -631,6 +631,7 @@
                         <segue destination="rhk-cQ-Ipu" kind="relationship" relationship="rootViewController" id="Vqc-lY-HhN"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNl-Hh-zDF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2494.202898550725" y="-308.03571428571428"/>
         </scene>

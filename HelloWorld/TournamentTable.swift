@@ -19,4 +19,5 @@ class TournamentTable: NSObject, Codable  {
     var goalScored: Int?
     var goalConceded: Int?
     var sc_con: Int?
+    var imageBase64: String?
 }

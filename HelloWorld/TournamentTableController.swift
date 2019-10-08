@@ -95,6 +95,12 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
             let row = indexPath.row-1
             let tournamentTable: TournamentTable = self.tournamentTable[row]
             cell.position.text = String(row+1)
+            //загрузка картинку
+            if !tournamentTable.imageBase64!.isEmpty{
+                let decodeData = NSData(base64Encoded: tournamentTable.imageBase64!, options: .ignoreUnknownCharacters)!
+                let decodedimage = UIImage(data: decodeData as Data)
+                cell.imageTeam.image = decodedimage
+            }
             cell.teamName.text = tournamentTable.teamName!
             cell.games.text = String(tournamentTable.games!)
             cell.scored.text = String(tournamentTable.goalScored!)

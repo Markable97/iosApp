@@ -17,4 +17,6 @@ class NextMatch: Decodable{
     var teamVisit: String?
     var date: String?
     var nameStadium: String?
+    var imageHome: String?
+    var imageGuest: String?
 }

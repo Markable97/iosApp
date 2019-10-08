@@ -32,7 +32,7 @@ class TabBarMainController: UITabBarController {
         if message != "ERROR"{
             //Вытаскивает JSON-ы через ? в строки и передаем в табы
             let arrayJSON = message.split(separator: "?")
-            print(arrayJSON)
+            //print(arrayJSON)
             let table: String = String(arrayJSON[0])
             let prevMatch: String = String(arrayJSON[1])
             let nextMatch: String = String(arrayJSON[2])
@@ -66,7 +66,7 @@ class TabBarMainController: UITabBarController {
            encoder.outputFormatting = .prettyPrinted
            let messageForServer = MessageJSON(messageLogic: logic, id: 1)
            let data = try? encoder.encode(messageForServer)
-           print(String(data: data!, encoding: .utf8)!)
+           //print(String(data: data!, encoding: .utf8)!)
            //UIApplication.shared.beginIgnoringInteractionEvents()
            let (code,dataFromServer) = Connect().connectionDivision(JSON: data!)
                switch code {

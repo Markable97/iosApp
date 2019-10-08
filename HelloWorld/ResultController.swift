@@ -53,7 +53,7 @@ class ResultController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func recieveTabBarConroler(data: String){
-        print("Данные пришли в Result \(data)")
+        //print("Данные пришли в Result \(data)")
         if indicator == nil{
             guard let results = try? decoder.decode([PrevMatch].self, from: data.data(using: .utf8)!) else {
                 print("ResultConroler bad JSON decoder")
@@ -83,6 +83,19 @@ class ResultController: UIViewController, UITableViewDataSource, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ResultCell
         let result: PrevMatch = self.results[row]
         cell.tour.text = "Тур " + String(result.idTour!)
+        //IMAGE HOME
+        if !result.imageHome!.isEmpty{
+            let decodeData = NSData(base64Encoded: result.imageHome!, options: .ignoreUnknownCharacters)!
+            let decodedimage = UIImage(data: decodeData as Data)
+            cell.imaageHome.image = decodedimage
+        }
+        //IMAGE GUEST
+        if !result.imageGuest!.isEmpty{
+            let decodeData = NSData(base64Encoded: result.imageGuest!, options: .ignoreUnknownCharacters)!
+            let decodedimage = UIImage(data: decodeData as Data)
+            cell.imageVisit.image = decodedimage
+        }
+
         cell.teamHome.text = result.teamHome!
         cell.teamVisit.text = result.teamVisit!
         cell.goalHome.text = String(result.goalHome!)
