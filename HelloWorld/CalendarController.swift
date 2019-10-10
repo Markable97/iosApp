@@ -60,9 +60,25 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let calendar = self.calendar[row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = calendar.teamHome!+" - "+calendar.teamVisit!
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CalendarCell
+        cell.tour.text = "Тур "+String(calendar.idTour!)
+        //IMAGE HOME
+        if !calendar.imageHome!.isEmpty{
+            let decodeData = NSData(base64Encoded: calendar.imageHome!, options: .ignoreUnknownCharacters)!
+            let decodedimage = UIImage(data: decodeData as Data)
+            cell.imaageHome.image = decodedimage
+        }
+        //IMAGE GUEST
+        if !calendar.imageGuest!.isEmpty{
+            let decodeData = NSData(base64Encoded: calendar.imageGuest!, options: .ignoreUnknownCharacters)!
+            let decodedimage = UIImage(data: decodeData as Data)
+            cell.imageVisit.image = decodedimage
+        }
+        cell.teamHome.text = calendar.teamHome!
+        cell.teamVisit.text = calendar.teamVisit!
+        cell.date.text = calendar.date!
+        cell.stadium.text = calendar.nameStadium!
+        return cell
     }
     /*
     // MARK: - Navigation

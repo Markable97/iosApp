@@ -21,6 +21,7 @@
 		D09BAD8F2343C6BC00E42A92 /* AlertVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09BAD8E2343C6BC00E42A92 /* AlertVisible.swift */; };
 		D09E3C8F2347B7CB00455AFC /* NextMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09E3C8E2347B7CB00455AFC /* NextMatch.swift */; };
 		D09E3C912347B86200455AFC /* PrevMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09E3C902347B86200455AFC /* PrevMatch.swift */; };
+		D0A7F902234F14A20003D5C7 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F901234F14A20003D5C7 /* CalendarCell.swift */; };
 		D0CA228F23465C6400AE10F5 /* TabBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */; };
 		D0CA229123465CAD00AE10F5 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA229023465CAD00AE10F5 /* ResultController.swift */; };
 		D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */; };
@@ -49,6 +50,7 @@
 		D09BAD8E2343C6BC00E42A92 /* AlertVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVisible.swift; sourceTree = "<group>"; };
 		D09E3C8E2347B7CB00455AFC /* NextMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextMatch.swift; sourceTree = "<group>"; };
 		D09E3C902347B86200455AFC /* PrevMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevMatch.swift; sourceTree = "<group>"; };
+		D0A7F901234F14A20003D5C7 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMainController.swift; sourceTree = "<group>"; };
 		D0CA229023465CAD00AE10F5 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTableController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */,
 				D0CF165A234934E1005ACC93 /* CalendarController.swift */,
+				D0A7F901234F14A20003D5C7 /* CalendarCell.swift */,
 				D0CA229023465CAD00AE10F5 /* ResultController.swift */,
 				D0CF1660234A2860005ACC93 /* ResultCell.swift */,
 				D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */,
@@ -278,6 +281,7 @@
 				D09E3C912347B86200455AFC /* PrevMatch.swift in Sources */,
 				D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */,
 				D0117887233F7B8900773E34 /* MainViewController.swift in Sources */,
+				D0A7F902234F14A20003D5C7 /* CalendarCell.swift in Sources */,
 				D0CF165F234A0BDD005ACC93 /* TournamentCell.swift in Sources */,
 				D0CA2295234697C300AE10F5 /* TournamentTable.swift in Sources */,
 				D09BAD8B23427AC900E42A92 /* UserInfo.swift in Sources */,
