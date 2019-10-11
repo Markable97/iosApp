@@ -8,15 +8,26 @@
 
 import UIKit
 
-class MenuController: UIViewController {
+class MenuController: UIViewController,  UITableViewDataSource, UITableViewDelegate {
 
+    let divisions = ["Высший дивизион", "Первый дивизион", "Второй дивизион А", "Второй дивизион В", "Третий дивизион А", "Третий дивизион В"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    //MARK: - TABLE
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return divisions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        cell?.textLabel!.text = self.divisions[indexPath.row]
+        return cell!
+    }
     /*
     // MARK: - Navigation
 
