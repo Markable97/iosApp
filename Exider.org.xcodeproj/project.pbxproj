@@ -22,6 +22,9 @@
 		D09E3C8F2347B7CB00455AFC /* NextMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09E3C8E2347B7CB00455AFC /* NextMatch.swift */; };
 		D09E3C912347B86200455AFC /* PrevMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09E3C902347B86200455AFC /* PrevMatch.swift */; };
 		D0A7F902234F14A20003D5C7 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F901234F14A20003D5C7 /* CalendarCell.swift */; };
+		D0A7F904234F6A290003D5C7 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F903234F6A290003D5C7 /* ContainerViewController.swift */; };
+		D0A7F908234F6A9F0003D5C7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F907234F6A9F0003D5C7 /* MenuViewController.swift */; };
+		D0A7F90A234F85890003D5C7 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F909234F85890003D5C7 /* MenuController.swift */; };
 		D0CA228F23465C6400AE10F5 /* TabBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */; };
 		D0CA229123465CAD00AE10F5 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA229023465CAD00AE10F5 /* ResultController.swift */; };
 		D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */; };
@@ -51,6 +54,9 @@
 		D09E3C8E2347B7CB00455AFC /* NextMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextMatch.swift; sourceTree = "<group>"; };
 		D09E3C902347B86200455AFC /* PrevMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevMatch.swift; sourceTree = "<group>"; };
 		D0A7F901234F14A20003D5C7 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		D0A7F903234F6A290003D5C7 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		D0A7F907234F6A9F0003D5C7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D0A7F909234F85890003D5C7 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMainController.swift; sourceTree = "<group>"; };
 		D0CA229023465CAD00AE10F5 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTableController.swift; sourceTree = "<group>"; };
@@ -111,12 +117,15 @@
 			isa = PBXGroup;
 			children = (
 				D09BAD87234271AF00E42A92 /* Classes */,
+				D0A7F903234F6A290003D5C7 /* ContainerViewController.swift */,
+				D0A7F907234F6A9F0003D5C7 /* MenuViewController.swift */,
 				D0CF165C23493668005ACC93 /* MainScreen */,
 				D04A7BE6233E5C1D00923F5B /* AppDelegate.swift */,
 				D04A7BE8233E5C1D00923F5B /* ViewController.swift */,
 				D0117884233F787200773E34 /* RegisterViewController.swift */,
 				D0117886233F7B8900773E34 /* MainViewController.swift */,
 				D04A7BEA233E5C1D00923F5B /* Main.storyboard */,
+				D0A7F909234F85890003D5C7 /* MenuController.swift */,
 				D04A7BED233E5C1F00923F5B /* Assets.xcassets */,
 				D04A7BEF233E5C1F00923F5B /* LaunchScreen.storyboard */,
 				D04A7BF2233E5C1F00923F5B /* Info.plist */,
@@ -275,11 +284,14 @@
 				D09E3C8F2347B7CB00455AFC /* NextMatch.swift in Sources */,
 				D0CF1661234A2860005ACC93 /* ResultCell.swift in Sources */,
 				D04A7BE9233E5C1D00923F5B /* ViewController.swift in Sources */,
+				D0A7F90A234F85890003D5C7 /* MenuController.swift in Sources */,
 				D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */,
 				D0CF165B234934E1005ACC93 /* CalendarController.swift in Sources */,
 				D09BAD8F2343C6BC00E42A92 /* AlertVisible.swift in Sources */,
 				D09E3C912347B86200455AFC /* PrevMatch.swift in Sources */,
+				D0A7F908234F6A9F0003D5C7 /* MenuViewController.swift in Sources */,
 				D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */,
+				D0A7F904234F6A290003D5C7 /* ContainerViewController.swift in Sources */,
 				D0117887233F7B8900773E34 /* MainViewController.swift in Sources */,
 				D0A7F902234F14A20003D5C7 /* CalendarCell.swift in Sources */,
 				D0CF165F234A0BDD005ACC93 /* TournamentCell.swift in Sources */,

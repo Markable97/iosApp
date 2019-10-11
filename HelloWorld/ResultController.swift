@@ -24,6 +24,9 @@ class ResultController: UIViewController, UITableViewDataSource, UITableViewDele
             print("Already downloading!!")
         }
     }
+    @IBAction func onClickMenu(){
+        rvc.toggleMenu()
+    }
     var rvc: TabBarMainController!
     var results = [PrevMatch]()
     let decoder = JSONDecoder()

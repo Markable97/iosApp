@@ -10,6 +10,7 @@ import UIKit
 
 class CalendarController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
+    
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
@@ -23,6 +24,9 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
             print("Already downloading!!")
         }
     }
+    @IBAction func onClickMenu(){
+        rvc.toggleMenu()
+    }
     var rvc: TabBarMainController!
     var calendar = [NextMatch]()
     let decoder = JSONDecoder()
@@ -34,7 +38,6 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
         indicator.startAnimating()
         // Do any additional setup after loading the view.
     }
-    
     //Метод приема от главного контроера
     func recieveTabBarConroler(data: String){
         //print("Данные пришли в Calendar \(data)")

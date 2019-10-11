@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "mainView"{
             guard let dvc = segue.destination as? MainViewController else {
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
             }
         }*/
         
-    }
+    }*/
     //Регистрация
     @IBAction func onClickRegUp(_ sender: UIButton){
         print("Click button register")

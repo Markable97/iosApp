@@ -8,11 +8,15 @@
 
 import UIKit
 
+protocol MenuDelegate{
+    func toggleMenu()
+}
+
 class TabBarMainController: UITabBarController {
 
     var test: String = "Hello from MVC"
     var isDownloading: Bool = true
-    
+    var delegateMenu: MenuDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         print("TabBarMainController: ViewDidLoad")
@@ -23,6 +27,10 @@ class TabBarMainController: UITabBarController {
         // Do any additional setup after loading the view.
     }
 
+    func toggleMenu(){
+        delegateMenu?.toggleMenu()
+    }
+    
     func sendForConroler(message: String){
         isDownloading = false
         //var arrayJSON = [String.SubSequence()]

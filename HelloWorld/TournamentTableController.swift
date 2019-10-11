@@ -29,6 +29,9 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
             print("Already downloading!!")
         }
     }
+    @IBAction func onClickMenu(){
+        rvc.toggleMenu()
+    }
     var rvc: TabBarMainController!
     override func viewDidLoad() {
         super.viewDidLoad()
