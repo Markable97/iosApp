@@ -25,7 +25,11 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     @IBAction func onClickMenu(){
+        self.view.alpha = 0.6
         rvc.toggleMenu()
+    }
+    func closeMenu(){
+        self.view.alpha = 1
     }
     var rvc: TabBarMainController!
     var calendar = [NextMatch]()

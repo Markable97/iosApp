@@ -12,13 +12,22 @@ protocol MenuDelegate{
     func toggleMenu()
 }
 
-class TabBarMainController: UITabBarController {
-
+class TabBarMainController: UITabBarController{
+    
+    var first_vc: CalendarController!
+    var seconf_vc: ResultController!
+    var third_vc: TournamentTableController!
+    
+    var mainControler: UIViewController!
+    
     var test: String = "Hello from MVC"
     var isDownloading: Bool = true
     var delegateMenu: MenuDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        first_vc = self.viewControllers?[0].children[0] as? CalendarController
+        seconf_vc = self.viewControllers?[1].children[0] as? ResultController
+        third_vc = self.viewControllers?[2].children[0] as? TournamentTableController
         print("TabBarMainController: ViewDidLoad")
         let query = DispatchQueue.global(qos: .utility)
         query.async {
@@ -34,9 +43,9 @@ class TabBarMainController: UITabBarController {
     func sendForConroler(message: String){
         isDownloading = false
         //var arrayJSON = [String.SubSequence()]
-        let first_vc = self.viewControllers?[0].children[0] as? CalendarController
+        /*let first_vc = self.viewControllers?[0].children[0] as? CalendarController
         let seconf_vc = self.viewControllers?[1].children[0] as? ResultController
-        let third_vc = self.viewControllers?[2].children[0] as? TournamentTableController
+        let third_vc = self.viewControllers?[2].children[0] as? TournamentTableController*/
         if message != "ERROR"{
             //Вытаскивает JSON-ы через ? в строки и передаем в табы
             let arrayJSON = message.split(separator: "?")
@@ -93,7 +102,13 @@ class TabBarMainController: UITabBarController {
 
             //return "prosto tak"
        }
-
+    //возврат от главного контейнера о закрытии меню
+    func close() {
+        print("Return from main container about close menu")
+        first_vc!.closeMenu()
+        seconf_vc!.closeMenu()
+        third_vc!.closeMenu()
+    }
     /*
     // MARK: - Navigation
 

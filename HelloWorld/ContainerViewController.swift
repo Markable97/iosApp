@@ -9,10 +9,8 @@
 import UIKit
 
 
-
 class ContainerViewController: UIViewController, MenuDelegate {
 
-    
 
     var tabBarControler: UITabBarController!
     var menuConroler: UIViewController!
@@ -50,12 +48,15 @@ class ContainerViewController: UIViewController, MenuDelegate {
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut,
                            animations: {
-                            self.tabBarControler.view.frame.origin.x = self.tabBarControler.view.frame.width - 140
+                            self.tabBarControler.view.frame.origin.x = self.tabBarControler.view.frame.width - 100
             }) { (finished ) in
                 
             }
         }else{
             //убирает меню
+            let controler = self.tabBarControler as! TabBarMainController
+            controler.close()
+            
             UIView.animate(withDuration: 0.5,
                            delay: 0,
                            usingSpringWithDamping: 0.8,
@@ -66,6 +67,7 @@ class ContainerViewController: UIViewController, MenuDelegate {
             }) { (finished ) in
                 
             }
+            
         }
     }
     
