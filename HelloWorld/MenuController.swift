@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuItem {
-    func onClickItem(idDivsion: Int)
+    func onClickItem(idDivsion: Int, nameDivision: String)
 }
 
 class MenuController: UIViewController,  UITableViewDataSource, UITableViewDelegate {
@@ -23,8 +23,8 @@ class MenuController: UIViewController,  UITableViewDataSource, UITableViewDeleg
         // Do any additional setup after loading the view.
     }
     
-    func onClickItem(id: Int){
-        delegateItem?.onClickItem(idDivsion: id)
+    func onClickItem(id: Int, name: String){
+        delegateItem?.onClickItem(idDivsion: id, nameDivision: name)
     }
     
     //MARK: - TABLE
@@ -38,7 +38,7 @@ class MenuController: UIViewController,  UITableViewDataSource, UITableViewDeleg
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onClickItem(id: indexPath.row+1)
+        onClickItem(id: indexPath.row+1, name: divisions[indexPath.row])
     }
     /*
     // MARK: - Navigation

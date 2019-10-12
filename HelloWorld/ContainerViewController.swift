@@ -78,13 +78,13 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
         isMove = !isMove
         showMenu(move: isMove)
     }
-    func onClickItem(idDivsion: Int) {
+    func onClickItem(idDivsion: Int, nameDivision: String) {
         print("click item \(idDivsion)")
         isMove = !isMove
         showMenu(move: isMove)
         let controler = self.tabBarControler as! TabBarMainController
         controler.idDivision = idDivsion
-        controler.startAllIndicator()
+        controler.startAllIndicator(titleName: nameDivision)
         let query = DispatchQueue.global(qos: .utility)
         query.async {
             controler.sendData(logic: "division")

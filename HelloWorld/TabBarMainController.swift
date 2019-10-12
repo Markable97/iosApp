@@ -65,6 +65,14 @@ class TabBarMainController: UITabBarController{
 
     }
     
+    func startAllIndicator(titleName: String){
+        first_vc!.navigationItem.title  = titleName
+        first_vc!.indicator.startAnimating()
+        seconf_vc!.navigationItem.title  = titleName
+        seconf_vc!.indicator.startAnimating()
+        third_vc!.navigationItem.title  = titleName
+        third_vc!.indicator.startAnimating()
+    }
     func startAllIndicator(){
         first_vc!.indicator.startAnimating()
         seconf_vc!.indicator.startAnimating()
