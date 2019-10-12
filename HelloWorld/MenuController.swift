@@ -8,14 +8,23 @@
 
 import UIKit
 
+protocol MenuItem {
+    func onClickItem(idDivsion: Int)
+}
+
 class MenuController: UIViewController,  UITableViewDataSource, UITableViewDelegate {
 
+    var delegateItem: MenuItem?
     let divisions = ["Высший дивизион", "Первый дивизион", "Второй дивизион А", "Второй дивизион В", "Третий дивизион А", "Третий дивизион В"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func onClickItem(id: Int){
+        delegateItem?.onClickItem(idDivsion: id)
     }
     
     //MARK: - TABLE
@@ -27,6 +36,9 @@ class MenuController: UIViewController,  UITableViewDataSource, UITableViewDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel!.text = self.divisions[indexPath.row]
         return cell!
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onClickItem(id: indexPath.row+1)
     }
     /*
     // MARK: - Navigation

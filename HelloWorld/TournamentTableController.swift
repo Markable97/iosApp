@@ -65,6 +65,8 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
         }else{
             indicator.stopAnimating()
             guard let tournamentTable = try? decoder.decode([TournamentTable].self, from: data.data(using: .utf8)!) else {
+                self.tournamentTable = []
+                self.tableview.reloadData()
                 print("TableConroler bad JSON decode")
                 return
             }

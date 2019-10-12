@@ -16,8 +16,6 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func onClickRefresh(){
         if !rvc.isDownloading{
-            indicator.startAnimating()
-            
             rvc.controlDownloading()
         
         }else{
@@ -51,6 +49,8 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
         }else{
            //self.textView.text = data
             guard let calendar = try? decoder.decode([NextMatch].self, from: data.data(using: .utf8)!) else {
+                self.calendar = []
+                tableview.reloadData()
                 print("CalendarConroler bad JSON decode")
                 return
             }

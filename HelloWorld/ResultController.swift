@@ -71,6 +71,8 @@ class ResultController: UIViewController, UITableViewDataSource, UITableViewDele
             indicator.stopAnimating()
             //self.textView.text = data
             guard let results = try? decoder.decode([PrevMatch].self, from: data.data(using: .utf8)!) else {
+                self.results = []
+                tableview.reloadData()
                 print("ResultConroler bad JSON decoder")
                 return
             }

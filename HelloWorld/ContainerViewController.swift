@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ContainerViewController: UIViewController, MenuDelegate {
+class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
 
 
     var tabBarControler: UITabBarController!
@@ -32,7 +32,9 @@ class ContainerViewController: UIViewController, MenuDelegate {
     }
     func conficMenuControler(){
         if menuConroler == nil{
-            self.menuConroler = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: "test_id") as! MenuController
+            let menuControler = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: "test_id") as! MenuController
+            menuControler.delegateItem = self
+            self.menuConroler = menuControler
             view.insertSubview(self.menuConroler.view, at: 0)
             addChild(menuConroler)
             print("add MENU")
@@ -75,6 +77,18 @@ class ContainerViewController: UIViewController, MenuDelegate {
         conficMenuControler()
         isMove = !isMove
         showMenu(move: isMove)
+    }
+    func onClickItem(idDivsion: Int) {
+        print("click item \(idDivsion)")
+        isMove = !isMove
+        showMenu(move: isMove)
+        let controler = self.tabBarControler as! TabBarMainController
+        controler.idDivision = idDivsion
+        controler.startAllIndicator()
+        let query = DispatchQueue.global(qos: .utility)
+        query.async {
+            controler.sendData(logic: "division")
+        }
     }
     /*
     // MARK: - Navigation

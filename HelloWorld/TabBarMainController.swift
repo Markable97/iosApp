@@ -21,7 +21,8 @@ class TabBarMainController: UITabBarController{
     var mainControler: UIViewController!
     
     var test: String = "Hello from MVC"
-    var isDownloading: Bool = true
+    var idDivision: Int = 1
+    var isDownloading: Bool = false
     var delegateMenu: MenuDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +65,15 @@ class TabBarMainController: UITabBarController{
 
     }
     
+    func startAllIndicator(){
+        first_vc!.indicator.startAnimating()
+        seconf_vc!.indicator.startAnimating()
+        third_vc!.indicator.startAnimating()
+    }
+    
     func controlDownloading(){
         if !isDownloading{
+            startAllIndicator()
             let query = DispatchQueue.global(qos: .utility)
             query.async {
                     self.sendData(logic: "division")
@@ -77,11 +85,12 @@ class TabBarMainController: UITabBarController{
     
     func sendData(logic: String){
            print("send data to Server with logic \(logic)")
+        if !isDownloading{
            isDownloading = true
            //let userInfo = UserInfo(email: login!, password: password!)
            let encoder = JSONEncoder()
            encoder.outputFormatting = .prettyPrinted
-           let messageForServer = MessageJSON(messageLogic: logic, id: 1)
+            let messageForServer = MessageJSON(messageLogic: logic, id: self.idDivision)
            let data = try? encoder.encode(messageForServer)
            //print(String(data: data!, encoding: .utf8)!)
            //UIApplication.shared.beginIgnoringInteractionEvents()
@@ -99,7 +108,9 @@ class TabBarMainController: UITabBarController{
                     }
 
                }
-
+        }else{
+            print("donwloding exist")
+        }
             //return "prosto tak"
        }
     //возврат от главного контейнера о закрытии меню
