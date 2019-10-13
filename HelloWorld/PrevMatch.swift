@@ -9,7 +9,7 @@
 import Foundation
 class PrevMatch: Decodable{
     var id_match: Int?
-    var nameDivisio: String?
+    var nameDivision: String?
     var idTour: Int?
     var teamHome: String?
     var goalHome: Int?

@@ -115,14 +115,26 @@ class ResultController: UIViewController, UITableViewDataSource, UITableViewDele
 
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "MatchDetail"{
+            if let indexPath = self.tableview.indexPathForSelectedRow{
+                let matchDetail = segue.destination as! MatchController
+                matchDetail.division = results[indexPath.row].nameDivision!
+                matchDetail.tour = results[indexPath.row].idTour!
+                let goalHome = results[indexPath.row].goalHome!
+                let goalGuest = results[indexPath.row].goalVisit!
+                matchDetail.score = String(goalHome) + " : " + String(goalGuest)
+                matchDetail.teamHome = results[indexPath.row].teamHome!
+                matchDetail.teamGuest = results[indexPath.row].teamVisit!
+                matchDetail.imHomeBase64 = results[indexPath.row].imageHome!
+                matchDetail.imGuestBase64 = results[indexPath.row].imageGuest!
+            }
+        }
     }
-    */
+    
 
 }
