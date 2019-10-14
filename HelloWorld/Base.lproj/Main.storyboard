@@ -346,12 +346,18 @@
                                     <constraint firstItem="LH6-Vv-uAX" firstAttribute="top" secondItem="6pR-3G-JJ9" secondAttribute="bottom" constant="15" id="wH4-ew-eEr"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="R5p-Sl-Cll">
+                                <rect key="frame" x="169" y="305" width="37" height="37"/>
+                                <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gxy-GI-Z8U" firstAttribute="trailing" secondItem="Rha-KA-MGb" secondAttribute="trailing" constant="5" id="0Vx-nk-uOe"/>
                             <constraint firstItem="Rha-KA-MGb" firstAttribute="top" secondItem="gxy-GI-Z8U" secondAttribute="top" constant="5" id="77e-Pg-9eM"/>
+                            <constraint firstItem="R5p-Sl-Cll" firstAttribute="centerX" secondItem="0ft-hi-5rr" secondAttribute="centerX" id="Zb5-Fj-oop"/>
+                            <constraint firstItem="R5p-Sl-Cll" firstAttribute="centerY" secondItem="0ft-hi-5rr" secondAttribute="centerY" id="vl6-Rw-FgM"/>
                             <constraint firstItem="Rha-KA-MGb" firstAttribute="leading" secondItem="gxy-GI-Z8U" secondAttribute="leading" constant="5" id="yLa-hX-AwB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gxy-GI-Z8U"/>
@@ -361,6 +367,7 @@
                         <outlet property="divisionUI" destination="WAp-HH-e7t" id="NrI-af-MEk"/>
                         <outlet property="imGuestUI" destination="f2s-QS-F2b" id="hoP-xi-9ol"/>
                         <outlet property="imHomeUI" destination="NUF-Ii-eBb" id="bw8-Es-cDr"/>
+                        <outlet property="indicator" destination="R5p-Sl-Cll" id="AXE-tP-ywe"/>
                         <outlet property="scoreUI" destination="LH6-Vv-uAX" id="D36-px-vid"/>
                         <outlet property="teamGuestUI" destination="V4L-iY-jDI" id="E9b-65-bpB"/>
                         <outlet property="teamHomeUI" destination="o9c-Vd-NwB" id="Jhm-K5-saY"/>

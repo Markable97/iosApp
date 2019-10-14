@@ -132,6 +132,7 @@ class ResultController: UIViewController, UITableViewDataSource, UITableViewDele
                 matchDetail.teamGuest = results[indexPath.row].teamVisit!
                 matchDetail.imHomeBase64 = results[indexPath.row].imageHome!
                 matchDetail.imGuestBase64 = results[indexPath.row].imageGuest!
+                matchDetail.idMatch = results[indexPath.row].id_match!
             }
         }
     }

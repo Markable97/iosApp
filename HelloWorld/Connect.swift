@@ -59,7 +59,7 @@ class Connect: NSObject {
             return "Error connect"
         }
     }
-    func connectionDivision(JSON:Data)->(Int,String){
+    func connectionToServer(JSON:Data)->(Int,String){
         let byte = JSON
         let client = TCPClient(address: self.IP, port: self.PORT)
         switch client.connect(timeout: 10){
@@ -82,7 +82,7 @@ class Connect: NSObject {
                         }else{
                             print("Count bytes from server 1 = \(data_first.count)")
                             
-                            guard let response = String(bytes: data_first, encoding: .windowsCP1251) else {return (-1,"ERRO convert to String")}
+                            guard let response = String(bytes: data_first, encoding: .utf8) else {return (-1,"ERRO convert to String")}
                             //print("Data: \n \(response)")
                             client.close()
                             return (1,response)
