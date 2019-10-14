@@ -27,6 +27,8 @@ class MatchController: UIViewController {
     var imHomeBase64: String = ""
     var imGuestBase64: String = ""
     var idMatch: Int!
+    let query = DispatchQueue(label: "ConnectServer", attributes: .concurrent)
+    let group = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +45,17 @@ class MatchController: UIViewController {
         decodedimage = UIImage(data: decodeData as Data)
         imGuestUI.image = decodedimage
         indicator.startAnimating()
-        let query = DispatchQueue.global(qos: .utility)
+
+        group.enter()
         query.async {
             self.sendData(idMatch: self.idMatch)
         }
+        
+
+        /*let query = DispatchQueue.global(qos: .utility)
+        query.async {
+            self.sendData(idMatch: self.idMatch)
+        }*/
         // Do any additional setup after loading the view.
     }
     
@@ -56,24 +65,39 @@ class MatchController: UIViewController {
         encoder.outputFormatting = .prettyPrinted
         let messageForServer = MessageJSON(messageLogic: "player", id: idMatch)
         let data = try? encoder.encode(messageForServer)
-        let (code,dataFromServer) = Connect().connectionToServer(JSON: data!)
+        let (code,dataFromServer) = Connect().connectionToServer(JSON: data!, time: 4)
         switch code {
             case 1:
                 print("seccuss read data from server")
                 print("Data from server = \(dataFromServer)")
+                self.group.leave()
                 DispatchQueue.main.async {
                     self.indicator.stopAnimating()
+                    
                 }
                 
             default:
                 print("\(dataFromServer)")
+                self.group.leave()
                 DispatchQueue.main.async {
                     self.present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
                     self.indicator.stopAnimating()
+                    
                 }
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Жду группу")
+        let result = group.wait(timeout: .now()+3)
+        switch result {
+        case .success:
+            print("Succes")
+        default:
+            print("Дождался")
+            dismiss(animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
         print(String(data: data!, encoding: .utf8)!)
         
         //UIApplication.shared.beginIgnoringInteractionEvents()
-        let (code,dataFromServer) = Connect().connectionToServer(JSON: data!)
+        let (code,dataFromServer) = Connect().connectionToServer(JSON: data!, time: 10)
         switch code {
         case 1:
             print("seccuss read data from server")
