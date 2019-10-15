@@ -34,6 +34,9 @@
 		D0CF165B234934E1005ACC93 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF165A234934E1005ACC93 /* CalendarController.swift */; };
 		D0CF165F234A0BDD005ACC93 /* TournamentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF165E234A0BDD005ACC93 /* TournamentCell.swift */; };
 		D0CF1661234A2860005ACC93 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF1660234A2860005ACC93 /* ResultCell.swift */; };
+		D0E3614F235627AB0086F3F3 /* HomeTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3614E235627AB0086F3F3 /* HomeTeamController.swift */; };
+		D0E36151235627C20086F3F3 /* GuestTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E36150235627C20086F3F3 /* GuestTeamController.swift */; };
+		D0E36153235659430086F3F3 /* PlayerInMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E36152235659430086F3F3 /* PlayerInMatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		D0CF165A234934E1005ACC93 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		D0CF165E234A0BDD005ACC93 /* TournamentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCell.swift; sourceTree = "<group>"; };
 		D0CF1660234A2860005ACC93 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		D0E3614E235627AB0086F3F3 /* HomeTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTeamController.swift; sourceTree = "<group>"; };
+		D0E36150235627C20086F3F3 /* GuestTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTeamController.swift; sourceTree = "<group>"; };
+		D0E36152235659430086F3F3 /* PlayerInMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInMatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +135,7 @@
 				D04A7BE8233E5C1D00923F5B /* ViewController.swift */,
 				D0117884233F787200773E34 /* RegisterViewController.swift */,
 				D0117886233F7B8900773E34 /* MainViewController.swift */,
-				D0A7F90B23522C8D0003D5C7 /* MatchController.swift */,
+				D0E3614D235627630086F3F3 /* MatchDetail */,
 				D04A7BEA233E5C1D00923F5B /* Main.storyboard */,
 				D04A7BED233E5C1F00923F5B /* Assets.xcassets */,
 				D04A7BEF233E5C1F00923F5B /* LaunchScreen.storyboard */,
@@ -149,6 +155,7 @@
 				D09E3C8E2347B7CB00455AFC /* NextMatch.swift */,
 				D09E3C902347B86200455AFC /* PrevMatch.swift */,
 				D069845523539F9700876083 /* Player.swift */,
+				D0E36152235659430086F3F3 /* PlayerInMatch.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -165,6 +172,16 @@
 				D0CF165E234A0BDD005ACC93 /* TournamentCell.swift */,
 			);
 			name = MainScreen;
+			sourceTree = "<group>";
+		};
+		D0E3614D235627630086F3F3 /* MatchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D0A7F90B23522C8D0003D5C7 /* MatchController.swift */,
+				D0E3614E235627AB0086F3F3 /* HomeTeamController.swift */,
+				D0E36150235627C20086F3F3 /* GuestTeamController.swift */,
+			);
+			name = MatchDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E36151235627C20086F3F3 /* GuestTeamController.swift in Sources */,
 				D0117885233F787200773E34 /* RegisterViewController.swift in Sources */,
 				D0CA228F23465C6400AE10F5 /* TabBarMainController.swift in Sources */,
 				D0CA229123465CAD00AE10F5 /* ResultController.swift in Sources */,
@@ -290,12 +308,14 @@
 				D069845623539F9700876083 /* Player.swift in Sources */,
 				D09E3C8F2347B7CB00455AFC /* NextMatch.swift in Sources */,
 				D0CF1661234A2860005ACC93 /* ResultCell.swift in Sources */,
+				D0E3614F235627AB0086F3F3 /* HomeTeamController.swift in Sources */,
 				D04A7BE9233E5C1D00923F5B /* ViewController.swift in Sources */,
 				D0A7F90A234F85890003D5C7 /* MenuController.swift in Sources */,
 				D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */,
 				D0CF165B234934E1005ACC93 /* CalendarController.swift in Sources */,
 				D09BAD8F2343C6BC00E42A92 /* AlertVisible.swift in Sources */,
 				D09E3C912347B86200455AFC /* PrevMatch.swift in Sources */,
+				D0E36153235659430086F3F3 /* PlayerInMatch.swift in Sources */,
 				D0A7F908234F6A9F0003D5C7 /* MenuViewController.swift in Sources */,
 				D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */,
 				D0A7F904234F6A290003D5C7 /* ContainerViewController.swift in Sources */,
