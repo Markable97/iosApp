@@ -39,22 +39,45 @@ class HomeTeamController: UITableViewController {
     }
 
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if players[indexPath.row].action == "assist" && players[indexPath.row].name.count > 0 {
+            return 100
+        }else{
+            return 44
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        if row != players.count{
-            //cell.textLabel?.text = players[row].name
-            switch players[row].action {
-            case "goal":
-                cell.imageView?.image = UIImage(named: "goal")
-            case "yellow":
-                cell.imageView?.image = UIImage(named: "yellow_card")
-            default: break
-                
-            }
-        }else{
-            cell.textLabel?.text = "Ассистенты: " + players[row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlayerInMatchCell
+        switch players[row].action {
+        case "goal":
+            cell.actionView?.image = UIImage(named: "goal")
+            cell.name?.text = players[row].nameForTable + "(\(players[row].countAction!))"
+        case "own_goal":
+            cell.actionView?.image = UIImage(named: "own_goal")
+            cell.name?.text = players[row].nameForTable + "(\(players[row].countAction!))"
+        case "penalty":
+            cell.actionView?.image = UIImage(named: "penalty")
+            cell.name?.text = players[row].nameForTable + "(\(players[row].countAction!))"
+        case "penalty_out":
+            cell.name?.text = players[row].nameForTable + "(\(players[row].countAction!)"
+            cell.actionView?.image = UIImage(named: "penalty_out")
+        case "yellow":
+            cell.name?.text = players[row].nameForTable
+            cell.actionView?.image = UIImage(named: "yellow_card")
+        case "red":
+            cell.name?.text = players[row].nameForTable
+            cell.actionView?.image = UIImage(named: "red_card")
+        case "yellow_red":
+            cell.name?.text = players[row].nameForTable
+            cell.actionView?.image = UIImage(named: "red_yellow_card")
+        case "assist":
+            cell.name?.text = "Ассистенты: " + players[row].name
+            //cell.name?.textAlignment = NSTextAlignment.left
+        default: break
         }
+        
         // Configure the cell...
 
         return cell

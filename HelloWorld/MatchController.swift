@@ -23,6 +23,7 @@ class MatchController: UIViewController {
     var playersHome = [PlayerInMatch]()
     var playersGuest = [PlayerInMatch]()
     
+    var firstOpen: Bool = true
     var division: String = ""
     var tour: Int!
     var score: String = ""
@@ -65,8 +66,9 @@ class MatchController: UIViewController {
         print("Жду группку")
         group.wait()
         print("Дождался группу")
-        if self.players.count > 0 {
+        if self.players.count > 0 && firstOpen{
             sortPlayers()
+            firstOpen = false
         }
     }
     func sendData(idMatch: Int){
@@ -113,10 +115,12 @@ class MatchController: UIViewController {
                     playersHome.append(PlayerInMatch(action: "goal", name: p.playerName, countAction: p.goal))
                 }
                 if p.assist > 0{
+                    let str = p.playerName.split(separator: " ")
+                    let name = str[0] + " " + str[1]
                     if assistHome.count == 0{
-                         assistHome = p.playerName + " ("+String(p.assist)+")"
+                         assistHome = name + "("+String(p.assist)+")"
                     }else{
-                        assistHome = assistHome + ", "+p.playerName + " ("+String(p.assist)+")"
+                        assistHome += ", " + name + " ("+String(p.assist)+")"
                     }
                 }
                 if p.own_goal > 0{
@@ -141,10 +145,12 @@ class MatchController: UIViewController {
                     playersGuest.append(PlayerInMatch(action: "goal", name: p.playerName, countAction: p.goal))
                 }
                 if p.assist > 0{
+                    let str = p.playerName.split(separator: " ")
+                    let name = str[0] + " " + str[1]
                     if assistGuest.count == 0{
-                         assistHome = p.playerName + " ("+String(p.assist)+")"
+                         assistGuest = name + "(" + String(p.assist) + ")"
                     }else{
-                        assistGuest = assistHome + ", "+p.playerName + " ("+String(p.assist)+")"
+                        assistGuest += ", " + name + " ("+String(p.assist)+")"
                     }
                 }
                 if p.own_goal > 0{
@@ -173,7 +179,7 @@ class MatchController: UIViewController {
         let homeTable = self.children[0] as! HomeTeamController
         let guestTable = self.children[1] as! GuestTeamController
         homeTable.dataFromMatchConroler(data: playersHome)
-        guestTable.dataFromMatchConroler()
+        guestTable.dataFromMatchConroler(data: playersGuest)
     }
     /*
     override func viewWillDisappear(_ animated: Bool) {
