@@ -7,4 +7,5 @@ target 'Exider.org' do
 
   # Pods for Exider.org
 	pod 'SwiftSocket'
+	pod 'DLRadioButton', '~> 1.4'
 end

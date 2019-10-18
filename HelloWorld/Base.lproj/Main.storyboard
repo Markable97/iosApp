@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RlQ-uX-fE9">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -701,6 +701,104 @@
             </objects>
             <point key="canvasLocation" x="5360.8000000000002" y="42.728635682158924"/>
         </scene>
+        <!--Team Content Conroler-->
+        <scene sceneID="0Ro-ye-2H6">
+            <objects>
+                <viewController id="RlQ-uX-fE9" customClass="TeamContentConroler" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DG7-hh-mD3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FKo-51-0fV">
+                                <rect key="frame" x="0.0" y="0.5" width="130" height="129.5"/>
+                                <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="EY0-Bu-2T8"/>
+                                    <constraint firstAttribute="height" constant="130" id="LRC-KA-Lyw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Команда" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfK-4x-rE6">
+                                <rect key="frame" x="138" y="5" width="229" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AAo-ck-NUa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OA9-rc-Jrt" customClass="DLRadioButton">
+                                <rect key="frame" x="138" y="96" width="229" height="34"/>
+                                <state key="normal" title="Все матчи">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onClickAllMatches:" destination="RlQ-uX-fE9" eventType="touchUpInside" id="f6D-hN-FOy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiR-RO-tbN" customClass="DLRadioButton">
+                                <rect key="frame" x="138" y="54" width="229" height="34"/>
+                                <state key="normal" title="Статистика игроков">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onClickStatPlayer:" destination="RlQ-uX-fE9" eventType="touchUpInside" id="jmS-XE-9Fj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oiR-RO-tbN" firstAttribute="top" secondItem="OfK-4x-rE6" secondAttribute="bottom" constant="9" id="7tw-XD-CWI"/>
+                            <constraint firstItem="i1V-9Q-vEa" firstAttribute="trailing" secondItem="OfK-4x-rE6" secondAttribute="trailing" constant="8" id="A9G-H9-BTx"/>
+                            <constraint firstItem="FKo-51-0fV" firstAttribute="leading" secondItem="i1V-9Q-vEa" secondAttribute="leading" id="AKM-9o-cxS"/>
+                            <constraint firstItem="OfK-4x-rE6" firstAttribute="leading" secondItem="FKo-51-0fV" secondAttribute="trailing" constant="8" id="Cxj-Ag-kTW"/>
+                            <constraint firstItem="FKo-51-0fV" firstAttribute="top" secondItem="i1V-9Q-vEa" secondAttribute="top" id="EA2-z4-QBd"/>
+                            <constraint firstItem="i1V-9Q-vEa" firstAttribute="trailing" secondItem="OA9-rc-Jrt" secondAttribute="trailing" constant="8" id="HSU-fs-Wr5"/>
+                            <constraint firstItem="OfK-4x-rE6" firstAttribute="top" secondItem="i1V-9Q-vEa" secondAttribute="top" constant="5" id="SiM-m2-9tI"/>
+                            <constraint firstItem="OA9-rc-Jrt" firstAttribute="leading" secondItem="FKo-51-0fV" secondAttribute="trailing" constant="8" id="TGJ-j3-oll"/>
+                            <constraint firstItem="i1V-9Q-vEa" firstAttribute="trailing" secondItem="oiR-RO-tbN" secondAttribute="trailing" constant="8" id="Y4e-79-djX"/>
+                            <constraint firstItem="OA9-rc-Jrt" firstAttribute="top" secondItem="oiR-RO-tbN" secondAttribute="bottom" constant="8" id="h8r-W9-579"/>
+                            <constraint firstItem="oiR-RO-tbN" firstAttribute="leading" secondItem="FKo-51-0fV" secondAttribute="trailing" constant="8" id="vvQ-dn-7vA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i1V-9Q-vEa"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnMatches" destination="OA9-rc-Jrt" id="E1P-zu-VAP"/>
+                        <outlet property="btntPlayers" destination="oiR-RO-tbN" id="ZhY-rd-8at"/>
+                        <outlet property="teamNameUI" destination="OfK-4x-rE6" id="PoF-B8-1Lp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPp-nL-lJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6213.6000000000004" y="32.833583208395808"/>
+        </scene>
         <!--Высший дивизион-->
         <scene sceneID="cr8-UJ-OCF">
             <objects>
@@ -1176,6 +1274,7 @@
         <image name="logotype" width="403" height="403"/>
         <image name="person.2" catalog="system" width="64" height="40"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="person.circle.fill" catalog="system" width="64" height="62"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="play.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="table" catalog="system" width="64" height="48"/>

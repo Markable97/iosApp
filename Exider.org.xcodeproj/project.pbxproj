@@ -38,6 +38,7 @@
 		D0E3614F235627AB0086F3F3 /* HomeTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3614E235627AB0086F3F3 /* HomeTeamController.swift */; };
 		D0E36151235627C20086F3F3 /* GuestTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E36150235627C20086F3F3 /* GuestTeamController.swift */; };
 		D0E36153235659430086F3F3 /* PlayerInMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E36152235659430086F3F3 /* PlayerInMatch.swift */; };
+		D0ED9E76235A15BE00CC1F5F /* TeamContentConroler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E75235A15BE00CC1F5F /* TeamContentConroler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		D0E3614E235627AB0086F3F3 /* HomeTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTeamController.swift; sourceTree = "<group>"; };
 		D0E36150235627C20086F3F3 /* GuestTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTeamController.swift; sourceTree = "<group>"; };
 		D0E36152235659430086F3F3 /* PlayerInMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInMatch.swift; sourceTree = "<group>"; };
+		D0ED9E75235A15BE00CC1F5F /* TeamContentConroler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamContentConroler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		D04A7BE5233E5C1D00923F5B /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				D0ED9E74235A150E00CC1F5F /* TeamContent */,
 				D09BAD87234271AF00E42A92 /* Classes */,
 				D0A7F903234F6A290003D5C7 /* ContainerViewController.swift */,
 				D0A7F907234F6A9F0003D5C7 /* MenuViewController.swift */,
@@ -185,6 +188,14 @@
 				D0401BD6235781A600865DF4 /* PlayerInMatchCell.swift */,
 			);
 			name = MatchDetail;
+			sourceTree = "<group>";
+		};
+		D0ED9E74235A150E00CC1F5F /* TeamContent */ = {
+			isa = PBXGroup;
+			children = (
+				D0ED9E75235A15BE00CC1F5F /* TeamContentConroler.swift */,
+			);
+			name = TeamContent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +336,7 @@
 				D0A7F904234F6A290003D5C7 /* ContainerViewController.swift in Sources */,
 				D0A7F90C23522C8D0003D5C7 /* MatchController.swift in Sources */,
 				D0117887233F7B8900773E34 /* MainViewController.swift in Sources */,
+				D0ED9E76235A15BE00CC1F5F /* TeamContentConroler.swift in Sources */,
 				D0A7F902234F14A20003D5C7 /* CalendarCell.swift in Sources */,
 				D0CF165F234A0BDD005ACC93 /* TournamentCell.swift in Sources */,
 				D0CA2295234697C300AE10F5 /* TournamentTable.swift in Sources */,

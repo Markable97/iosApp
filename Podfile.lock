@@ -1,16 +1,20 @@
 PODS:
+  - DLRadioButton (1.4.12)
   - SwiftSocket (2.0.2)
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
   - SwiftSocket
 
 SPEC REPOS:
   trunk:
+    - DLRadioButton
     - SwiftSocket
 
 SPEC CHECKSUMS:
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
 
-PODFILE CHECKSUM: 7b605254ed9254f794a7cf8c7232138060428aeb
+PODFILE CHECKSUM: 995f6d6b747828148ab5de948784769079b6e244
 
 COCOAPODS: 1.8.1
