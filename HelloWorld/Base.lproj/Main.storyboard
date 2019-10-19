@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RlQ-uX-fE9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -695,18 +695,49 @@
                     <connections>
                         <outlet property="indicator" destination="AGh-fz-mXh" id="isi-Yh-nAG"/>
                         <outlet property="tableview" destination="ven-Zl-J4T" id="xXD-hd-OMW"/>
+                        <segue destination="RlQ-uX-fE9" kind="showDetail" identifier="TeamContent" id="5DA-Yo-Ej9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TJ-Dp-5eA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5360.8000000000002" y="42.728635682158924"/>
         </scene>
+        <!--Statistic Controller-->
+        <scene sceneID="x4g-FJ-aTw">
+            <objects>
+                <viewController storyboardIdentifier="statisticVC" id="yil-88-hdN" customClass="StatisticController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gi4-6e-Bsm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="SbB-TR-FZR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54A-dg-UUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5567" y="743"/>
+        </scene>
+        <!--Matches Controller-->
+        <scene sceneID="9wT-Tp-IUB">
+            <objects>
+                <viewController storyboardIdentifier="matchesVC" id="ayU-az-7Ys" customClass="MatchesController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ety-0q-vNm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="srA-nH-DVK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMG-K9-1Vr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6860" y="743"/>
+        </scene>
         <!--Team Content Conroler-->
         <scene sceneID="0Ro-ye-2H6">
             <objects>
                 <viewController id="RlQ-uX-fE9" customClass="TeamContentConroler" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DG7-hh-mD3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FKo-51-0fV">
@@ -749,6 +780,12 @@
                                     <action selector="onClickAllMatches:" destination="RlQ-uX-fE9" eventType="touchUpInside" id="f6D-hN-FOy"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFX-YK-Ex6">
+                                <rect key="frame" x="0.0" y="118" width="375" height="509"/>
+                                <connections>
+                                    <segue destination="fTR-u1-KNd" kind="embed" id="VL7-yE-zG1"/>
+                                </connections>
+                            </containerView>
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiR-RO-tbN" customClass="DLRadioButton">
                                 <rect key="frame" x="138" y="54" width="229" height="34"/>
                                 <state key="normal" title="Статистика игроков">
@@ -780,18 +817,24 @@
                             <constraint firstItem="FKo-51-0fV" firstAttribute="leading" secondItem="i1V-9Q-vEa" secondAttribute="leading" id="AKM-9o-cxS"/>
                             <constraint firstItem="OfK-4x-rE6" firstAttribute="leading" secondItem="FKo-51-0fV" secondAttribute="trailing" constant="8" id="Cxj-Ag-kTW"/>
                             <constraint firstItem="FKo-51-0fV" firstAttribute="top" secondItem="i1V-9Q-vEa" secondAttribute="top" id="EA2-z4-QBd"/>
+                            <constraint firstItem="HFX-YK-Ex6" firstAttribute="trailing" secondItem="i1V-9Q-vEa" secondAttribute="trailing" id="Ecf-BE-rLR"/>
                             <constraint firstItem="i1V-9Q-vEa" firstAttribute="trailing" secondItem="OA9-rc-Jrt" secondAttribute="trailing" constant="8" id="HSU-fs-Wr5"/>
+                            <constraint firstItem="HFX-YK-Ex6" firstAttribute="leading" secondItem="DG7-hh-mD3" secondAttribute="leading" id="Hnq-JW-4A3"/>
                             <constraint firstItem="OfK-4x-rE6" firstAttribute="top" secondItem="i1V-9Q-vEa" secondAttribute="top" constant="5" id="SiM-m2-9tI"/>
                             <constraint firstItem="OA9-rc-Jrt" firstAttribute="leading" secondItem="FKo-51-0fV" secondAttribute="trailing" constant="8" id="TGJ-j3-oll"/>
+                            <constraint firstItem="HFX-YK-Ex6" firstAttribute="top" secondItem="FKo-51-0fV" secondAttribute="bottom" constant="8" id="Wd3-YF-WlU"/>
                             <constraint firstItem="i1V-9Q-vEa" firstAttribute="trailing" secondItem="oiR-RO-tbN" secondAttribute="trailing" constant="8" id="Y4e-79-djX"/>
                             <constraint firstItem="OA9-rc-Jrt" firstAttribute="top" secondItem="oiR-RO-tbN" secondAttribute="bottom" constant="8" id="h8r-W9-579"/>
+                            <constraint firstItem="HFX-YK-Ex6" firstAttribute="bottom" secondItem="i1V-9Q-vEa" secondAttribute="bottom" id="ll4-cI-BqD"/>
                             <constraint firstItem="oiR-RO-tbN" firstAttribute="leading" secondItem="FKo-51-0fV" secondAttribute="trailing" constant="8" id="vvQ-dn-7vA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i1V-9Q-vEa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="d4E-nB-20a"/>
                     <connections>
                         <outlet property="btnMatches" destination="OA9-rc-Jrt" id="E1P-zu-VAP"/>
                         <outlet property="btntPlayers" destination="oiR-RO-tbN" id="ZhY-rd-8at"/>
+                        <outlet property="imageTeam" destination="FKo-51-0fV" id="LIN-Yh-U59"/>
                         <outlet property="teamNameUI" destination="OfK-4x-rE6" id="PoF-B8-1Lp"/>
                     </connections>
                 </viewController>
@@ -1266,6 +1309,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAx-gU-iUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="985" y="-752"/>
+        </scene>
+        <!--Down Content Controller-->
+        <scene sceneID="UPJ-kx-e0f">
+            <objects>
+                <viewController id="fTR-u1-KNd" customClass="DownContentController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j6C-lc-eqK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cfa-Je-zv6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6214" y="673"/>
         </scene>
     </scenes>
     <resources>

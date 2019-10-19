@@ -39,6 +39,9 @@
 		D0E36151235627C20086F3F3 /* GuestTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E36150235627C20086F3F3 /* GuestTeamController.swift */; };
 		D0E36153235659430086F3F3 /* PlayerInMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E36152235659430086F3F3 /* PlayerInMatch.swift */; };
 		D0ED9E76235A15BE00CC1F5F /* TeamContentConroler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E75235A15BE00CC1F5F /* TeamContentConroler.swift */; };
+		D0ED9E78235AEEA800CC1F5F /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E77235AEEA800CC1F5F /* MatchesController.swift */; };
+		D0ED9E7A235AEEC700CC1F5F /* StatisticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E79235AEEC700CC1F5F /* StatisticController.swift */; };
+		D0ED9E7C235AF71100CC1F5F /* DownContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E7B235AF71100CC1F5F /* DownContentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		D0E36150235627C20086F3F3 /* GuestTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTeamController.swift; sourceTree = "<group>"; };
 		D0E36152235659430086F3F3 /* PlayerInMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInMatch.swift; sourceTree = "<group>"; };
 		D0ED9E75235A15BE00CC1F5F /* TeamContentConroler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamContentConroler.swift; sourceTree = "<group>"; };
+		D0ED9E77235AEEA800CC1F5F /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
+		D0ED9E79235AEEC700CC1F5F /* StatisticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticController.swift; sourceTree = "<group>"; };
+		D0ED9E7B235AF71100CC1F5F /* DownContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				D0ED9E75235A15BE00CC1F5F /* TeamContentConroler.swift */,
+				D0ED9E7B235AF71100CC1F5F /* DownContentController.swift */,
+				D0ED9E79235AEEC700CC1F5F /* StatisticController.swift */,
+				D0ED9E77235AEEA800CC1F5F /* MatchesController.swift */,
 			);
 			name = TeamContent;
 			sourceTree = "<group>";
@@ -320,12 +329,14 @@
 				D0CA229123465CAD00AE10F5 /* ResultController.swift in Sources */,
 				D09BAD8D2342830F00E42A92 /* MessageJSON.swift in Sources */,
 				D069845623539F9700876083 /* Player.swift in Sources */,
+				D0ED9E7C235AF71100CC1F5F /* DownContentController.swift in Sources */,
 				D09E3C8F2347B7CB00455AFC /* NextMatch.swift in Sources */,
 				D0CF1661234A2860005ACC93 /* ResultCell.swift in Sources */,
 				D0E3614F235627AB0086F3F3 /* HomeTeamController.swift in Sources */,
 				D04A7BE9233E5C1D00923F5B /* ViewController.swift in Sources */,
 				D0401BD7235781A600865DF4 /* PlayerInMatchCell.swift in Sources */,
 				D0A7F90A234F85890003D5C7 /* MenuController.swift in Sources */,
+				D0ED9E7A235AEEC700CC1F5F /* StatisticController.swift in Sources */,
 				D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */,
 				D0CF165B234934E1005ACC93 /* CalendarController.swift in Sources */,
 				D09BAD8F2343C6BC00E42A92 /* AlertVisible.swift in Sources */,
@@ -334,6 +345,7 @@
 				D0A7F908234F6A9F0003D5C7 /* MenuViewController.swift in Sources */,
 				D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */,
 				D0A7F904234F6A290003D5C7 /* ContainerViewController.swift in Sources */,
+				D0ED9E78235AEEA800CC1F5F /* MatchesController.swift in Sources */,
 				D0A7F90C23522C8D0003D5C7 /* MatchController.swift in Sources */,
 				D0117887233F7B8900773E34 /* MainViewController.swift in Sources */,
 				D0ED9E76235A15BE00CC1F5F /* TeamContentConroler.swift in Sources */,

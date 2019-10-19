@@ -122,14 +122,25 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-    /*
     // MARK: - Navigation
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if row > 0 {
+            performSegue(withIdentifier: "TeamContent", sender: nil)
+        }
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let indexPath = self.tableview.indexPathForSelectedRow{
+            let row = indexPath.row - 1
+            if segue.identifier == "TeamContent"{
+                 let teamContent =  segue.destination as! TeamContentConroler
+                 teamContent.teamName = self.tournamentTable[row].teamName!
+                 teamContent.imageBase64 = self.tournamentTable[row].imageBase64!
+            }
+        }
     }
-    */
 
 }
