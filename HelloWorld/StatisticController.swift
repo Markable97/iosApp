@@ -16,6 +16,9 @@ class StatisticController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func sendFromDownVC(data: String){
+        print("This StaticticVC \(data.count)")
+    }
 
     /*
     // MARK: - Navigation

@@ -14,7 +14,28 @@ class Connect: NSObject {
     let IP: String = "192.168.0.106"
     let PORT: Int32 = 55555
     
+    var client: TCPClient?
     
+    func openConnect()->Bool{
+        if client == nil{
+            self.client = TCPClient(address: self.IP, port: self.PORT)
+            switch client!.connect(timeout: 2){
+                case .success:
+                    print("connect with server********")
+                    return true
+                case .failure(let error):
+                    print(error)
+                    return false
+            }
+        }
+        return false
+    }
+    
+    func closeConnect(){
+        if client != nil{
+            client?.close()
+        }
+    }
     
    func connection(JSON:Data)->String{
         let byte = JSON
@@ -45,7 +66,7 @@ class Connect: NSObject {
                       print(response)
                         let decoder = JSONDecoder()
                         let message = try? decoder.decode(MessageJSON.self, from: response.data(using: .utf8)!)
-                        client.close()
+                        //client.close()
                         return message!.responseFromServer!
                     
                 }
@@ -59,6 +80,31 @@ class Connect: NSObject {
             return "Error connect"
         }
     }
+    
+    func connectToServer(JSON:Data)->(Int,String){
+        let byte = JSON
+        switch client!.send(data: byte){
+        case .success:
+            print("message send")
+            var data = [UInt8]()
+            while true{
+                guard let response = self.client!.read(1024*10, timeout: 2) else { break }
+               data += response
+            }
+            if data.isEmpty{
+                return(-1,"Error data read")
+            }else{
+                print("Count bytes from server 1 = \(data.count)")
+                
+                guard let response = String(bytes: data, encoding: .utf8) else {return (-1,"ERRO convert to String")}
+                return (1,response)
+            }
+        case.failure(let error):
+            print(error)
+            return (-1,"Error send")
+        }
+    }
+    
     func connectionToServer(JSON:Data, time: Int)->(Int,String){
         let byte = JSON
         let client = TCPClient(address: self.IP, port: self.PORT)

@@ -12,12 +12,22 @@ class DownContentController: UIViewController {
 
     var matchesVC: UIViewController!
     var statisticVC: UIViewController!
-    
+    var players: String!
+    var results: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DownControler did load")
         configConroler()
         // Do any additional setup after loading the view.
+    }
+    
+    func sendFromTeamVC(players: String, results: String){
+        self.players = players
+        self.results = results
+        let sVC = self.statisticVC as! StatisticController
+        sVC.sendFromDownVC(data: players)
+        let mVC = self.matchesVC as! MatchesController
+        mVC.sendFromDownVC(data: results)
     }
     
     func configConroler(){

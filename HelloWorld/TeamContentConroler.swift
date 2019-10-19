@@ -15,10 +15,14 @@ class TeamContentConroler: UIViewController {
     @IBOutlet weak var btntPlayers: DLRadioButton!
     @IBOutlet weak var btnMatches: DLRadioButton!
     @IBOutlet weak var imageTeam: UIImageView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    var players: String!
+    var results: String!
     var teamName: String = ""
     var imageBase64: String = ""
     var downVC: DownContentController!
+    let decoder = JSONDecoder()
     
     @IBAction func onClickStatPlayer(_ sender: DLRadioButton){
         if sender.isSelected == false{
@@ -42,7 +46,7 @@ class TeamContentConroler: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        downVC = self.children[0] as! DownContentController
+        downVC = self.children[0] as? DownContentController
         btnMatches.isMultipleSelectionEnabled = true
         btntPlayers.isMultipleSelectionEnabled = true
         btntPlayers.isSelected = true
@@ -52,10 +56,67 @@ class TeamContentConroler: UIViewController {
             let decodedimage = UIImage(data: decodeData as Data)
             imageTeam.image = decodedimage
         }
+        indicator.startAnimating()
+        let query = DispatchQueue.global(qos: .utility)
+         query.async {
+            self.sendMainData(teamName: self.teamName)
+         }
         // Do any additional setup after loading the view.
     }
     
+    func sendMainData(teamName: String){
+        print("send data to Server \(teamName)")
+        var error = true
+        var (isSend,JSON) = sendDopData(teamName: teamName, logic: "team")
+        self.players = JSON
+        error = isSend
+        (isSend, JSON) = sendDopData(teamName: teamName, logic: "matches")
+        self.results = JSON
+        error = isSend
+        DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+            self.downVC.sendFromTeamVC(players:self.players, results:self.results)
+            if(!error){
+                self.present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+            }
+        }
+    }
 
+    func sendDopData(teamName: String, logic: String)->(Bool,String){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let messageForServer = MessageJSON(messageLogic: logic, teamName: self.teamName)
+        let data = try? encoder.encode(messageForServer)
+        let connect = Connect()
+        let connection = connect.openConnect()
+        if connection{
+            let (code,dataFromServer) = connect.connectToServer(JSON: data!)
+            switch code {
+            case 1:
+                print("seccuss read data from server")
+                //print("Data from server = \(dataFromServer)")
+                return (true, dataFromServer)
+                /*guard let players = try? decoder.decode([Player].self, from: dataFromServer.data(using: .utf8)!) else {
+                    print("Bad decoding to JSON")
+                }*/
+            default:
+               print("\(dataFromServer)")
+               return(false,"ERROR")
+            }
+            /*DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+                if code != 1{
+                    self.present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+                }
+            }*/
+        }else{
+            return (false,"ERROR")
+            /*DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+                self.present(AlertVisible.showAlert(message: "Не удалось поделючиться к серверу данных"), animated: true, completion: nil)
+            }*/
+        }
+    }
     /*
     // MARK: - Navigation
 

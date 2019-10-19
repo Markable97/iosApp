@@ -16,7 +16,9 @@ class MatchesController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    func sendFromDownVC(data: String){
+        print("This MatchesVC \(data.count)")
+    }
     /*
     // MARK: - Navigation
 
