@@ -22,4 +22,12 @@ class Player: Decodable{
     var redCard: Int!
     var penalty_out: Int!
     var own_goal: Int!
+    var nameForTable: String{
+        if self.playerName != ""{
+            let strArray = self.playerName.split(separator: " ")
+                return strArray[0] + " " + strArray[1]
+        }else{
+            return ""
+        }
+    }
 }

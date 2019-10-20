@@ -11,6 +11,8 @@
 		D0117885233F787200773E34 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0117884233F787200773E34 /* RegisterViewController.swift */; };
 		D0117887233F7B8900773E34 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0117886233F7B8900773E34 /* MainViewController.swift */; };
 		D0401BD7235781A600865DF4 /* PlayerInMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0401BD6235781A600865DF4 /* PlayerInMatchCell.swift */; };
+		D0437706235CBC610047FF4A /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0437705235CBC610047FF4A /* HeadCell.swift */; };
+		D0437708235CBD170047FF4A /* AmpluaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0437707235CBD170047FF4A /* AmpluaCell.swift */; };
 		D04A7BE7233E5C1D00923F5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A7BE6233E5C1D00923F5B /* AppDelegate.swift */; };
 		D04A7BE9233E5C1D00923F5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A7BE8233E5C1D00923F5B /* ViewController.swift */; };
 		D04A7BEC233E5C1D00923F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04A7BEA233E5C1D00923F5B /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		D0117884233F787200773E34 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D0117886233F7B8900773E34 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0401BD6235781A600865DF4 /* PlayerInMatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInMatchCell.swift; sourceTree = "<group>"; };
+		D0437705235CBC610047FF4A /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
+		D0437707235CBD170047FF4A /* AmpluaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpluaCell.swift; sourceTree = "<group>"; };
 		D04A7BE3233E5C1D00923F5B /* Exider.org.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exider.org.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04A7BE6233E5C1D00923F5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D04A7BE8233E5C1D00923F5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				D0ED9E7B235AF71100CC1F5F /* DownContentController.swift */,
 				D0ED9E79235AEEC700CC1F5F /* StatisticController.swift */,
 				D0ED9E77235AEEA800CC1F5F /* MatchesController.swift */,
+				D0437705235CBC610047FF4A /* HeadCell.swift */,
+				D0437707235CBD170047FF4A /* AmpluaCell.swift */,
 			);
 			name = TeamContent;
 			sourceTree = "<group>";
@@ -347,9 +353,11 @@
 				D0A7F904234F6A290003D5C7 /* ContainerViewController.swift in Sources */,
 				D0ED9E78235AEEA800CC1F5F /* MatchesController.swift in Sources */,
 				D0A7F90C23522C8D0003D5C7 /* MatchController.swift in Sources */,
+				D0437708235CBD170047FF4A /* AmpluaCell.swift in Sources */,
 				D0117887233F7B8900773E34 /* MainViewController.swift in Sources */,
 				D0ED9E76235A15BE00CC1F5F /* TeamContentConroler.swift in Sources */,
 				D0A7F902234F14A20003D5C7 /* CalendarCell.swift in Sources */,
+				D0437706235CBC610047FF4A /* HeadCell.swift in Sources */,
 				D0CF165F234A0BDD005ACC93 /* TournamentCell.swift in Sources */,
 				D0CA2295234697C300AE10F5 /* TournamentTable.swift in Sources */,
 				D09BAD8B23427AC900E42A92 /* UserInfo.swift in Sources */,
