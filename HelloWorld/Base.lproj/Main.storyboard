@@ -1097,7 +1097,7 @@
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OA9-rc-Jrt" customClass="DLRadioButton">
                                 <rect key="frame" x="138" y="96" width="229" height="34"/>
                                 <state key="normal" title="Все матчи">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
@@ -1126,7 +1126,7 @@
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiR-RO-tbN" customClass="DLRadioButton">
                                 <rect key="frame" x="138" y="54" width="229" height="34"/>
                                 <state key="normal" title="Статистика игроков">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
