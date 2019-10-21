@@ -11,7 +11,11 @@ import UIKit
 class StatisticController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var players = [Player]()
-    
+    var playersForTable = [PlayerInStatistic]()
+    var goalkeepers = [PlayerInStatistic]()
+    var defenders = [PlayerInStatistic]()
+    var halfbacks = [PlayerInStatistic]()
+    var forwards = [PlayerInStatistic]()
     var cntGoalkeeper: Int = 0
     var cntDefender: Int = 0
     var cntHalfback: Int = 0
@@ -43,92 +47,59 @@ class StatisticController: UIViewController, UITableViewDataSource, UITableViewD
         for p in self.players{
             switch p.amplua {
                 case "Вратарь":
+                    goalkeepers.append(PlayerInStatistic(typeCell: "Cell", player: p))
                     cntGoalkeeper+=1
                 case "Защитник":
+                    defenders.append(PlayerInStatistic(typeCell: "Cell", player: p))
                     cntDefender+=1
                 case "Полузащитник":
+                    halfbacks.append(PlayerInStatistic(typeCell: "Cell", player: p))
                     cntHalfback+=1
                 case "Нападающий":
+                    forwards.append(PlayerInStatistic(typeCell: "Cell", player: p))
                     cntForward+=1
                 default:
                     break
             }
         }
+        playersForTable.append(PlayerInStatistic(typeCell: "Head"))
+        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Вратарь"))
+        playersForTable = playersForTable + goalkeepers
+        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Защитник"))
+        playersForTable = playersForTable + defenders
+        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Полузащитник"))
+        playersForTable = playersForTable + halfbacks
+        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Нападающий"))
+        playersForTable = playersForTable + forwards
     }
     // MARK: - Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.players.count + 5
+        return playersForTable.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        if row == self.players.count{
-            self.numberPlayer = 0
-        }
         //Ячейка заголовок
         let cellHead = tableView.dequeueReusableCell(withIdentifier: "CellHead") as! HeadCell
         //Ячейка амлуа
         let cellAmplua = tableView.dequeueReusableCell(withIdentifier: "CellAmplua") as! AmpluaCell
         //Ячейка игроков
         let cellPlayer = tableView.dequeueReusableCell(withIdentifier: "CellPlayers") as! HeadCell
-        switch row {
-        case 0:
+        let celling = playersForTable[row]
+        switch celling.typeCell {
+        case "Head":
             return cellHead
-        case 1:
-            cellAmplua.amplua.text = "Вратарь"
+        case "Amplua":
+            cellAmplua.amplua.text = celling.amplua
             return cellAmplua
-        case 2..<cntGoalkeeper+2: //2 до 2 + 3
-            let goalkeeper = self.players[self.numberPlayer]
-            cellPlayer.number.text = String(self.numberPlayer + 1)
-            cellPlayer.name.text = goalkeeper.nameForTable
-            cellPlayer.games.text = String(goalkeeper.games)
-            cellPlayer.goals.text = String(goalkeeper.goal + goalkeeper.penalty)
-            cellPlayer.assists.text = String(goalkeeper.assist)
-            cellPlayer.yellowCard.text = String(goalkeeper.yellowCard)
-            cellPlayer.radCard.text = String(goalkeeper.redCard)
-            self.numberPlayer+=1
-            return cellPlayer
-        case cntGoalkeeper+2..<cntGoalkeeper+3:
-            cellAmplua.amplua.text = "Защитник"
-            return cellAmplua
-        case cntGoalkeeper+3..<cntGoalkeeper + cntDefender + 3:
-            let defender = self.players[self.numberPlayer]
-            cellPlayer.number.text = String(self.numberPlayer + 1)
-            cellPlayer.name.text = defender.nameForTable
-            cellPlayer.games.text = String(defender.games)
-            cellPlayer.goals.text = String(defender.goal + defender.penalty)
-            cellPlayer.assists.text = String(defender.assist)
-            cellPlayer.yellowCard.text = String(defender.yellowCard)
-            cellPlayer.radCard.text = String(defender.redCard)
-            self.numberPlayer+=1
-            return cellPlayer
-        case cntGoalkeeper + cntDefender + 3..<cntGoalkeeper + cntDefender + 4:
-            cellAmplua.amplua.text = "Полузащитник"
-            return cellAmplua
-        case cntGoalkeeper + cntDefender + 4..<cntGoalkeeper + cntDefender + cntHalfback + 4:
-            let halfback = self.players[self.numberPlayer]
-            cellPlayer.number.text = String(self.numberPlayer + 1)
-            cellPlayer.name.text = halfback.nameForTable
-            cellPlayer.games.text = String(halfback.games)
-            cellPlayer.goals.text = String(halfback.goal + halfback.penalty)
-            cellPlayer.assists.text = String(halfback.assist)
-            cellPlayer.yellowCard.text = String(halfback.yellowCard)
-            cellPlayer.radCard.text = String(halfback.redCard)
-            self.numberPlayer+=1
-            return cellPlayer
-        case cntGoalkeeper + cntDefender + cntHalfback + 4..<cntGoalkeeper + cntDefender + cntHalfback + 5:
-            cellAmplua.amplua.text = "Нападающий"
-            return cellAmplua
-        case cntGoalkeeper + cntDefender + cntHalfback + 5..<cntGoalkeeper + cntDefender + cntHalfback + cntForward + 5:
-            let forward = self.players[self.numberPlayer]
-            cellPlayer.number.text = String(self.numberPlayer + 1)
-            cellPlayer.name.text = forward.nameForTable
-            cellPlayer.games.text = String(forward.games)
-            cellPlayer.goals.text = String(forward.goal + forward.penalty)
-            cellPlayer.assists.text = String(forward.assist)
-            cellPlayer.yellowCard.text = String(forward.yellowCard)
-            cellPlayer.radCard.text = String(forward.redCard)
-            self.numberPlayer+=1
+        case "Cell":
+            //cellPlayer.number.text = String(row - 1)
+            cellPlayer.name.text = celling.player!.nameForTable
+            cellPlayer.games.text = String(celling.player!.games)
+            cellPlayer.goals.text = String(celling.player!.goal + celling.player!.penalty)
+            cellPlayer.assists.text = String(celling.player!.assist)
+            cellPlayer.yellowCard.text = String(celling.player!.yellowCard)
+            cellPlayer.radCard.text = String(celling.player!.redCard)
             return cellPlayer
         default:
             break
