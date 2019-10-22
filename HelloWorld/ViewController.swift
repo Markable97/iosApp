@@ -8,9 +8,28 @@
 
 import UIKit
 import SwiftSocket
+import CoreData
 
 class ViewController: UIViewController {
 
+    var setting = [MainSetting]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<MainSetting> = MainSetting.fetchRequest()
+        do{
+            self.setting = try context.fetch(fetchRequest)
+        }catch{
+            print(error.localizedDescription)
+        }
+        if !setting.isEmpty{
+            passwordTF.text = setting[0].password
+            loginTF.text = setting[0].login
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator.hidesWhenStopped = true

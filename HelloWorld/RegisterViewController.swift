@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RegisterViewController: UIViewController {
 
@@ -63,12 +64,32 @@ class RegisterViewController: UIViewController {
             print("register seccuss")
             self.email = email!
             self.password = password!
+            saveData(email: email!, password: password!)
             performSegue(withIdentifier: "regUp", sender: nil)
         default:
             self.indicator.stopAnimating()
             print("ERROR")
             present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
         }
+    }
+    
+    func saveData(email: String, password: String){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "MainSetting", in: context)
+        let mainSettingObject = NSManagedObject(entity: entity!, insertInto: context) as! MainSetting
+        
+        mainSettingObject.login = email
+        mainSettingObject.password = password
+        
+        do{
+            try context.save()
+            print("Saved setting")
+        }catch{
+            print(error.localizedDescription)
+        }
+        
     }
     /*
     // MARK: - Navigation
