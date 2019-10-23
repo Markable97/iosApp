@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d8s-NM-9bv">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -220,6 +220,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1803921568627451" green="0.19607843137254902" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dcs-kn-orU" firstAttribute="centerX" secondItem="sRc-za-Vtg" secondAttribute="centerX" id="124-qY-JEg"/>
                             <constraint firstItem="Dre-LA-htB" firstAttribute="top" secondItem="sRc-za-Vtg" secondAttribute="top" id="2Yo-KO-WCG"/>
@@ -229,6 +230,9 @@
                             <constraint firstItem="Dre-LA-htB" firstAttribute="centerY" secondItem="sRc-za-Vtg" secondAttribute="centerY" id="nV4-k9-oPq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sRc-za-Vtg"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SVa-Fe-oOE" appends="YES" id="kRc-Jg-yeb"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Высший дивизион" id="CGP-Vd-8X1">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="YAp-Mj-0Ym">
@@ -250,6 +254,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2f-02-YeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="SVa-Fe-oOE">
+                    <connections>
+                        <action selector="handleSwip:" destination="0Is-HY-r7l" id="KqX-9o-LOM"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3402.4000000000001" y="388.15592203898052"/>
         </scene>
@@ -666,6 +675,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.1960784314" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="AGh-fz-mXh" firstAttribute="centerY" secondItem="Dfq-bW-ZRn" secondAttribute="centerY" id="9Kn-yL-TLi"/>
                             <constraint firstItem="ven-Zl-J4T" firstAttribute="top" secondItem="Dfq-bW-ZRn" secondAttribute="top" id="Ld7-wK-33k"/>
@@ -677,6 +687,9 @@
                             <constraint firstItem="ven-Zl-J4T" firstAttribute="leading" secondItem="Dfq-bW-ZRn" secondAttribute="leading" id="sVv-3z-Pws"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dfq-bW-ZRn"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9NH-2l-2et" appends="YES" id="8OS-PH-UWA"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Высший дивизион" id="H3h-dD-3ST">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="Er6-dj-gVA">
@@ -699,6 +712,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TJ-Dp-5eA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="9NH-2l-2et">
+                    <connections>
+                        <action selector="handleSwip:" destination="QAf-Ql-joC" id="EOk-Xy-x4m"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5360.8000000000002" y="42.728635682158924"/>
         </scene>
@@ -1314,6 +1332,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.1960784314" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="hCp-Fg-Sud" firstAttribute="bottom" secondItem="8RM-Ah-zqe" secondAttribute="bottom" id="2bx-kN-RQa"/>
                             <constraint firstItem="Mqg-XJ-bsZ" firstAttribute="centerY" secondItem="Ubn-c1-4dr" secondAttribute="centerY" id="Owt-zQ-lb1"/>
@@ -1323,6 +1342,9 @@
                             <constraint firstItem="hCp-Fg-Sud" firstAttribute="trailing" secondItem="8RM-Ah-zqe" secondAttribute="trailing" id="o7y-Vx-iaF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8RM-Ah-zqe"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FSN-HB-c7W" appends="YES" id="DTc-Xs-w3B"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Высший дивизион" id="jWv-jg-wR7">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="n2m-g6-pqH">
@@ -1344,6 +1366,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoD-5s-i3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="FSN-HB-c7W">
+                    <connections>
+                        <action selector="handleSwip:" destination="rhk-cQ-Ipu" id="db4-oq-RiF"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3404" y="-308.09595202398805"/>
         </scene>
@@ -1424,6 +1451,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23745071887969971" green="0.25135785341262817" blue="0.26489689946174622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="s3L-ij-Jab" firstAttribute="leading" secondItem="mlU-Ri-zVh" secondAttribute="leading" id="0aX-ff-QcH"/>
                             <constraint firstItem="kct-PZ-F6p" firstAttribute="top" secondItem="s3L-ij-Jab" secondAttribute="bottom" id="5AR-cR-lae"/>
@@ -1434,9 +1462,17 @@
                             <constraint firstItem="mlU-Ri-zVh" firstAttribute="trailing" secondItem="s3L-ij-Jab" secondAttribute="trailing" constant="100" id="y6x-Lo-j0P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mlU-Ri-zVh"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7pb-N0-u8K" appends="YES" id="r3g-Ja-wpn"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5C-xV-Zaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="7pb-N0-u8K">
+                    <connections>
+                        <action selector="handleSwipClose:" destination="GzG-4r-jP4" id="a5G-26-cL0"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="14.732142857142856"/>
         </scene>
@@ -1684,6 +1720,6 @@
         <image name="table" catalog="system" width="64" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yWp-la-dih"/>
+        <segue reference="lAz-YK-KqY"/>
     </inferredMetricsTieBreakers>
 </document>

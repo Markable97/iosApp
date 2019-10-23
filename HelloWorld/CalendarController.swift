@@ -10,10 +10,18 @@ import UIKit
 
 class CalendarController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
-    
+    var isMove = false //для меню
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    @IBAction func handleSwip(_ sender: UISwipeGestureRecognizer) {
+        if !isMove{
+            print("SWIP SWIP SWIP")
+            self.view.alpha = 0.6
+            isMove = true
+            rvc.toggleMenu()
+        }
+    }
     @IBAction func onClickRefresh(){
         if !rvc.isDownloading{
             rvc.controlDownloading()
@@ -27,6 +35,7 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
         rvc.toggleMenu()
     }
     func closeMenu(){
+        isMove = false
         self.view.alpha = 1
     }
     var rvc: TabBarMainController!

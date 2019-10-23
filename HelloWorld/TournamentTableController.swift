@@ -9,11 +9,19 @@
 import UIKit
 
 class TournamentTableController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    var isMove = false //для меню
     var tournamentTable = [TournamentTable]()
     let decoder = JSONDecoder()
     var text: String = "Default"
     
+    @IBAction func handleSwip(_ sender: UISwipeGestureRecognizer) {
+        if !isMove{
+            print("SWIP SWIP SWIP")
+            self.view.alpha = 0.6
+            isMove = true
+            rvc.toggleMenu()
+        }
+    }
     //@IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tableview: UITableView!
@@ -34,6 +42,7 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
         rvc.toggleMenu()
     }
     func closeMenu(){
+        isMove = false
         self.view.alpha = 1
     }
     var rvc: TabBarMainController!

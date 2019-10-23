@@ -10,10 +10,15 @@ import UIKit
 
 protocol MenuItem {
     func onClickItem(idDivsion: Int, nameDivision: String)
+    func onSwipCloseMenu()
 }
 
 class MenuController: UIViewController,  UITableViewDataSource, UITableViewDelegate {
 
+    @IBAction func handleSwipClose(_ sender: UISwipeGestureRecognizer) {
+        print("SwipClose")
+        delegateItem?.onSwipCloseMenu()
+    }
     var delegateItem: MenuItem?
     let divisions = ["Высший дивизион", "Первый дивизион", "Второй дивизион А", "Второй дивизион В", "Третий дивизион А", "Третий дивизион В"]
     

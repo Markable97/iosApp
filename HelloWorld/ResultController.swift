@@ -9,7 +9,7 @@
 import UIKit
 
 class ResultController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
+    var isMove = false //для меню
     //@IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tableview: UITableView!
@@ -24,11 +24,20 @@ class ResultController: UIViewController, UITableViewDataSource, UITableViewDele
             print("Already downloading!!")
         }
     }
+    @IBAction func handleSwip(_ sender: UISwipeGestureRecognizer) {
+        if !isMove{
+            print("SWIP SWIP SWIP")
+            self.view.alpha = 0.6
+            isMove = true
+            rvc.toggleMenu()
+        }
+    }
     @IBAction func onClickMenu(){
         self.view.alpha = 0.6
         rvc.toggleMenu()
     }
     func closeMenu(){
+        isMove = false
         self.view.alpha = 1
     }
     var rvc: TabBarMainController!

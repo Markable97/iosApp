@@ -90,6 +90,10 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
             controler.sendData(logic: "division")
         }
     }
+    func onSwipCloseMenu() {
+        isMove = !isMove
+        showMenu(move: isMove)
+    }
     /*
     // MARK: - Navigation
 
