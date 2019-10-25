@@ -14,6 +14,11 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
     let decoder = JSONDecoder()
     var text: String = "Default"
     
+    let green = UIColor(rgb: 0xe4f7e3)
+    let red = UIColor(rgb: 0xffd5cf)
+    let yellow = UIColor(rgb: 0xfeffdb)
+    let white = UIColor.white
+    
     @IBAction func handleSwip(_ sender: UISwipeGestureRecognizer) {
         if !isMove{
             print("SWIP SWIP SWIP")
@@ -85,7 +90,44 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
         }
         
     }
-
+    func getColorCell(nameDivision: String, position: Int) -> UIColor{
+        var color: UIColor
+        switch nameDivision {
+        case "Высший дивизион":
+            if position  < 7 {
+                color = green
+            }else{
+                color = red
+            }
+        case "Первый дивизион":
+            if position < 4 {
+                color = green
+            }else if position == 4 || position == 5 {
+                color = yellow
+            }else if position > 15 {
+                color = red
+            }else{
+                color = white
+            }
+        case "Второй дивизион A", "Второй дивизион B":
+            if position < 4{
+                color = green
+            }else if position > 17{
+                color = red
+            }else {
+                color = white
+            }
+        case "Третий дивизион A", "Третий дивизион B":
+            if position < 2{
+                color = green
+            }else{
+                color = white
+            }
+        default:
+            color = white
+        }
+        return color
+    }
     // MARK: - Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tournamentTable.count+1
@@ -111,7 +153,9 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
             cell.points.text = "О"
         }else{
             let row = indexPath.row-1
+            
             let tournamentTable: TournamentTable = self.tournamentTable[row]
+            cell.backgroundColor = getColorCell(nameDivision: tournamentTable.divisionName!, position: row)
             cell.position.text = String(row+1)
             //загрузка картинку
             if !tournamentTable.imageBase64!.isEmpty{
@@ -152,4 +196,21 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
+}
+extension UIColor {
+   convenience init(red: Int, green: Int, blue: Int) {
+       assert(red >= 0 && red <= 255, "Invalid red component")
+       assert(green >= 0 && green <= 255, "Invalid green component")
+       assert(blue >= 0 && blue <= 255, "Invalid blue component")
+
+       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+   }
+
+   convenience init(rgb: Int) {
+       self.init(
+           red: (rgb >> 16) & 0xFF,
+           green: (rgb >> 8) & 0xFF,
+           blue: rgb & 0xFF
+       )
+   }
 }

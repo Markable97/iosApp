@@ -55,9 +55,13 @@ class MatchesController: UIViewController, UITableViewDataSource, UITableViewDel
 
         cell.teamHome.text = result.teamHome!
         cell.teamVisit.text = result.teamVisit!
-        cell.goalHome.text = String(result.goalHome!)
-        cell.goalVisit.text = String(result.goalVisit!)
-        
+        if result.played == 1{
+            cell.goalHome.text = String(result.goalHome!)
+            cell.goalVisit.text = String(result.goalVisit!)
+        }else{
+            cell.goalHome.text = ""
+            cell.goalVisit.text = ""
+        }
         return cell
     }
 
@@ -65,7 +69,14 @@ class MatchesController: UIViewController, UITableViewDataSource, UITableViewDel
 
     
     // MARK: - Navigation
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if results[row].played == 1 {
+            performSegue(withIdentifier: "MatchDetail", sender: nil)
+        }else{
+            present(AlertVisible.showAlert(message: "Матч еще не сыгран"), animated: true, completion: nil)
+        }
+    }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MatchDetail"{

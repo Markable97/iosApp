@@ -1059,7 +1059,6 @@
                                             <outlet property="teamHome" destination="1GX-5s-JAE" id="aMH-YC-n2P"/>
                                             <outlet property="teamVisit" destination="HuP-rZ-jCI" id="jHP-iy-mOy"/>
                                             <outlet property="tour" destination="mOU-Hd-nWr" id="ZvZ-n4-wRq"/>
-                                            <segue destination="snC-Jp-4Ju" kind="showDetail" identifier="MatchDetail" id="yWp-la-dih"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1081,6 +1080,7 @@
                     </view>
                     <connections>
                         <outlet property="tableview" destination="iBf-20-4FV" id="Htb-Bw-fXJ"/>
+                        <segue destination="snC-Jp-4Ju" kind="show" identifier="MatchDetail" id="GJF-sN-zEq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMG-K9-1Vr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1720,6 +1720,6 @@
         <image name="table" catalog="system" width="64" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lAz-YK-KqY"/>
+        <segue reference="GJF-sN-zEq"/>
     </inferredMetricsTieBreakers>
 </document>

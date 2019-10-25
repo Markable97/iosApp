@@ -17,4 +17,5 @@ class PrevMatch: Decodable{
     var teamVisit: String?
     var imageHome: String?
     var imageGuest: String?
+    var played: Int?
 }
