@@ -151,11 +151,13 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
             cell.scored.text = "З"
             cell.conceded.text = "П"
             cell.points.text = "О"
+            cell.backgroundColor = getColorCell(nameDivision: "Заголовок", position: 0)
         }else{
             let row = indexPath.row-1
             
             let tournamentTable: TournamentTable = self.tournamentTable[row]
             cell.backgroundColor = getColorCell(nameDivision: tournamentTable.divisionName!, position: row)
+            
             cell.position.text = String(row+1)
             //загрузка картинку
             if !tournamentTable.imageBase64!.isEmpty{

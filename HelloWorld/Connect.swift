@@ -11,7 +11,8 @@ import SwiftSocket
 
 class Connect: NSObject {
 
-    let IP: String = "192.168.0.106"
+    //let IP: String = "192.168.0.106"
+    let IP: String = "213.248.20.145"
     let PORT: Int32 = 55555
     
     var client: TCPClient?

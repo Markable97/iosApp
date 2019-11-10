@@ -74,9 +74,15 @@ class TabBarMainController: UITabBarController{
         third_vc!.indicator.startAnimating()
     }
     func startAllIndicator(){
-        first_vc!.indicator.startAnimating()
-        seconf_vc!.indicator.startAnimating()
-        third_vc!.indicator.startAnimating()
+        if first_vc!.indicator != nil{
+            first_vc!.indicator.startAnimating()
+        }
+        if seconf_vc!.indicator != nil{
+            seconf_vc!.indicator.startAnimating()
+        }
+        if third_vc!.indicator != nil{
+            third_vc!.indicator.startAnimating()
+        }
     }
     
     func controlDownloading(){
