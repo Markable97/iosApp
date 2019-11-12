@@ -35,6 +35,7 @@
 		D0A7F908234F6A9F0003D5C7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F907234F6A9F0003D5C7 /* MenuViewController.swift */; };
 		D0A7F90A234F85890003D5C7 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F909234F85890003D5C7 /* MenuController.swift */; };
 		D0A7F90C23522C8D0003D5C7 /* MatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7F90B23522C8D0003D5C7 /* MatchController.swift */; };
+		D0B9BD88237868D100D4D06C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0B9BD87237868D000D4D06C /* GoogleService-Info.plist */; };
 		D0CA228F23465C6400AE10F5 /* TabBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */; };
 		D0CA229123465CAD00AE10F5 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA229023465CAD00AE10F5 /* ResultController.swift */; };
 		D0CA229323465CCB00AE10F5 /* TournamentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */; };
@@ -61,6 +62,8 @@
 		D026D7EB235F55D900C94444 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D03C7AE5235E197D002E9751 /* PlayerInStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInStatistic.swift; sourceTree = "<group>"; };
 		D0401BD6235781A600865DF4 /* PlayerInMatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInMatchCell.swift; sourceTree = "<group>"; };
+		D0424603237B0986004C1D57 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseMessaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0424607237B0B17004C1D57 /* Exider.org.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Exider.org.entitlements; sourceTree = "<group>"; };
 		D0437705235CBC610047FF4A /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		D0437707235CBD170047FF4A /* AmpluaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpluaCell.swift; sourceTree = "<group>"; };
 		D04A7BE3233E5C1D00923F5B /* Exider.org.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exider.org.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +87,7 @@
 		D0A7F907234F6A9F0003D5C7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D0A7F909234F85890003D5C7 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D0A7F90B23522C8D0003D5C7 /* MatchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchController.swift; sourceTree = "<group>"; };
+		D0B9BD87237868D000D4D06C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMainController.swift; sourceTree = "<group>"; };
 		D0CA229023465CAD00AE10F5 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		D0CA229223465CCB00AE10F5 /* TournamentTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTableController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		B233A5B43C84957B9444543E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0424603237B0986004C1D57 /* FirebaseMessaging.framework */,
 				D026D7E8235F548800C94444 /* CoreData.framework */,
 				C12D7760E304F5188E782C6F /* Pods_Exider_org.framework */,
 			);
@@ -134,6 +139,7 @@
 		D04A7BDA233E5C1D00923F5B = {
 			isa = PBXGroup;
 			children = (
+				D0424607237B0B17004C1D57 /* Exider.org.entitlements */,
 				D0530A80235F68300094AAF2 /* MainSetting+CoreDataClass.swift */,
 				D0530A81235F68300094AAF2 /* MainSetting+CoreDataProperties.swift */,
 				D04A7BE5233E5C1D00923F5B /* HelloWorld */,
@@ -169,6 +175,7 @@
 				D04A7BED233E5C1F00923F5B /* Assets.xcassets */,
 				D04A7BEF233E5C1F00923F5B /* LaunchScreen.storyboard */,
 				D04A7BF2233E5C1F00923F5B /* Info.plist */,
+				D0B9BD87237868D000D4D06C /* GoogleService-Info.plist */,
 				D026D7EA235F55D900C94444 /* Model.xcdatamodeld */,
 			);
 			path = HelloWorld;
@@ -291,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04A7BF1233E5C1F00923F5B /* LaunchScreen.storyboard in Resources */,
+				D0B9BD88237868D100D4D06C /* GoogleService-Info.plist in Resources */,
 				D04A7BEE233E5C1F00923F5B /* Assets.xcassets in Resources */,
 				D04A7BEC233E5C1D00923F5B /* Main.storyboard in Resources */,
 			);
@@ -528,6 +536,7 @@
 			baseConfigurationReference = 710428981A31B788C61F9FAE /* Pods-Exider.org.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Exider.org.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UU3A9VHCNA;
 				INFOPLIST_FILE = HelloWorld/Info.plist;
@@ -539,7 +548,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markglushko.amateurLiga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -548,6 +557,7 @@
 			baseConfigurationReference = 8FB56D92B649013C33CA09C7 /* Pods-Exider.org.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Exider.org.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UU3A9VHCNA;
 				INFOPLIST_FILE = HelloWorld/Info.plist;
@@ -559,7 +569,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markglushko.amateurLiga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

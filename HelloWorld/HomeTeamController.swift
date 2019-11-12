@@ -41,7 +41,7 @@ class HomeTeamController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if players[indexPath.row].action == "assist" && players[indexPath.row].name.count > 0 {
-            return 100
+            return 200
         }else{
             return 44
         }
