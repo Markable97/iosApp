@@ -50,6 +50,7 @@
 		D0ED9E78235AEEA800CC1F5F /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E77235AEEA800CC1F5F /* MatchesController.swift */; };
 		D0ED9E7A235AEEC700CC1F5F /* StatisticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E79235AEEC700CC1F5F /* StatisticController.swift */; };
 		D0ED9E7C235AF71100CC1F5F /* DownContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED9E7B235AF71100CC1F5F /* DownContentController.swift */; };
+		D0F2EDF3239CF5D200D633D0 /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2EDF2239CF5D200D633D0 /* Division.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		D0ED9E77235AEEA800CC1F5F /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
 		D0ED9E79235AEEC700CC1F5F /* StatisticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticController.swift; sourceTree = "<group>"; };
 		D0ED9E7B235AF71100CC1F5F /* DownContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownContentController.swift; sourceTree = "<group>"; };
+		D0F2EDF2239CF5D200D633D0 /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				D069845523539F9700876083 /* Player.swift */,
 				D0E36152235659430086F3F3 /* PlayerInMatch.swift */,
 				D03C7AE5235E197D002E9751 /* PlayerInStatistic.swift */,
+				D0F2EDF2239CF5D200D633D0 /* Division.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				D0ED9E7C235AF71100CC1F5F /* DownContentController.swift in Sources */,
 				D09E3C8F2347B7CB00455AFC /* NextMatch.swift in Sources */,
 				D0CF1661234A2860005ACC93 /* ResultCell.swift in Sources */,
+				D0F2EDF3239CF5D200D633D0 /* Division.swift in Sources */,
 				D0E3614F235627AB0086F3F3 /* HomeTeamController.swift in Sources */,
 				D04A7BE9233E5C1D00923F5B /* ViewController.swift in Sources */,
 				D0401BD7235781A600865DF4 /* PlayerInMatchCell.swift in Sources */,

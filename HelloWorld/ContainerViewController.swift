@@ -14,6 +14,7 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
 
     var tabBarControler: UITabBarController!
     var menuConroler: UIViewController!
+    var menuControlerClass: MenuController!
     var isMove = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +31,18 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
         view.addSubview(tabBarControler.view)
         addChild(tabBarControler)
     }
-    func conficMenuControler(){
+    func conficMenuControler(divisionsJSON: String){
         if menuConroler == nil{
             let menuControler = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: "test_id") as! MenuController
             menuControler.delegateItem = self
+            self.menuControlerClass = menuControler
             self.menuConroler = menuControler
             view.insertSubview(self.menuConroler.view, at: 0)
             addChild(menuConroler)
             print("add MENU")
+            menuControler.refresh(data: divisionsJSON)
+        }else{
+            self.menuControlerClass.refresh(data: divisionsJSON)
         }
     }
     
@@ -73,8 +78,8 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
         }
     }
     
-    func toggleMenu() {
-        conficMenuControler()
+    func toggleMenu(divisionsJSON: String) {
+        conficMenuControler(divisionsJSON: divisionsJSON)
         isMove = !isMove
         showMenu(move: isMove)
     }

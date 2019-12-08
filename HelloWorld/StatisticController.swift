@@ -16,10 +16,12 @@ class StatisticController: UIViewController, UITableViewDataSource, UITableViewD
     var defenders = [PlayerInStatistic]()
     var halfbacks = [PlayerInStatistic]()
     var forwards = [PlayerInStatistic]()
+    var ussual = [PlayerInStatistic]()
     var cntGoalkeeper: Int = 0
     var cntDefender: Int = 0
     var cntHalfback: Int = 0
     var cntForward: Int = 0
+    var cntUssual: Int = 0
     var numberPlayer: Int = 0
     
     @IBOutlet weak var tableview: UITableView!
@@ -58,19 +60,35 @@ class StatisticController: UIViewController, UITableViewDataSource, UITableViewD
                 case "Нападающий":
                     forwards.append(PlayerInStatistic(typeCell: "Cell", player: p))
                     cntForward+=1
+                case "Полевой игрок":
+                    ussual.append(PlayerInStatistic(typeCell: "Cell", player: p))
+                    cntUssual+=1
                 default:
                     break
             }
         }
         playersForTable.append(PlayerInStatistic(typeCell: "Head"))
-        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Вратарь"))
-        playersForTable = playersForTable + goalkeepers
-        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Защитник"))
-        playersForTable = playersForTable + defenders
-        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Полузащитник"))
-        playersForTable = playersForTable + halfbacks
-        playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Нападающий"))
-        playersForTable = playersForTable + forwards
+        if cntGoalkeeper > 0 {
+            playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Вратарь"))
+            playersForTable = playersForTable + goalkeepers
+        }
+        if cntDefender > 0{
+            playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Защитник"))
+            playersForTable = playersForTable + defenders
+        }
+        if cntHalfback > 0{
+            playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Полузащитник"))
+            playersForTable = playersForTable + halfbacks
+        }
+        if cntForward > 0{
+            playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Нападающий"))
+            playersForTable = playersForTable + forwards
+        }
+        if cntUssual > 0{
+            playersForTable.append(PlayerInStatistic(typeCell: "Amplua", amplua: "Полевой игрок"))
+            playersForTable = playersForTable + ussual
+        }
+        
     }
     // MARK: - Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

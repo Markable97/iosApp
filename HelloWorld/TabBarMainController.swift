@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuDelegate{
-    func toggleMenu()
+    func toggleMenu(divisionsJSON: String)
 }
 
 class TabBarMainController: UITabBarController{
@@ -20,6 +20,8 @@ class TabBarMainController: UITabBarController{
     
     var mainControler: UIViewController!
     
+    var divisionsJSON: String!
+    var firstSetup: Bool = true
     var test: String = "Hello from MVC"
     var idDivision: Int = 1
     var isDownloading: Bool = false
@@ -38,11 +40,20 @@ class TabBarMainController: UITabBarController{
     }
 
     func toggleMenu(){
-        delegateMenu?.toggleMenu()
+        delegateMenu?.toggleMenu(divisionsJSON: divisionsJSON)
     }
     
     func sendForConroler(message: String){
         isDownloading = false
+        if firstSetup{
+            let decoder = JSONDecoder()
+            guard let divisions = try? decoder.decode([Division].self, from: divisionsJSON.data(using: .utf8)!) else {
+                setAllTitle(titleName: "Дивизион")
+                print("Divisions bad JSON decode")
+                return
+            }
+            setAllTitle(titleName: divisions[0].nameDivision)
+        }
         //var arrayJSON = [String.SubSequence()]
         /*let first_vc = self.viewControllers?[0].children[0] as? CalendarController
         let seconf_vc = self.viewControllers?[1].children[0] as? ResultController
@@ -64,8 +75,19 @@ class TabBarMainController: UITabBarController{
         }
 
     }
-    
+    func setAllTitle(titleName: String){
+        
+            first_vc!.navigationItem.title  = titleName
+        
+        
+            seconf_vc!.navigationItem.title  = titleName
+        
+        
+            third_vc!.navigationItem.title  = titleName
+        
+    }
     func startAllIndicator(titleName: String){
+        firstSetup = false
         first_vc!.navigationItem.title  = titleName
         first_vc!.indicator.startAnimating()
         seconf_vc!.navigationItem.title  = titleName
@@ -100,33 +122,67 @@ class TabBarMainController: UITabBarController{
     func sendData(logic: String){
            print("send data to Server with logic \(logic)")
         if !isDownloading{
-           isDownloading = true
-           //let userInfo = UserInfo(email: login!, password: password!)
-           let encoder = JSONEncoder()
-           encoder.outputFormatting = .prettyPrinted
-            let messageForServer = MessageJSON(messageLogic: logic, id: self.idDivision)
-           let data = try? encoder.encode(messageForServer)
-           //print(String(data: data!, encoding: .utf8)!)
-           //UIApplication.shared.beginIgnoringInteractionEvents()
-            let (code,dataFromServer) = Connect().connectionToServer(JSON: data!, time: 10)
-               switch code {
-               case 1:
-                   print("seccuss read data from server")
-                   DispatchQueue.main.async {
-                    self.sendForConroler(message: dataFromServer)
-                    }
-               default:
-                   print("\(dataFromServer)")
-                   DispatchQueue.main.async {
-                        self.sendForConroler(message: "ERROR")
-                    }
-
-               }
+            isDownloading = true
+            var error = true
+            var (isSend,JSON) = sendDopData(idDivision: self.idDivision, logic: "listDivision")
+            self.divisionsJSON = JSON
+            error = isSend
+            print("Logic 1 download = \(error)")
+            (isSend, JSON) = sendDopData(idDivision: self.idDivision, logic: logic)
+            let dataFromServer = JSON
+            error = isSend
+            print("Logic 2 download = \(error)")
+            if (error){
+                print("seccuss read data from server")
+                DispatchQueue.main.async {
+                 self.sendForConroler(message: dataFromServer)
+                 }
+            }else{
+                print("Error in SendData")
+                DispatchQueue.main.async {
+                     self.sendForConroler(message: "ERROR")
+                }
+            }
         }else{
             print("donwloding exist")
         }
             //return "prosto tak"
        }
+    func sendDopData(idDivision: Int, logic: String)->(Bool,String){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let messageForServer = MessageJSON(messageLogic: logic, id: idDivision)
+        let data = try? encoder.encode(messageForServer)
+        let connect = Connect()
+        let connection = connect.openConnect()
+        if connection{
+            let (code,dataFromServer) = connect.connectToServer(JSON: data!)
+            switch code {
+            case 1:
+                print("seccuss read data from server")
+                //print("Data from server = \(dataFromServer)")
+                return (true, dataFromServer)
+                /*guard let players = try? decoder.decode([Player].self, from: dataFromServer.data(using: .utf8)!) else {
+                    print("Bad decoding to JSON")
+                }*/
+            default:
+               print("ERROR in logic = \(logic)")
+               return(false,"ERROR")
+            }
+            /*DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+                if code != 1{
+                    self.present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
+                }
+            }*/
+        }else{
+            return (false,"ERROR")
+            /*DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+                self.present(AlertVisible.showAlert(message: "Не удалось поделючиться к серверу данных"), animated: true, completion: nil)
+            }*/
+        }
+    }
     //возврат от главного контейнера о закрытии меню
     func close() {
         print("Return from main container about close menu")

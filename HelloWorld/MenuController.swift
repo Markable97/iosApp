@@ -19,13 +19,29 @@ class MenuController: UIViewController,  UITableViewDataSource, UITableViewDeleg
         print("SwipClose")
         delegateItem?.onSwipCloseMenu()
     }
+    @IBOutlet weak var tableview: UITableView!
     var delegateItem: MenuItem?
-    let divisions = ["Высший дивизион", "Первый дивизион", "Второй дивизион А", "Второй дивизион В", "Третий дивизион А", "Третий дивизион В"]
+    /*let divisions = ["Высший дивизион", "Первый дивизион", "Второй дивизион А", "Второй дивизион В", "Третий дивизион А", "Третий дивизион В"]*/
+    
+    var divisions = [Division]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("MenuControler viewDidLoad")
         // Do any additional setup after loading the view.
+    }
+    
+    func refresh(data: String){
+        print("recieve divisionsJSON")
+        let decoder = JSONDecoder()
+        guard let divisions = try? decoder.decode([Division].self, from: data.data(using: .utf8)!) else {
+            self.divisions = []
+            tableview.reloadData()
+            print("Divisions bad JSON decode")
+            return
+        }
+        self.divisions = divisions
+        tableview.reloadData()
     }
     
     func onClickItem(id: Int, name: String){
@@ -39,11 +55,11 @@ class MenuController: UIViewController,  UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel!.text = self.divisions[indexPath.row]
+        cell?.textLabel!.text = self.divisions[indexPath.row].nameDivision
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onClickItem(id: indexPath.row+1, name: divisions[indexPath.row])
+        onClickItem(id: divisions[indexPath.row].idDivision, name: divisions[indexPath.row].nameDivision)
     }
     /*
     // MARK: - Navigation
