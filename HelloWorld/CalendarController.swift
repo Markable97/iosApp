@@ -54,6 +54,8 @@ class CalendarController: UIViewController, UITableViewDataSource, UITableViewDe
         //print("Данные пришли в Calendar \(data)")
         indicator.stopAnimating()
         if data == "ERROR"{
+            self.calendar = []
+            tableview.reloadData()
             present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
         }else{
            //self.textView.text = data
