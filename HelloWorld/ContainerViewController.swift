@@ -41,8 +41,6 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
             addChild(menuConroler)
             print("add MENU")
             menuControler.refresh(data: divisionsJSON)
-        }else{
-            self.menuControlerClass.refresh(data: divisionsJSON)
         }
     }
     
@@ -78,8 +76,10 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
         }
     }
     
-    func toggleMenu(divisionsJSON: String) {
-        conficMenuControler(divisionsJSON: divisionsJSON)
+    func toggleMenu(divisionsJSON: String, downloadMenu: Bool) {
+        if downloadMenu{
+            conficMenuControler(divisionsJSON: divisionsJSON)
+        }
         isMove = !isMove
         showMenu(move: isMove)
     }

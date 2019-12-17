@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d8s-NM-9bv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d8s-NM-9bv">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,7 +89,7 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="16.071428571428569"/>
         </scene>
-        <!--Высший дивизион-->
+        <!--Дивизион-->
         <scene sceneID="cO5-cb-Icm">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="0Is-HY-r7l" customClass="ResultController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,14 +118,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YyB-e9-gd4">
-                                                    <rect key="frame" x="69" y="3.5" width="35" height="33"/>
+                                                    <rect key="frame" x="69" y="3.5" width="35" height="32.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="EM0-84-bLq"/>
                                                         <constraint firstAttribute="width" constant="35" id="FXO-2W-Ejb"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kmG-QO-gvM">
-                                                    <rect key="frame" x="69" y="44.5" width="35" height="32.5"/>
+                                                    <rect key="frame" x="69" y="44.5" width="35" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="8YD-UO-Rpt"/>
                                                         <constraint firstAttribute="height" constant="35" id="TvA-Kb-8mj"/>
@@ -234,7 +234,7 @@
                             <outletCollection property="gestureRecognizers" destination="SVa-Fe-oOE" appends="YES" id="kRc-Jg-yeb"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Высший дивизион" id="CGP-Vd-8X1">
+                    <navigationItem key="navigationItem" title="Дивизион" id="CGP-Vd-8X1">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="YAp-Mj-0Ym">
                             <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -537,7 +537,7 @@
             </objects>
             <point key="canvasLocation" x="3933.5999999999999" y="1223.8380809595203"/>
         </scene>
-        <!--Высший дивизион-->
+        <!--Дивизион-->
         <scene sceneID="d7I-zx-NyA">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="QAf-Ql-joC" customClass="TournamentTableController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
@@ -691,7 +691,7 @@
                             <outletCollection property="gestureRecognizers" destination="9NH-2l-2et" appends="YES" id="8OS-PH-UWA"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Высший дивизион" id="H3h-dD-3ST">
+                    <navigationItem key="navigationItem" title="Дивизион" id="H3h-dD-3ST">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="Er6-dj-gVA">
                             <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -973,14 +973,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="u0b-Zm-YH4">
-                                                    <rect key="frame" x="69" y="3.5" width="35" height="33"/>
+                                                    <rect key="frame" x="69" y="3.5" width="35" height="32.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="SMB-zD-LVx"/>
                                                         <constraint firstAttribute="width" constant="35" id="yBv-t2-SWH"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tiw-b7-dbh">
-                                                    <rect key="frame" x="69" y="44.5" width="35" height="32.5"/>
+                                                    <rect key="frame" x="69" y="44.5" width="35" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="MvY-sQ-8Qc"/>
                                                         <constraint firstAttribute="width" constant="35" id="oQA-9i-AM4"/>
@@ -1096,7 +1096,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FKo-51-0fV">
-                                <rect key="frame" x="0.0" y="0.5" width="130" height="129.5"/>
+                                <rect key="frame" x="0.0" y="0.5" width="130" height="129"/>
                                 <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="EY0-Bu-2T8"/>
@@ -1204,7 +1204,7 @@
             </objects>
             <point key="canvasLocation" x="6213.6000000000004" y="32.833583208395808"/>
         </scene>
-        <!--Высший дивизион-->
+        <!--Дивизион-->
         <scene sceneID="cr8-UJ-OCF">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="rhk-cQ-Ipu" customClass="CalendarController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
@@ -1234,14 +1234,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g2v-Wc-1KL">
-                                                    <rect key="frame" x="68" y="3.5" width="35" height="33"/>
+                                                    <rect key="frame" x="68" y="3.5" width="35" height="32.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="dUF-GD-fqb"/>
                                                         <constraint firstAttribute="height" constant="35" id="gBB-1j-SwA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="baS-7l-TXA">
-                                                    <rect key="frame" x="68" y="44.5" width="35" height="32.5"/>
+                                                    <rect key="frame" x="68" y="44.5" width="35" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="Sk2-dA-jEw"/>
                                                         <constraint firstAttribute="height" constant="35" id="Zi1-55-hKc"/>
@@ -1346,7 +1346,7 @@
                             <outletCollection property="gestureRecognizers" destination="FSN-HB-c7W" appends="YES" id="DTc-Xs-w3B"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Высший дивизион" id="jWv-jg-wR7">
+                    <navigationItem key="navigationItem" title="Дивизион" id="jWv-jg-wR7">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="n2m-g6-pqH">
                             <color key="tintColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -1385,21 +1385,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3L-ij-Jab">
                                 <rect key="frame" x="0.0" y="0.0" width="275" height="160"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotype" translatesAutoresizingMaskIntoConstraints="NO" id="AUG-In-QLw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="AUG-In-QLw">
                                         <rect key="frame" x="8" y="8" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="BpY-Fe-Yd3"/>
                                             <constraint firstAttribute="width" constant="90" id="GLD-gx-ZOi"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Любительская футбольная лига" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRF-7Y-KqL">
-                                        <rect key="frame" x="8" y="106" width="240" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Лига Чемпионов Бизнеса" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRF-7Y-KqL">
+                                        <rect key="frame" x="8" y="106" width="194" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зона Восток" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTh-il-8e2">
-                                        <rect key="frame" x="8" y="135" width="84" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Футбол" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTh-il-8e2">
+                                        <rect key="frame" x="8" y="135" width="50" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1415,7 +1415,7 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UTh-il-8e2" secondAttribute="trailing" constant="20" symbolic="YES" id="p5P-s0-lMi"/>
                                     <constraint firstAttribute="height" constant="160" id="vim-Ip-est"/>
                                     <constraint firstItem="UTh-il-8e2" firstAttribute="top" secondItem="eRF-7Y-KqL" secondAttribute="bottom" constant="9.5" id="xx9-s9-g0W"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eRF-7Y-KqL" secondAttribute="trailing" symbolic="YES" id="yUK-N1-YnU"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eRF-7Y-KqL" secondAttribute="trailing" constant="20" symbolic="YES" id="yUK-N1-YnU"/>
                                     <constraint firstItem="eRF-7Y-KqL" firstAttribute="top" secondItem="AUG-In-QLw" secondAttribute="bottom" constant="8" id="zrA-FS-VwZ"/>
                                 </constraints>
                             </view>
@@ -1710,17 +1710,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="64" height="54"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
-        <image name="logotype" width="201.5" height="201.5"/>
+        <image name="logo" width="85" height="85"/>
         <image name="person.2" catalog="system" width="64" height="40"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
-        <image name="person.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
-        <image name="play.rectangle.fill" catalog="system" width="64" height="48"/>
+        <image name="play.rectangle.fill" catalog="system" width="64" height="46"/>
         <image name="popup_rc" width="7.5" height="8.5"/>
         <image name="popup_yc" width="7.5" height="8.5"/>
-        <image name="table" catalog="system" width="64" height="48"/>
+        <image name="table" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lAz-YK-KqY"/>

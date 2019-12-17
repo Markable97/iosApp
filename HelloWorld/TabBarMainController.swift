@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuDelegate{
-    func toggleMenu(divisionsJSON: String)
+    func toggleMenu(divisionsJSON: String, downloadMenu: Bool)
 }
 
 class TabBarMainController: UITabBarController{
@@ -21,6 +21,7 @@ class TabBarMainController: UITabBarController{
     var mainControler: UIViewController!
     
     var divisionsJSON: String!
+    var downloadMenu: Bool = false
     var firstSetup: Bool = true
     var test: String = "Hello from MVC"
     var idDivision: Int = 1
@@ -40,25 +41,31 @@ class TabBarMainController: UITabBarController{
     }
 
     func toggleMenu(){
-        delegateMenu?.toggleMenu(divisionsJSON: divisionsJSON)
+        delegateMenu?.toggleMenu(divisionsJSON: divisionsJSON, downloadMenu: downloadMenu)
     }
     
     func sendForConroler(message: String){
+        print("method sendForConroler(message: \(message))")
         isDownloading = false
-        if firstSetup{
-            let decoder = JSONDecoder()
-            guard let divisions = try? decoder.decode([Division].self, from: divisionsJSON.data(using: .utf8)!) else {
-                setAllTitle(titleName: "Дивизион")
-                print("Divisions bad JSON decode")
-                return
-            }
-            setAllTitle(titleName: divisions[0].nameDivision)
-        }
+        
         //var arrayJSON = [String.SubSequence()]
         /*let first_vc = self.viewControllers?[0].children[0] as? CalendarController
         let seconf_vc = self.viewControllers?[1].children[0] as? ResultController
         let third_vc = self.viewControllers?[2].children[0] as? TournamentTableController*/
         if message != "ERROR"{
+            //Проверяем первая ли загрузка и парсим JSON чтобы заполнить меню
+            if downloadMenu && firstSetup{
+                let decoder = JSONDecoder()
+                guard let divisions = try? decoder.decode([Division].self, from: divisionsJSON.data(using: .utf8)!) else {
+                    setAllTitle(titleName: "Дивизион")
+                    print("Divisions bad JSON decode")
+                    downloadMenu = false
+                    firstSetup = true
+                    return
+                }
+                setAllTitle(titleName: divisions[0].nameDivision)
+                firstSetup = false
+            }
             //Вытаскивает JSON-ы через ? в строки и передаем в табы
             let arrayJSON = message.split(separator: "?")
             //print(arrayJSON)
@@ -87,7 +94,6 @@ class TabBarMainController: UITabBarController{
         
     }
     func startAllIndicator(titleName: String){
-        firstSetup = false
         first_vc!.navigationItem.title  = titleName
         first_vc!.indicator.startAnimating()
         seconf_vc!.navigationItem.title  = titleName
@@ -124,15 +130,20 @@ class TabBarMainController: UITabBarController{
         if !isDownloading{
             isDownloading = true
             var error = true
-            var (isSend,JSON) = sendDopData(idDivision: self.idDivision, logic: "listDivision")
-            self.divisionsJSON = JSON
-            error = isSend
-            print("Logic 1 download = \(error)")
+            var (isSend,JSON): (Bool, String)
+            if !downloadMenu && firstSetup{
+                (isSend,JSON) = sendDopData(idDivision: self.idDivision, logic: "listDivision")
+                self.divisionsJSON = JSON
+                error = isSend
+                print("Logic 1 download = \(error)")
+            }
             (isSend, JSON) = sendDopData(idDivision: self.idDivision, logic: logic)
             let dataFromServer = JSON
             error = isSend
             print("Logic 2 download = \(error)")
             if (error){
+                downloadMenu = true
+                
                 print("seccuss read data from server")
                 DispatchQueue.main.async {
                  self.sendForConroler(message: dataFromServer)
