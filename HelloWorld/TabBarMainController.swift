@@ -41,7 +41,20 @@ class TabBarMainController: UITabBarController{
     }
 
     func toggleMenu(){
-        delegateMenu?.toggleMenu(divisionsJSON: divisionsJSON, downloadMenu: downloadMenu)
+        switch divisionsJSON{
+            case nil:
+                close()
+            case "ERROR":
+                close()
+            default:
+              delegateMenu?.toggleMenu(divisionsJSON: divisionsJSON, downloadMenu: downloadMenu)
+        }
+        /*if divisionsJSON != nil{
+            
+            delegateMenu?.toggleMenu(divisionsJSON: divisionsJSON, downloadMenu: downloadMenu)
+        }else{
+            close()
+        }*/
     }
     
     func sendForConroler(message: String){

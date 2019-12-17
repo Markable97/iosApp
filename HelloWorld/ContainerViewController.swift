@@ -77,11 +77,13 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
     }
     
     func toggleMenu(divisionsJSON: String, downloadMenu: Bool) {
-        if downloadMenu{
+        if downloadMenu {
             conficMenuControler(divisionsJSON: divisionsJSON)
+            isMove = !isMove
+            showMenu(move: isMove)
+        }else{
+            
         }
-        isMove = !isMove
-        showMenu(move: isMove)
     }
     func onClickItem(idDivsion: Int, nameDivision: String) {
         print("click item \(idDivsion)")
