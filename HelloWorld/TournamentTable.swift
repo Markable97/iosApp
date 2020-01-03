@@ -11,6 +11,7 @@ import UIKit
 class TournamentTable: NSObject, Codable  {
     var divisionName: String?
     var teamName: String?
+    var idTeam: Int?
     var games: Int?
     var points: Int?
     var wins: Int?

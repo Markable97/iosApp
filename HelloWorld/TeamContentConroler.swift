@@ -21,6 +21,7 @@ class TeamContentConroler: UIViewController {
     var results: String!
     var teamName: String = ""
     var imageBase64: String = ""
+    var idTeam: Int!
     var downVC: DownContentController!
     let decoder = JSONDecoder()
     
@@ -59,18 +60,18 @@ class TeamContentConroler: UIViewController {
         indicator.startAnimating()
         let query = DispatchQueue.global(qos: .utility)
          query.async {
-            self.sendMainData(teamName: self.teamName)
+            self.sendMainData(idTeam: self.idTeam)
          }
         // Do any additional setup after loading the view.
     }
     
-    func sendMainData(teamName: String){
-        print("send data to Server \(teamName)")
+    func sendMainData(idTeam: Int){
+        print("send data to Server \(idTeam)")
         var error = true
-        var (isSend,JSON) = sendDopData(teamName: teamName, logic: "team")
+        var (isSend,JSON) = sendDopData(idTeam: idTeam, logic: "team")
         self.players = JSON
         error = isSend
-        (isSend, JSON) = sendDopData(teamName: teamName, logic: "matches")
+        (isSend, JSON) = sendDopData(idTeam: idTeam, logic: "matches")
         self.results = JSON
         error = isSend
         DispatchQueue.main.async {
@@ -82,10 +83,10 @@ class TeamContentConroler: UIViewController {
         }
     }
 
-    func sendDopData(teamName: String, logic: String)->(Bool,String){
+    func sendDopData(idTeam: Int, logic: String)->(Bool,String){
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-        let messageForServer = MessageJSON(messageLogic: logic, teamName: self.teamName)
+        let messageForServer = MessageJSON(messageLogic: logic, id: self.idTeam)
         let data = try? encoder.encode(messageForServer)
         let connect = Connect()
         let connection = connect.openConnect()

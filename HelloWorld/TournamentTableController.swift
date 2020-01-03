@@ -194,6 +194,7 @@ class TournamentTableController: UIViewController, UITableViewDataSource, UITabl
                  let teamContent =  segue.destination as! TeamContentConroler
                  teamContent.teamName = self.tournamentTable[row].teamName!
                  teamContent.imageBase64 = self.tournamentTable[row].imageBase64!
+                 teamContent.idTeam = self.tournamentTable[row].idTeam!
             }
         }
     }
