@@ -139,6 +139,8 @@ class ViewController: UIViewController {
             present(AlertVisible.showAlert(message: "Ошибка сети"), animated: true, completion: nil)
         }*/
     }
-    
+
 }
+
+
 

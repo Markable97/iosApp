@@ -12,6 +12,7 @@ class MessageJSON: Codable {
     var messageLogic: String?
     var id: Int?
     var user_info: UserInfo?
+    var name_league: String?
     var team_name: String?
     init(messageLogic: String, user_info: UserInfo){
         self.messageLogic = messageLogic
@@ -20,6 +21,10 @@ class MessageJSON: Codable {
     init(messageLogic: String, id: Int){
         self.messageLogic = messageLogic
         self.id = id
+    }
+    init(messageLogic: String, name_league: String){
+        self.messageLogic = messageLogic
+        self.name_league = name_league
     }
     init(messageLogic: String, teamName: String){
         self.messageLogic = messageLogic

@@ -78,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dropdownButton" destination="tmZ-ag-ETM" id="FyW-sy-QVK"/>
                         <outlet property="indicator" destination="ddT-ub-gfy" id="qoq-9g-fVL"/>
                         <outlet property="loginTF" destination="YMm-vd-m16" id="2R2-XB-dK0"/>
                         <outlet property="passwordTF" destination="CGR-De-ewo" id="6kc-IC-FaG"/>
@@ -1398,23 +1399,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Футбол" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTh-il-8e2">
-                                        <rect key="frame" x="8" y="135" width="50" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKH-o3-zmP">
+                                        <rect key="frame" x="8" y="130" width="259" height="30"/>
+                                        <state key="normal" title="          Выбор лиги              ">
+                                            <color key="titleColor" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="DropdownAction" destination="GzG-4r-jP4" eventType="touchUpInside" id="s3E-f6-I6f"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23745071887969971" green="0.25135785341262817" blue="0.26489689946174622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="UTh-il-8e2" secondAttribute="bottom" constant="8" id="BVp-p9-Nj4"/>
                                     <constraint firstItem="eRF-7Y-KqL" firstAttribute="leading" secondItem="s3L-ij-Jab" secondAttribute="leading" constant="8" id="Fyf-7B-N1D"/>
-                                    <constraint firstItem="UTh-il-8e2" firstAttribute="leading" secondItem="s3L-ij-Jab" secondAttribute="leading" constant="8" id="Iob-Xc-pK6"/>
+                                    <constraint firstItem="zKH-o3-zmP" firstAttribute="leading" secondItem="s3L-ij-Jab" secondAttribute="leading" constant="8" id="HSp-u6-JHn"/>
                                     <constraint firstItem="AUG-In-QLw" firstAttribute="leading" secondItem="s3L-ij-Jab" secondAttribute="leading" constant="8" id="MFM-Ls-b5a"/>
+                                    <constraint firstAttribute="trailing" secondItem="zKH-o3-zmP" secondAttribute="trailing" constant="8" id="Zpi-ns-VAF"/>
                                     <constraint firstItem="AUG-In-QLw" firstAttribute="top" secondItem="s3L-ij-Jab" secondAttribute="top" constant="8" id="d4r-xF-nVr"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UTh-il-8e2" secondAttribute="trailing" constant="20" symbolic="YES" id="p5P-s0-lMi"/>
+                                    <constraint firstItem="zKH-o3-zmP" firstAttribute="top" secondItem="eRF-7Y-KqL" secondAttribute="bottom" constant="4.5" id="sBh-T3-Or7"/>
                                     <constraint firstAttribute="height" constant="160" id="vim-Ip-est"/>
-                                    <constraint firstItem="UTh-il-8e2" firstAttribute="top" secondItem="eRF-7Y-KqL" secondAttribute="bottom" constant="9.5" id="xx9-s9-g0W"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eRF-7Y-KqL" secondAttribute="trailing" constant="20" symbolic="YES" id="yUK-N1-YnU"/>
                                     <constraint firstItem="eRF-7Y-KqL" firstAttribute="top" secondItem="AUG-In-QLw" secondAttribute="bottom" constant="8" id="zrA-FS-VwZ"/>
                                 </constraints>
@@ -1467,6 +1470,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="dropdownButton" destination="zKH-o3-zmP" id="cSM-AA-OQb"/>
                         <outlet property="tableview" destination="fAw-7E-7ZA" id="YdK-zY-Qm2"/>
                     </connections>
                 </viewController>
@@ -1477,7 +1481,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="14.732142857142856"/>
+            <point key="canvasLocation" x="928.79999999999995" y="13.943028485757123"/>
         </scene>
         <!--Tab Bar Main Controller-->
         <scene sceneID="uBk-hk-aDG">

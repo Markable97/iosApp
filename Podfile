@@ -9,5 +9,6 @@ target 'Exider.org' do
 	pod 'SwiftSocket'
 	pod 'DLRadioButton', '~> 1.4'
   pod 'Firebase/Core'
-  pod 'Firebase/Messaging' 
+  pod 'Firebase/Messaging'  
+  pod 'Dropper'	
 end

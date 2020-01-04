@@ -11,7 +11,7 @@ import UIKit
 
 class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
 
-
+    var nameLeague: String = ""
     var tabBarControler: UITabBarController!
     var menuConroler: UIViewController!
     var menuControlerClass: MenuController!
@@ -40,6 +40,8 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
             view.insertSubview(self.menuConroler.view, at: 0)
             addChild(menuConroler)
             print("add MENU")
+            menuControler.dropdownButton.setTitle(nameLeague, for: .normal)
+            menuControler.nameLeague = nameLeague
             menuControler.refresh(data: divisionsJSON)
         }
     }
@@ -75,7 +77,9 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
             
         }
     }
-    
+    func changeNameLiga(nameLeaague nameLeague: String){
+        self.nameLeague = nameLeague
+    }
     func toggleMenu(divisionsJSON: String, downloadMenu: Bool) {
         if downloadMenu {
             conficMenuControler(divisionsJSON: divisionsJSON)

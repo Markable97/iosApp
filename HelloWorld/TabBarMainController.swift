@@ -10,6 +10,7 @@ import UIKit
 
 protocol MenuDelegate{
     func toggleMenu(divisionsJSON: String, downloadMenu: Bool)
+    func changeNameLiga(nameLeaague: String)
 }
 
 class TabBarMainController: UITabBarController{
@@ -19,7 +20,8 @@ class TabBarMainController: UITabBarController{
     var third_vc: TournamentTableController!
     
     var mainControler: UIViewController!
-    
+    let decoder = JSONDecoder()
+    var nameLeague: String = "Западная Лига"
     var divisionsJSON: String!
     var downloadMenu: Bool = false
     var firstSetup: Bool = true
@@ -68,7 +70,7 @@ class TabBarMainController: UITabBarController{
         if message != "ERROR"{
             //Проверяем первая ли загрузка и парсим JSON чтобы заполнить меню
             if downloadMenu && firstSetup{
-                let decoder = JSONDecoder()
+                
                 guard let divisions = try? decoder.decode([Division].self, from: divisionsJSON.data(using: .utf8)!) else {
                     setAllTitle(titleName: "Дивизион")
                     print("Divisions bad JSON decode")
@@ -149,6 +151,14 @@ class TabBarMainController: UITabBarController{
                 self.divisionsJSON = JSON
                 error = isSend
                 print("Logic 1 download = \(error)")
+                let divisions = try? decoder.decode([Division].self, from: divisionsJSON.data(using: .utf8)!)
+                if divisions == nil{
+                    error = false
+                    print("bad parsing division in first download")
+                }else{
+                    self.idDivision = divisions![0].idDivision
+                    delegateMenu?.changeNameLiga(nameLeaague: self.nameLeague)
+                }
             }
             (isSend, JSON) = sendDopData(idDivision: self.idDivision, logic: logic)
             let dataFromServer = JSON
@@ -176,6 +186,7 @@ class TabBarMainController: UITabBarController{
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let messageForServer = MessageJSON(messageLogic: logic, id: idDivision)
+        messageForServer.name_league = nameLeague
         let data = try? encoder.encode(messageForServer)
         let connect = Connect()
         let connection = connect.openConnect()
