@@ -12,7 +12,8 @@ import UIKit
 class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
 
     var nameLeague: String = ""
-    var tabBarControler: UITabBarController!
+    //var tabBarControler: UITabBarController!
+    var containerTabBarController: UIViewController!
     var menuConroler: UIViewController!
     var menuControlerClass: MenuController!
     var isMove = false
@@ -25,11 +26,14 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
     
 
     func configTabBarConroler(){
-        let tabBarControler = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: "mainTabBar") as! TabBarMainController
+        /*let tabBarControler = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: "mainTabBar") as! TabBarMainController
         tabBarControler.delegateMenu = self
-        self.tabBarControler = tabBarControler
-        view.addSubview(tabBarControler.view)
-        addChild(tabBarControler)
+        self.tabBarControler = tabBarControler*/
+        let containerTabBarMain = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: "containerMainTabBar") as! ContainerTabBarMainController
+        containerTabBarMain.mainCheat = self
+        self.containerTabBarController = containerTabBarMain
+        view.addSubview(containerTabBarMain.view)
+        addChild(containerTabBarMain)
     }
     func conficMenuControler(divisionsJSON: String){
         if menuConroler == nil{
@@ -55,13 +59,14 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut,
                            animations: {
-                            self.tabBarControler.view.frame.origin.x = self.tabBarControler.view.frame.width - 100
+                            self.containerTabBarController.view.frame.origin.x = self.containerTabBarController.view.frame.width - 100
             }) { (finished ) in
                 
             }
         }else{
             //убирает меню
-            let controler = self.tabBarControler as! TabBarMainController
+            let rootControler = self.containerTabBarController as! ContainerTabBarMainController
+            let controler = rootControler.childConroller!
             controler.close()
             
             UIView.animate(withDuration: 0.5,
@@ -70,7 +75,7 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut,
                            animations: {
-                            self.tabBarControler.view.frame.origin.x = 0
+                            self.containerTabBarController.view.frame.origin.x = 0
             }) { (finished ) in
                 
             }
@@ -93,7 +98,8 @@ class ContainerViewController: UIViewController, MenuDelegate, MenuItem {
         print("click item \(idDivsion)")
         isMove = !isMove
         showMenu(move: isMove)
-        let controler = self.tabBarControler as! TabBarMainController
+        let rootConroler = self.containerTabBarController as! ContainerTabBarMainController
+        let controler = rootConroler.childConroller!
         controler.idDivision = idDivsion
         controler.startAllIndicator(titleName: nameDivision)
         let query = DispatchQueue.global(qos: .utility)

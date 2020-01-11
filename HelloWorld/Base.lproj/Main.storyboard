@@ -95,11 +95,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="0Is-HY-r7l" customClass="ResultController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o6v-eu-y4f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-LA-htB">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="hJG-Vt-cR4" customClass="ResultCell" customModule="Exider_org" customModuleProvider="target">
@@ -215,7 +215,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-kn-orU">
-                                <rect key="frame" x="169" y="312.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="287.5" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -268,7 +268,7 @@
             <objects>
                 <tableViewController id="GrG-3u-xex" customClass="HomeTeamController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xbJ-Ld-Xfb">
-                        <rect key="frame" x="0.0" y="0.0" width="177" height="497"/>
+                        <rect key="frame" x="0.0" y="0.0" width="177" height="447"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -324,7 +324,7 @@
             <objects>
                 <viewController id="snC-Jp-4Ju" customClass="MatchController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ft-hi-5rr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rha-KA-MGb">
@@ -419,26 +419,26 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQY-8U-mkp">
-                                <rect key="frame" x="187" y="145" width="1" height="502"/>
+                                <rect key="frame" x="187" y="145" width="1" height="452"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="vZ1-1J-EDk"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85a-4n-ZF9">
-                                <rect key="frame" x="5" y="145" width="177" height="497"/>
+                                <rect key="frame" x="5" y="145" width="177" height="447"/>
                                 <connections>
                                     <segue destination="GrG-3u-xex" kind="embed" id="ihd-N2-h20"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYh-vE-w7m">
-                                <rect key="frame" x="193" y="145" width="177" height="497"/>
+                                <rect key="frame" x="193" y="145" width="177" height="447"/>
                                 <connections>
                                     <segue destination="mbA-CV-epK" kind="embed" id="BKO-aj-77J"/>
                                 </connections>
                             </containerView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="R5p-Sl-Cll">
-                                <rect key="frame" x="169" y="305" width="37" height="37"/>
+                                <rect key="frame" x="169" y="280" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -487,7 +487,7 @@
             <objects>
                 <tableViewController id="mbA-CV-epK" customClass="GuestTeamController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Suw-fg-Osb">
-                        <rect key="frame" x="0.0" y="0.0" width="177" height="497"/>
+                        <rect key="frame" x="0.0" y="0.0" width="177" height="447"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -543,11 +543,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="QAf-Ql-joC" customClass="TournamentTableController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VWL-2o-JVH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ven-Zl-J4T">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="EGS-vC-SWM" customClass="TournamentCell" customModule="Exider_org" customModuleProvider="target">
@@ -670,7 +670,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-fz-mXh">
-                                <rect key="frame" x="169" y="312.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="287.5" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1093,7 +1093,7 @@
             <objects>
                 <viewController id="RlQ-uX-fE9" customClass="TeamContentConroler" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DG7-hh-mD3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FKo-51-0fV">
@@ -1137,7 +1137,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFX-YK-Ex6">
-                                <rect key="frame" x="0.0" y="138" width="375" height="509"/>
+                                <rect key="frame" x="0.0" y="138" width="375" height="459"/>
                                 <connections>
                                     <segue destination="fTR-u1-KNd" kind="embed" id="VL7-yE-zG1"/>
                                 </connections>
@@ -1166,7 +1166,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dtS-T6-WI0">
-                                <rect key="frame" x="169" y="305" width="37" height="37"/>
+                                <rect key="frame" x="169" y="280" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1210,11 +1210,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="rhk-cQ-Ipu" customClass="CalendarController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ubn-c1-4dr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hCp-Fg-Sud">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bpa-wI-QfM" customClass="CalendarCell" customModule="Exider_org" customModuleProvider="target">
@@ -1327,7 +1327,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-XJ-bsZ">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="169" y="290" width="37" height="37"/>
                                 <color key="color" red="0.98039215690000003" green="0.27450980390000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1697,12 +1697,51 @@
             </objects>
             <point key="canvasLocation" x="985" y="-752"/>
         </scene>
+        <!--Container Tab Bar Main Controller-->
+        <scene sceneID="8pi-fK-xBh">
+            <objects>
+                <viewController storyboardIdentifier="containerMainTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHg-8g-36n" customClass="ContainerTabBarMainController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z1Z-kA-tDE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BK-GC-eMW">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <connections>
+                                    <segue destination="aT4-bV-YQh" kind="embed" identifier="embedTabBar" id="CDB-RC-F5b"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qd-EM-iQZ">
+                                <rect key="frame" x="27.5" y="0.0" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3gx-dA-dcU"/>
+                                    <constraint firstAttribute="width" constant="320" id="w17-mV-v3c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9BK-GC-eMW" firstAttribute="top" secondItem="8Qd-EM-iQZ" secondAttribute="bottom" id="Ccw-4I-rcA"/>
+                            <constraint firstItem="8Qd-EM-iQZ" firstAttribute="top" secondItem="3x7-fD-UwO" secondAttribute="top" id="PeJ-hl-EYF"/>
+                            <constraint firstItem="8Qd-EM-iQZ" firstAttribute="centerX" secondItem="3x7-fD-UwO" secondAttribute="centerX" id="Qkx-9z-WXn"/>
+                            <constraint firstItem="9BK-GC-eMW" firstAttribute="trailing" secondItem="3x7-fD-UwO" secondAttribute="trailing" id="SUX-Z3-1zR"/>
+                            <constraint firstItem="9BK-GC-eMW" firstAttribute="leading" secondItem="3x7-fD-UwO" secondAttribute="leading" id="Vup-PN-yPG"/>
+                            <constraint firstItem="9BK-GC-eMW" firstAttribute="bottom" secondItem="3x7-fD-UwO" secondAttribute="bottom" id="wsA-ag-MlV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3x7-fD-UwO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCJ-oC-SDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="-752"/>
+        </scene>
         <!--Down Content Controller-->
         <scene sceneID="UPJ-kx-e0f">
             <objects>
                 <viewController id="fTR-u1-KNd" customClass="DownContentController" customModule="Exider_org" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j6C-lc-eqK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="459"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="53h-Sh-w3v"/>
