@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 protocol CheatDelegate{
     func useCheating()
 }
@@ -14,10 +15,14 @@ class ContainerTabBarMainController: UIViewController {
 
     var childConroller: TabBarMainController?
     var mainCheat: ContainerViewController?
+    @IBOutlet weak var bannerView: GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Start ContainerViewConroller")
         // Do any additional setup after loading the view.
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

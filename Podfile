@@ -10,5 +10,7 @@ target 'Exider.org' do
 	pod 'DLRadioButton', '~> 1.4'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'  
-  pod 'Dropper'	
+  pod 'Dropper'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/AdMob'
 end

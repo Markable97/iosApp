@@ -169,7 +169,6 @@
 				D0A7F903234F6A290003D5C7 /* ContainerViewController.swift */,
 				D0A7F907234F6A9F0003D5C7 /* MenuViewController.swift */,
 				D0A7F909234F85890003D5C7 /* MenuController.swift */,
-				D09A505D23C9E1A500C154C2 /* ContainerTabBarMainController.swift */,
 				D0CF165C23493668005ACC93 /* MainScreen */,
 				D04A7BE6233E5C1D00923F5B /* AppDelegate.swift */,
 				D04A7BE8233E5C1D00923F5B /* ViewController.swift */,
@@ -207,6 +206,7 @@
 		D0CF165C23493668005ACC93 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D09A505D23C9E1A500C154C2 /* ContainerTabBarMainController.swift */,
 				D0CA228E23465C6400AE10F5 /* TabBarMainController.swift */,
 				D0CF165A234934E1005ACC93 /* CalendarController.swift */,
 				D0A7F901234F14A20003D5C7 /* CalendarCell.swift */,

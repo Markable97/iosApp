@@ -1711,16 +1711,16 @@
                                     <segue destination="aT4-bV-YQh" kind="embed" identifier="embedTabBar" id="CDB-RC-F5b"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qd-EM-iQZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qd-EM-iQZ" customClass="GADBannerView">
                                 <rect key="frame" x="27.5" y="0.0" width="320" height="50"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3gx-dA-dcU"/>
                                     <constraint firstAttribute="width" constant="320" id="w17-mV-v3c"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.2374507189" green="0.2513578534" blue="0.2648968995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9BK-GC-eMW" firstAttribute="top" secondItem="8Qd-EM-iQZ" secondAttribute="bottom" id="Ccw-4I-rcA"/>
                             <constraint firstItem="8Qd-EM-iQZ" firstAttribute="top" secondItem="3x7-fD-UwO" secondAttribute="top" id="PeJ-hl-EYF"/>
@@ -1731,6 +1731,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3x7-fD-UwO"/>
                     </view>
+                    <connections>
+                        <outlet property="bannerView" destination="8Qd-EM-iQZ" id="e1F-7b-kgc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCJ-oC-SDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

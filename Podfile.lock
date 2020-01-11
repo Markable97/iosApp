@@ -1,6 +1,11 @@
 PODS:
   - DLRadioButton (1.4.12)
   - Dropper (2.7.6)
+  - Firebase/AdMob (6.12.0):
+    - Firebase/CoreOnly
+    - Google-Mobile-Ads-SDK (~> 7.50)
+  - Firebase/Analytics (6.12.0):
+    - Firebase/Core
   - Firebase/Core (6.12.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.1.5)
@@ -44,6 +49,8 @@ PODS:
     - GoogleUtilities/Reachability (~> 6.2)
     - GoogleUtilities/UserDefaults (~> 6.2)
     - Protobuf (>= 3.9.2, ~> 3.9)
+  - Google-Mobile-Ads-SDK (7.53.1):
+    - GoogleAppMeasurement (~> 6.0)
   - GoogleAppMeasurement (6.1.5):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -83,6 +90,8 @@ PODS:
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
   - Dropper
+  - Firebase/AdMob
+  - Firebase/Analytics
   - Firebase/Core
   - Firebase/Messaging
   - SwiftSocket
@@ -99,6 +108,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseInstanceID
     - FirebaseMessaging
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -118,6 +128,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
   FirebaseInstanceID: ebd2ea79ee38db0cb5f5167b17a0d387e1cc7b6e
   FirebaseMessaging: de30f83a372a390be6f2ba44ec43a45b7ccdb43f
+  Google-Mobile-Ads-SDK: fac081606dbd438d8db57198b83ba8b5f875a601
   GoogleAppMeasurement: 037f46d1d8ae8b312720f1042585ab961a1289e3
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
@@ -126,6 +137,6 @@ SPEC CHECKSUMS:
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
 
-PODFILE CHECKSUM: 499c5341238df2013ba5928e2acae45be38ed876
+PODFILE CHECKSUM: fdd32cc753184b72d8010cf898e86141a6d23bd8
 
 COCOAPODS: 1.8.4
